@@ -1,0 +1,141 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #6e7f91 0%, #e6e4e1 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+/* Sidebar container */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  background: #1F1F1F; /* deep charcoal */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  transition: width 0.2s ease;
+}
+
+#sidebar.expanded {
+  width: 240px;
+}
+/* Toggle button */
+#toggleBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+/* Nav content hidden by default via opacity + transform; keep in DOM for accessibility handling via JS */
+#navContent {
+  opacity: 0;
+  transform: translateY(12px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+/* When expanded, show, fade and translate to position */
+#sidebar.expanded #navContent {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+#navContent a:focus {
+  outline: 2px solid #D8CBB6;
+  outline-offset: 2px;
+}
+
+#sidebar.collapsed #navContent a,
+#sidebar.collapsed #navContent { pointer-events: none; }
+
+/* Nav links */
+#navContent a {
+  display: block;
+  padding: 12px 20px;
+  color: #D8CBB6; /* warm sand */
+  text-decoration: none;
+}
+
+#navContent a:hover {
+  background: #B26E4A; /* muted copper */
+  color: white;
+}
+
+     
+
+.sophistication-block {
+  max-width: 1075px;
+  margin: 10px auto 0 auto;
+  padding: 36px 44px;
+  transform: translateX(0);
+  transition: transform 0.25s ease;
+
+  /* Relief-style background */
+  background: linear-gradient(to right, #65676b8f 0%, #e6e4e1 100%);
+
+  border-left: 4px solid #B26E4A; /* muted copper */
+  backdrop-filter: blur(3px);     /* softens the gradient behind it */
+  border-radius: 6px;
+
+  color: #1F1F1F;                 /* deep charcoal text */
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+/* Utility to nudge the block right visually without affecting layout */
+.sophistication-block.shift-right {
+  transform: translateX(160px);
+}
+
+/* Example: nudge on hover */
+.sophistication-block:hover {
+  transform: translateX(110px);
+}
+
+.image-div {
+
+    width: 100%;
+    max-width: 600px;
+    overflow: visible;
+    /* border: 1px solid rgba(0,0,0,0.08); */
+    margin: 12px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+}
+
+.image-div img.scaled {
+    width: 100%;
+    transform: translateY(-30px) scale(1.3);
+    transition: transform 0.52s ease;
+}
+
+.image-div img.scaled:hover {
+    transform: translateY(-20px) scale(1.1);
+}
