@@ -6,7 +6,7 @@ body {
 .page-container {
     display: flex;
     flex-direction: column;
-    max-width: 1000px;
+    max-width: 95vw;
     /* margin: 0 auto; */
 }
 body {
@@ -88,10 +88,11 @@ body {
      
 
 .sophistication-block {
-  position: relative;
+  /* position: relative;
   right: -10%;
-  max-width: 90vw;
+  max-width: 90vw; */
   margin-top: 15vh;
+  margin-left: 15vw;
   padding: 36px 44px;
   transform: translateX(0);
   transition: transform 0.25s ease;
@@ -120,15 +121,24 @@ body {
 
 .image-div {
     position: relative;
-    right: -15%;
-    width: 100%;
-    max-width: 600px;
+    margin-top: 3vh; /* keep the logo from touching the top */
+    /* right: -15%;
+    width: 100%; */
+    /* max-width: 600px; */
     overflow: visible;
     /* border: 1px solid rgba(0,0,0,0.08); */
      /* transform: translateX(50%) scale(1); */
      /* transform: translateY(25%) scale(1); */
-    margin: 12px auto;
+    /* margin: 12px auto; */
+} 
 
+.image-div .center-wrapper {
+    position: relative;
+    left: calc(50% + 25%);
+    transform: translateX(-50%); /* center + shift right by 25% of the container */
+    display: inline-block;
+    max-width: 420px; /* prevent the image from getting too large */
+}
 
 .image-div img {
     display: block;
@@ -137,12 +147,35 @@ body {
     transform-origin: center center;
 }
 
+/* Responsive: remove the offset on narrow screens to prevent overflow */
+@media (max-width: 480px) {
+    .image-div .center-wrapper {
+        left: 50%;
+        transform: translateX(-50%); /* just center, no offset */
+    }
+}
+
+.image-div .center-wrapper img {
+    max-height: 35vh; /* keeps image from extending beyond viewport */
+    height: auto;
+    object-fit: contain;
+}
+
 .image-div img.scaled {
+
     width: 100%;
-    transform: translateY(-30px) scale(1.3);
+    transform: translateY(-10%) scale(1.1);
     transition: transform 0.52s ease;
 }
 
 .image-div img.scaled:hover {
-    transform: translateY(-20px) scale(1.1);
+    transform: translateY(-8%) scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .image-div img.scaled {
+        transform: translateY(0) scale(1);
+    }
+    .image-div .center-wrapper { left: 50%; transform: translateX(-50%); }
+    .image-div .center-wrapper img { max-height: 25vh; }
 }
