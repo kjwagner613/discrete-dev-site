@@ -3,7 +3,12 @@ body {
     height: 100%;
     margin: 0;
 }
-
+.page-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    /* margin: 0 auto; */
+}
 body {
     min-height: 100vh;
     background: linear-gradient(to bottom, #6e7f91 0%, #e6e4e1 100%);
@@ -83,8 +88,10 @@ body {
      
 
 .sophistication-block {
-  max-width: 1075px;
-  margin: 10px auto 0 auto;
+  position: relative;
+  right: -10%;
+  max-width: 90vw;
+  margin-top: 15vh;
   padding: 36px 44px;
   transform: translateX(0);
   transition: transform 0.25s ease;
@@ -97,31 +104,31 @@ body {
   border-radius: 6px;
 
   color: #1F1F1F;                 /* deep charcoal text */
-  line-height: 1.6;
-  font-size: 20px;
+  line-height: 1.1;
+  font-size: 16px;
 }
 
 /* Utility to nudge the block right visually without affecting layout */
-.sophistication-block.shift-right {
+/* .sophistication-block.shift-right {
   transform: translateX(160px);
-}
+} */
 
 /* Example: nudge on hover */
-.sophistication-block:hover {
+/* .sophistication-block:hover {
   transform: translateX(110px);
-}
+} */
 
 .image-div {
-
+    position: relative;
+    right: -15%;
     width: 100%;
     max-width: 600px;
     overflow: visible;
     /* border: 1px solid rgba(0,0,0,0.08); */
+     /* transform: translateX(50%) scale(1); */
+     /* transform: translateY(25%) scale(1); */
     margin: 12px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .image-div img {
     display: block;
