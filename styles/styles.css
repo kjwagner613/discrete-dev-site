@@ -85,10 +85,16 @@ body {
   transition-delay: 0s;
 }
 
-#navContent a:focus {
+/* #navContent a:focus {
   outline: 2px solid #D8CBB6;
   outline-offset: 2px;
 }
+
+nav a.active {
+  outline: 2px solid #D8CBB6;
+  outline-offset: 2px;
+} */
+
 
 #sidebar.collapsed #navContent a,
 #sidebar.collapsed #navContent { pointer-events: none; }
@@ -109,7 +115,7 @@ body {
      
 
 /* Block shared styles for 'sophistication-block' and 'method-block' */
-.sophistication-block, .method-block {
+.sophistication-block, .method-block, .contact-block, .services-block, .about-block, .philosophy-block {
   margin-top: var(--block-margin-top);
   margin-left: var(--block-base-left);
   padding: var(--block-padding);
@@ -212,4 +218,13 @@ body {
     }
     .image-div .center-wrapper { left: 50%; transform: translateX(-50%); }
     .image-div .center-wrapper img { max-height: 25vh; }
+}
+
+.category {
+
+    font-size: 20px;
+    color: #6e7f91;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
 }

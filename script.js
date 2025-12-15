@@ -23,6 +23,29 @@ function setSidebarOpen(open, skipFocus = false) {
   }
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const activeLink = document.querySelector("nav a.active");
+//   if (activeLink) {
+//     activeLink.focus();
+//   }
+// });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const links = document.querySelectorAll("nav a");
+//     const currentPath = window.location.pathname.split("/").pop();
+
+//     links.forEach(link => {
+//         const linkPath = link.getAttribute("href");
+//         if (linkPath === currentPath) {
+//             link.classList.add("active");
+//             link.focus();
+//         } else {
+//             link.classList.remove("active");
+//             link.blur(); // This clears any lingering focus
+//         }
+//     });
+// });
+
 // Toggle and let CSS handle transitions
 toggleBtn.addEventListener('click', (e) => {
   // Prevent immediate blur when controlling focus
