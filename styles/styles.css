@@ -19,10 +19,29 @@ body {
   background-size: 100% 100%;
 }
 
-h2 {
-  font-size: 1.8em;
-
+.hero {
+  margin-left: var(--block-base-left);
+  margin-top: 12vh;
+  max-width: 52ch;
 }
+
+.hero h1 {
+  font-size: 2.8em;
+  font-weight: 500;
+  margin-bottom: 0.4em;
+}
+
+.hero-sub {
+  font-size: 1.2em;
+  color: #3f4a55;
+}
+
+
+h2 {
+  line-height: 1.2;
+  font-weight: 500;
+}
+
 p, li {
   font-size: 1.2em;
 
@@ -112,11 +131,13 @@ ol.no-bullets {
   outline-offset: 2px;
 }
 
+ */
+
+
 nav a.active {
   outline: 2px solid #D8CBB6;
   outline-offset: 2px;
-} */
-
+}
 
 #sidebar.collapsed #navContent a,
 #sidebar.collapsed #navContent {
@@ -180,7 +201,7 @@ nav a.active {
   background: var(--block-bg);
   backdrop-filter: blur(3px);
   color: #1F1F1F;
-  line-height: 1.1;
+  line-height: 1.6;
   font-size: 16px;
   box-shadow: var(--block-shadow);
   border-radius: var(--block-radius);
@@ -288,8 +309,9 @@ nav a.active {
 }
 
 .image-div img.scaled:hover {
-  transform: translateY(-8%) scale(1.2);
+  transform: translateY(-6%) scale(1.12);
 }
+
 
 @media (max-width: 768px) {
   .image-div img.scaled {
