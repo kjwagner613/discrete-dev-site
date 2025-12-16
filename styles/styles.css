@@ -19,6 +19,14 @@ body {
   background-size: 100% 100%;
 }
 
+h2 {
+  font-size: 1.8em;
+
+}
+p {
+  font-size: 1.2em;
+
+}
 :root {
   --block-offset: 7vw;
   /* right-of-center visual offset */
@@ -283,3 +291,95 @@ nav a.active {
   margin-top: 20px;
   margin-left: var(--block-base-left);
 }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 24px;
+  margin-top: 16px;
+}
+
+/* keep labels on one line so first column stays just wide enough */
+.contact-grid h3 {
+  white-space: nowrap;
+}
+
+.contact-item {
+  margin: 0;
+}
+
+/* Contact form styles */
+.contact-form {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  max-width: 540px;
+}
+.contact-form h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+.contact-form label {
+  font-size: 0.9em;
+  color: #6e7f91;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(31,31,31,0.12);
+  border-radius: 4px;
+  font-size: 1em;
+  background: #fff;
+}
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-form .btn {
+  background: #B26E4A;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.form-status {
+  font-weight: 600;
+  color: #1F1F1F;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.form-status.success {
+  color: #1F7F3F; /* green */
+}
+.form-status.error {
+  color: #b00020; /* red */
+}
+.status-dismiss {
+  background: none;
+  border: 1px solid rgba(31,31,31,0.08);
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  cursor: pointer;
+  color: inherit;
+}
+.status-dismiss:focus {
+  outline: 2px solid #D8CBB6;
+  outline-offset: 2px;
+}
+
+/* Make form full width on small screens */
+@media (max-width: 480px) {
+  .contact-form {
+    max-width: 100%;
+  }
+} 

@@ -70,3 +70,71 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize to collapsed state on load (set tabindex and aria-hidden) without moving focus
 setSidebarOpen(false, true);
+
+/* Contact form: AJAX submit to Formspree with inline feedback */
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('.contact-form');
+  forms.forEach(form => {
+    const statusEl = form.querySelector('.form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const clearStatus = () => {
+      statusEl.textContent = '';
+      statusEl.classList.remove('success', 'error');
+      statusEl.removeAttribute('tabindex');
+    };
+
+    const showStatus = (msg, type = '') => {
+      clearStatus();
+      if (!msg) return;
+      statusEl.classList.add(type);
+      // append message text and a dismiss button
+      const textNode = document.createTextNode(msg + ' ');
+      statusEl.appendChild(textNode);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'status-dismiss';
+      btn.setAttribute('aria-label', 'Dismiss message');
+      btn.textContent = 'Dismiss';
+      btn.addEventListener('click', () => {
+        clearStatus();
+        submitBtn.focus();
+      }, { once: true });
+      statusEl.appendChild(btn);
+      // make it focusable so screen readers announce it
+      statusEl.setAttribute('tabindex', '0');
+      statusEl.focus();
+    };
+
+    form.addEventListener('submit', async (e) => {
+      if (!form.checkValidity()) {
+        // let browser show validation UI
+        return;
+      }
+      e.preventDefault();
+      // clear any previous messages
+      clearStatus();
+      submitBtn.disabled = true;
+      statusEl.textContent = 'Sending…';
+      const formData = new FormData(form);
+      try {
+        const resp = await fetch(form.action, {
+          method: form.method || 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+        if (resp.ok) {
+          form.reset();
+          showStatus('Thank you — your email has been sent.', 'success');
+        } else {
+          const data = await resp.json();
+          showStatus(data?.error || 'Sorry — there was a problem sending your message.', 'error');
+        }
+      } catch (err) {
+        showStatus('Network error — please try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  });
+});
