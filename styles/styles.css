@@ -37,15 +37,18 @@ body {
 }
 
 
+
 h2 {
   line-height: 1.2;
   font-weight: 500;
 }
 
-p, li {
+p,
+li {
   font-size: 1.2em;
 
 }
+
 :root {
   --block-offset: 7vw;
   /* right-of-center visual offset */
@@ -166,12 +169,14 @@ nav a.active {
   color: #728294;
   text-decoration-color: #728294;
 }
+
 .page-container a:visited,
 .contact-block a:visited,
 .contact-form a:visited {
   color: #9fb0ff;
   text-decoration-color: #9fb0ff;
 }
+
 .page-container a:hover,
 .page-container a:focus,
 .contact-block a:hover,
@@ -212,7 +217,8 @@ nav a.active {
 
 /* Utility to nudge the block right visually without affecting layout */
 .sophistication-block.shift-right,
-.method-block.shift-right, .contact-block.shift-right,
+.method-block.shift-right,
+.contact-block.shift-right,
 .services-block.shift-right,
 .about-block.shift-right,
 .philosophy-block.shift-right {
@@ -243,7 +249,7 @@ nav a.active {
 
 /* Keyboard focus support */
 .sophistication-block:focus-within,
-.method-block:focus-within, 
+.method-block:focus-within,
 .contact-block:focus-within,
 .services-block:focus-within,
 .about-block:focus-within,
@@ -328,9 +334,20 @@ nav a.active {
   }
 }
 
+.service-group {
+  justify-self: center;
+  font-size: 1.8em;
+  color: #6e7f91;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  margin-top: 2em;
+}
+
 .category {
 
-  font-size: 1.8em;
+
+  font-size: 1.5em;
   color: #6e7f91;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -370,7 +387,7 @@ nav a.active {
   /* border: solid grey 1px;
   padding: 16px;
   border-radius: 8px; */
-    /* margin-top: var(--block-margin-top);
+  /* margin-top: var(--block-margin-top);
   margin-left: var(--block-base-left); */
   padding: var(--block-padding);
   transform: translateX(0) translateY(0);
@@ -387,29 +404,34 @@ nav a.active {
   position: relative;
   z-index: 1;
 }
+
 .contact-form h3 {
   margin: 0;
   font-size: 1.2em;
 }
+
 .contact-form label {
   font-size: 0.9em;
   color: #6e7f91;
 }
+
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 95%;
   padding: 10px 12px;
-  border: 1px solid rgba(31,31,31,0.12);
+  border: 1px solid rgba(31, 31, 31, 0.12);
   border-radius: 4px;
   font-size: 1em;
   background: #fff;
 }
+
 .form-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .contact-form .btn {
   background: #B26E4A;
   color: #fff;
@@ -418,10 +440,12 @@ nav a.active {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .contact-form .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
 .form-status {
   font-weight: 600;
   color: #1F1F1F;
@@ -429,21 +453,27 @@ nav a.active {
   align-items: center;
   gap: 8px;
 }
+
 .form-status.success {
-  color: #1F7F3F; /* green */
+  color: #1F7F3F;
+  /* green */
 }
+
 .form-status.error {
-  color: #b00020; /* red */
+  color: #b00020;
+  /* red */
 }
+
 .status-dismiss {
   background: none;
-  border: 1px solid rgba(31,31,31,0.08);
+  border: 1px solid rgba(31, 31, 31, 0.08);
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 0.85em;
   cursor: pointer;
   color: inherit;
 }
+
 .status-dismiss:focus {
   outline: 2px solid #D8CBB6;
   outline-offset: 2px;
@@ -454,4 +484,4 @@ nav a.active {
   .contact-form {
     max-width: 100%;
   }
-} 
+}
