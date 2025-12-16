@@ -11,6 +11,7 @@ body {
   /* margin: 0 auto; */
 }
 
+
 body {
   min-height: 100vh;
   background: linear-gradient(to bottom, #6e7f91 0%, #e6e4e1 100%);
@@ -341,12 +342,11 @@ nav a.active {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
-  margin-top: 2em;
+
+
 }
 
 .category {
-
-
   font-size: 1.5em;
   color: #6e7f91;
   text-transform: uppercase;
