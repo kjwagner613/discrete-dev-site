@@ -198,6 +198,7 @@ nav a.active {
 .services-block,
 .about-block,
 .philosophy-block {
+
   margin-top: var(--block-margin-top);
   margin-left: var(--block-base-left);
   padding: var(--block-padding);
@@ -216,14 +217,47 @@ nav a.active {
   z-index: 1;
 }
 
+.technology-block {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem 0;
+    line-height: 1.6;
+}
+
+.technology-block p {
+    margin: 0.3rem 0 1rem 0;
+    /* color: #444; */
+}
+
+.technology-block:not(:first-of-type) {
+    border-left: 2px solid rgba(0,0,0,0.08);
+    padding-left: 1.5rem;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 600px) {
+    .shift-right {
+        margin-left: 0;
+    }
+    .technology-block {
+        padding: 0 1rem;
+    }
+}
+
 /* Utility to nudge the block right visually without affecting layout */
 .sophistication-block.shift-right,
 .method-block.shift-right,
 .contact-block.shift-right,
 .services-block.shift-right,
 .about-block.shift-right,
-.philosophy-block.shift-right {
+.philosophy-block.shift-right,
+.technology-block.shift-right {
   transform: translateX(var(--block-offset));
+}
+
+.technology-block.shift-right p {
+  margin-left: 2rem;
+
 }
 
 /* Hover lift (prefers transform for visual change) */
@@ -232,7 +266,8 @@ nav a.active {
 .services-block:hover,
 .about-block:hover,
 .philosophy-block:hover,
-.method-block:hover {
+.method-block:hover,
+.technology-block:hover {
   transform: translateY(-6px) translateX(0);
   box-shadow: var(--block-shadow-hover);
 }
@@ -243,7 +278,8 @@ nav a.active {
 .contact-block.shift-right:hover,
 .services-block.shift-right:hover,
 .about-block.shift-right:hover,
-.philosophy-block.shift-right:hover {
+.philosophy-block.shift-right:hover,
+.technology-block.shift-right:hover {
   transform: translateX(var(--block-offset)) translateY(-6px);
   box-shadow: var(--block-shadow-hover);
 }
@@ -254,7 +290,8 @@ nav a.active {
 .contact-block:focus-within,
 .services-block:focus-within,
 .about-block:focus-within,
-.philosophy-block:focus-within {
+.philosophy-block:focus-within,
+.technology-block:focus-within {
   transform: translateY(-4px);
   box-shadow: var(--block-shadow-hover);
 }
@@ -345,6 +382,17 @@ nav a.active {
 
 
 }
+
+.technology-group {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    letter-spacing: 0.5px;
+    
+}
+
 
 .category {
   font-size: 1.5em;
