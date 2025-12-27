@@ -50,6 +50,16 @@ li {
 
 }
 
+a.hyperlink {
+  color: red;
+  text-decoration-color: #728294;
+}
+
+.appLink {
+  font-size: 1.2em;
+  color: red
+}
+
 :root {
   --block-offset: 7vw;
   /* right-of-center visual offset */
@@ -327,6 +337,7 @@ nav a.active {
   width: 100%;
   height: auto;
   transform-origin: center center;
+  padding-bottom: 4em;
 }
 
 /* Responsive: remove the offset on narrow screens to prevent overflow */
@@ -398,6 +409,14 @@ nav a.active {
   font-size: 1.5em;
   color: #6e7f91;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+
+.subCategory {
+  font-size: 1.3em;
+  color: #6e7f91;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
 }
