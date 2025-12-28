@@ -244,7 +244,8 @@ nav a.active {
 .contact-block,
 .services-block,
 .about-block,
-.philosophy-block {
+.philosophy-block,
+.technology-block {
 
   margin-top: var(--block-margin-top);
   margin-left: var(--block-base-left);
@@ -264,12 +265,7 @@ nav a.active {
   z-index: 1;
 }
 
-.technology-block {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 1rem 0;
-  line-height: 1.6;
-}
+
 
 .technology-block p {
   margin: 0.3rem 0 1rem 0;
