@@ -8,9 +8,14 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 95vw;
+  
   /* margin: 0 auto; */
 }
 
+p.centered {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 
 body {
   min-height: 100vh;
@@ -55,9 +60,41 @@ a.hyperlink {
   text-decoration-color: #728294;
 }
 
-.appLink {
-  font-size: 1.2em;
-  color: red
+
+/* Base button style for <a> */
+a.button {
+  display: inline-block;
+  /* Makes it behave like a button */
+  padding: 10px 20px;
+  /* Space inside the button */
+  /* background-color: #007BFF;      */
+  background-color: #2b4057;
+  /* color: beige;                   */
+  text-decoration: none;
+  /* Remove underline */
+  border-radius: 5px;
+  /* Rounded corners */
+  /* font-family: Arial, sans-serif;   */
+  font-size: 16px;
+  /* Readable size */
+  transition: background-color 0.3s ease;
+  /* Smooth hover effect */
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+}
+
+/* Hover effect */
+a.button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+/* Optional: Focus style for accessibility */
+a.button:focus {
+  outline: 2px solid #ffcc00;
+  /* Yellow outline when focused */
+  outline-offset: 2px;
 }
 
 :root {
@@ -228,30 +265,31 @@ nav a.active {
 }
 
 .technology-block {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 1rem 0;
-    line-height: 1.6;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  line-height: 1.6;
 }
 
 .technology-block p {
-    margin: 0.3rem 0 1rem 0;
-    /* color: #444; */
+  margin: 0.3rem 0 1rem 0;
+  /* color: #444; */
 }
 
 .technology-block:not(:first-of-type) {
-    border-left: 2px solid rgba(0,0,0,0.08);
-    padding-left: 1.5rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.08);
+  padding-left: 1.5rem;
 }
 
 /* Improve readability on mobile */
 @media (max-width: 600px) {
-    .shift-right {
-        margin-left: 0;
-    }
-    .technology-block {
-        padding: 0 1rem;
-    }
+  .shift-right {
+    margin-left: 0;
+  }
+
+  .technology-block {
+    padding: 0 1rem;
+  }
 }
 
 /* Utility to nudge the block right visually without affecting layout */
@@ -385,7 +423,7 @@ nav a.active {
 
 .service-group {
   justify-self: center;
-  font-size: 1.8em;
+  font-size: 2.1em;
   color: #6e7f91;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -395,13 +433,13 @@ nav a.active {
 }
 
 .technology-group {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-    letter-spacing: 0.5px;
-    
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  letter-spacing: 0.5px;
+
 }
 
 
@@ -551,4 +589,38 @@ nav a.active {
   .contact-form {
     max-width: 100%;
   }
+}
+
+
+.plainBlock-container {
+  display: grid;
+  padding-left: 18vw;
+
+}
+
+.plainBlock {
+  display: flex 1;
+  text-indent: 0;
+  margin-left: 0;
+  padding: 0;
+
+}
+
+.page-title-2 {
+
+  font-size: 42px;
+  color: #1F1F1F;
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.title-1 {
+  font-size: 1.7em;
+  /* color: #1F1F1F; */
+
+}
+
+.indent {
+  text-indent: 3vw;
+
 }
