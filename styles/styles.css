@@ -4,12 +4,19 @@ body {
   margin: 0;
 }
 
+.page-header {
+  max-width: 170ch;
+  margin-left: 13vw;
+}
+
+
+
 .page-container {
   display: flex;
   flex-direction: column;
   max-width: 95vw;
   
-  /* margin: 0 auto; */
+  
 }
 
 p.centered {
@@ -27,7 +34,7 @@ body {
 
 .hero {
   margin-left: var(--block-base-left);
-  margin-top: 12vh;
+  margin-top: 4vh;
   max-width: 52ch;
 }
 
@@ -111,6 +118,7 @@ a.button:focus {
   --block-max-width: 65vw;
   --block-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   --block-shadow-hover: 0 18px 48px rgba(0, 0, 0, 0.18);
+  --nav-width: 60px;
 }
 
 @media (max-width: 768px) {
@@ -120,6 +128,7 @@ a.button:focus {
     --block-padding: 12px 28px;
   }
 }
+
 
 
 ul.no-bullets,
@@ -616,7 +625,78 @@ nav a.active {
 
 }
 
+.subtitle {
+  
+  max-width: 70ch;      /* controls line breaks */
+  text-align: left;     /* THIS is the key */
+  margin-left: 4rem;     
+  margin-right: auto;   
+
+
+}
+
 .indent {
   text-indent: 3vw;
+}
 
+
+/* 
+.note {
+  margin-top: 4rem;
+  margin-left: 13rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+} */
+
+/* .note p {
+  max-width: 70ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #1f1f1f;
+} */
+/* 
+.divider {
+        border: none;             
+        height: 1px;            
+        background-color: #555;   
+        margin: 24px 0;           
+        margin-left: 12rem;
+    } */
+
+/* .divider  {
+    border: 0;
+    height: 2px;
+    background: rgba(31,31,31,0.12);
+    margin: 2.75rem 0 2rem 0;
+
+    extend slightly beyond the content column
+    width: calc(100% + 1.5rem);
+    margin-left: -0.75rem;
+} */
+
+
+.section-ribbon {
+  height: 14px;
+  margin: 3.5rem 0 3rem 0;
+
+  margin-left: calc(var(--nav-width) + 2rem);
+  width: calc(100% - var(--nav-width) - 2rem);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(31,31,31,0),
+    rgba(31,31,31,0.08),
+    rgba(31,31,31,0)
+  );
+}
+
+.note {
+  min-width: 80%;
+  margin-top: 0;
+  margin-left: 50%;
+  transform: translateX(-40%)
+}
+
+.nav-group {
+  margin-bottom: 1.25rem;
 }

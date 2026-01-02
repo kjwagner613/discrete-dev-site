@@ -16,39 +16,66 @@
 </head>
 
 <body>
+
+    <div class="image-div">
+        <div class="center-wrapper">
+            <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="collapsed">
+        <button id="toggleBtn" aria-expanded="false" aria-controls="navContent">☰</button>
+        <nav id="navContent" aria-hidden="true">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="technology.html">Technology</a>
+            <a href="software.html">Software Sample</a>            
+            <p class="indent">Services</p>
+            <div class="nav-group">
+                <a href="services.html">Established / Multi-Site</a>
+                <a href="services-smb-pers.html" class="active">Independent Operators</a>
+            </div>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main content -->
     <div class="page-container">
-        <div class="image-div">
-            <div class="center-wrapper">
-                <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div id="sidebar" class="collapsed">
-            <button id="toggleBtn" aria-expanded="false" aria-controls="navContent">☰</button>
-            <nav id="navContent" aria-hidden="true">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="technology.html">Technology</a>
-                <a href="software.html">Software Sample</a>                
-                <a href="philosophy.html">Philosophy</a>
-                <a href="contact.html">Contact</a>
-
-            </nav>
-        </div>
-
-        <!-- Main content -->
         <div id="content">
-            <div class="plainBlock-container">
-                <div class="plainBlock">
+       
+                <div class="page-header">
                     <div class="page-title-2 indent">Services Offered </div>
-                    <div class="page-title-2 indent">Personal or Small Business</div>
-                    <p class="indent">Modern, lightweight, and no subscriptions needed.</p>
+                    <div class="page-title-2 indent">Independent Operators</div>
+              
+                    <p class="subtitle">I help modernize systems — from websites to workflows to accounting — with clean,
+                        ownership-friendly tools that behave predictably, scale with you, without additional
+                        subscriptions or costly feature tiers.</p>
                 </div>
-            </div>
+            <!-- </div> -->
+        </div>
+
+        <div class="services-block shift-right">
+
+            <p class="service-group">QuickBooks Desktop → QuickBooks Online Migration</p>
+            <p>A structured, low‑stress migration from your aging QuickBooks Desktop file into a clean, accurate,
+                structurally-sound
+                QuickBooks Online environment.</p>
+            <p>I handle:</p>
+            <ul class="no-bullets">
+                <li>List cleanup</li>
+                <li>Data normalization</li>
+                <li>Mapping</li>
+                <li>Structural fixes</li>
+                <li>The full migration</li>
+                <li>and a post‑migration audit</li>
+            </ul>
+            <p>So your books land in QBO clean, accurate, and ready for business.
+            </p>
         </div>
         <div class="services-block">
+
             <p class="service-group">Website Modernization</p>
 
             <p>A clean rebuild of your existing site using modern, standards‑based React.
@@ -84,14 +111,15 @@
             <ul>
                 <li>Your store, on your domain</li>
                 <li>Clean product pages</li>
-                <li>Stripe checkout</li>
+                <li>Online credit card processing</li>
                 <li>You own the code, the data, and the revenue</li>
                 <li>A straightforward way to add online sales without adopting a new platform.</li>
             </ul>
 
             <p class="service-group">Dropshipper Integration</p>
             <p>Connect your store to a fulfillment partner so orders ship automatically.
-                Ideal for salons, boutiques, and small shops wanting passive revenue without inventory or overhead.</p>
+                Ideal for salons, boutiques, and small shops wanting passive revenue without inventory or overhead.
+            </p>
 
             <p class="service-group">Product Setup</p>
             <p>Add products with clean descriptions, images, and pricing.
@@ -100,16 +128,22 @@
             <p class="service-group">Optional Ongoing Support</p>
             <p>No‑pressure support for small updates, seasonal refreshes, or product changes.
                 You stay in control — support is available when you want it.</p>
-            
         </div>
-        </br></br>
-    </div>
+
+
+        <!-- <hr class="divider"> -->
+        <div class="section-ribbon"></div>
+
+        <section class="note">
+            <p>Every business has its own rhythm and personality. I help streamline and modernize your systems in a
+                way that supports that individuality, not replace it. </p>
+        </section>
+
+
+
 
     </div>
 
-
-    <h1></h1>
-    </div>
 </body>
 
 </html>
