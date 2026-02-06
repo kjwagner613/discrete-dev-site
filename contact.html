@@ -1,70 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Discrete Development</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="public/images/DD-logo-favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Discrete Development — Contact</title>
+  <meta name="description"
+    content="Services for corporate or enterprise businesses: architecture, automation, and refinement with a calm, precise, ownership-friendly approach." />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+   <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+  <!-- Fonts (distinct display + readable body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+
 </head>
 
 <body>
-    <div class="page-container">
-        <div class="image-div">
-            <div class="center-wrapper">
-                <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
-            </div>
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+  <!-- Inserts Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pip"></span> Business Services</div>
+          <h1>Discrete Development</h1>
+          <p class="sub">
+            Sophisticated Software / Custom Built Solutions
+          </p>
+          <div class="hero-actions">
+            <!-- <button class="btn primary" type="button" data-scroll="#architecture">Explore Services</button> -->
+             <a class="btn primary" type="button" href="servicesOverview.html" data-route="servicesOverview">Explore Services</a>
+            <!-- <button class="btn" type="button" data-scroll="#contact">Request a Consult</button> -->
+
+            <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink" class="btn" type="button" target="_blank">
+  Request a Consult
+</a>   
+          </div>
         </div>
+        <!-- Inserts Brand -->
+        <div id="brandTileMount"></div>
+      </div>
+    </header>
 
-        <!-- Sidebar -->
-        <!-- Sidebar (loaded from partials/sidebar.html) -->
-        <div id="sidebar-slot"></div>
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay:.12s">
+        <p>From the fringe, delivering clarity at the center.</p>
+        <!-- <div class="tag">Architecture • Automation • Longevity</div> -->
+        <div style="margin-right: 90px;" class="tag">Contact Us</div>
+      </div>
+    </div>
 
-        <div class="page-title">Contact</div>
+<div class="extender">
+    <div class="video-div">
+      <video class="video-crop" autoplay muted loop playsinline preload="auto" poster="">
+        <source src="public/videos/DD-animatedLogo-640-480.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="band" aria-hidden="true"></div>
+    </div>
 
-        <section class="contact-block">
+    <main>
+      <section class="sections" aria-label="Service pillars">
 
+        <!-- Contact -->
+        <article class="paper reveal" id="contact">
+          <div class="paper-inner">
+            <div>
+              <h2>Contact</h2>
+              <p class="lede">
+                Brief is fine. The most helpful notes include your current system, the friction points, and what a
+                “better” outcome looks like internally.
+              </p>
+              <div class="contact-notes">
+                <p>To email using your default mail client, click the email link below:</p>
+                <p><strong>Email:</strong>
+                  <a class="contact-link" href="mailto:kevin@discrete-dev.com?subject=Request%20for%20consult">
+                    kevin@discrete-dev.com
+                  </a>
+                </p>
+                <p>Call us directly at:</p>
+                <p <strong>Phone:</strong>
+                  <a class="contact-link" href="tel:+18056513043">+1 805 651 3043</a>
+                </p>
+              </div>
 
-            <p>If you’re encountering resistance, inefficiency, or uncertainty in how work gets done, we should talk.
-            </p>
-            <div class="contact-grid">
-                <h3 class="contact-item">Email</h3>
-                <p class="contact-item"><a href="mailto:kevin@discrete-dev.com">kevin@discrete-dev.com</a></p>
-
-                <h3 class="contact-item">Schedule a Meeting</h3>
-                <p class="contact-item"><a
-                        href="https://outlook.office.com/book/BookameetingwithDiscreteDevelopment@discrete-dev.com/?ismsaljsauthenabled"
-                        target="_blank">Book a meeting</a></p>
-
-                <h3 class="contact-item">Telephone</h3>
-                <p class="contact-item">+1 (805) 651-3043</p>
             </div>
+
 
             <!-- Formspree contact form -->
-            <form class="contact-form" action="https://formspree.io/f/mgvgbdkb" method="POST">
+            <div class="pillar contact-card">
+              <form class="contact-form" action="https://formspree.io/f/mgvgbdkb" method="POST">
                 <h3>Send a Message</h3>
 
                 <label for="cf-name">Name</label>
-                <input id="cf-name" name="name" type="text" required>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required>
 
                 <label for="cf-email">Email</label>
-                <input id="cf-email" name="_replyto" type="email" required>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
 
                 <label for="cf-message">Message</label>
                 <textarea id="cf-message" name="message" rows="6" required></textarea>
 
+                <input type="hidden" name="_redirect" value="contact.html?sent=1#contact">
                 <!-- simple honeypot for spam -->
                 <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
                 <div class="form-actions">
-                    <button type="submit" class="btn">Send</button>
-                    <span class="form-status" role="status" aria-live="polite"></span>
+                  <button type="submit" class="btn-primary">Send</button>
+                  <span class="form-status" role="status" aria-live="polite"></span>
                 </div>
-            </form>
-        </section>
-    </div>
+              </form>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development. Built for clarity.</small>
+        <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience
+          guides.</small>
+      </div>
+    </footer>
+  </div>
+
+
 </body>
 
 </html>

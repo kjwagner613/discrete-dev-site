@@ -133,12 +133,13 @@ a.hyperlink {
 
 /* Base button style for <a> */
 a.button {
+  color: white;
   display: inline-block;
   /* Makes it behave like a button */
   padding: 10px 20px;
   /* Space inside the button */
   /* background-color: #007BFF;      */
-  background-color: #2b4057;
+  background-color: #96a1ad;
   /* color: beige;                   */
   text-decoration: none;
   /* Remove underline */

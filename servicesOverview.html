@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services Overview</title>
+  <meta name="description"
+    content="A complete overview of services from Discrete Development: small business, modernization, automation, systems, and ongoing support." />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+  <!-- Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pip"></span>Discrete Development</div>
+          <h1>Services Overview</h1>
+          <p class="sub">
+            A single place to see everything we offer: from small business sites to automation, systems, and long-term
+            refinement.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" type="button" data-scroll="#services">Explore Services</button>
+            <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
+              class="btn" type="button" target="_blank">
+              Request a Consult
+            </a>
+          </div>
+        </div>
+
+        <div id="brandTileMount"></div>
+      </div>
+    </header>
+
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay:.12s">
+        <p>All Services in One Place</p>
+        <div style="margin-right: 0;" class="tag">Small Business • Modernization • Systems</div>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true"></div>
+
+    <main>
+      <section class="sections" aria-label="Service overview" id="services">
+
+        <!-- Small Business Services -->
+        <article class="paper nudge-up reveal" id="small-business">
+          <div class="paper-inner">
+            <div>
+              <h2>Small Business Services</h2>
+              <p class="lede">
+                For owners who need a clear, modern web presence without the noise. We focus on what actually supports
+                your operations: clean structure, simple updates, and a site that feels like part of how you work—not a
+                separate chore.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Modern, Focused Websites</h3>
+                <p>
+                  Purpose-built sites that highlight what you do, how to work with you, and how to reach you—without
+                  clutter or gimmicks.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Clear Information Architecture</h3>
+                <p>
+                  Pages organized around how your customers actually think. No maze, no dead ends, no “where do I click
+                  now?” moments.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Owner-Friendly Updates</h3>
+                <p>
+                  Simple patterns for keeping things current. We design with the assumption that you’ll want to adjust
+                  copy, hours, or offerings over time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Website Modernization & Enhancements -->
+        <article class="paper reveal" id="modernization">
+          <div class="paper-inner">
+            <div>
+              <h2>Website Modernization &amp; Enhancements</h2>
+              <p class="lede">
+                When your existing site is doing “something” but not quite what you need, we refine it instead of
+                starting from chaos. The goal is a site that’s faster, clearer, and easier to maintain.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Structure &amp; Content Cleanup</h3>
+                <p>
+                  Reduce noise, remove dead content, and bring the important paths to the surface so visitors can move
+                  with confidence.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Targeted Feature Additions</h3>
+                <p>
+                  Add only what serves the mission: better forms, clearer calls to action, improved navigation, or
+                  focused landing pages.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Performance &amp; Reliability</h3>
+                <p>
+                  Faster load times, fewer surprises, and a site that behaves consistently across devices and browsers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Scheduling & Client Workflow Tools -->
+        <article class="paper reveal" id="scheduling">
+          <div class="paper-inner">
+            <div>
+              <h2>Scheduling &amp; Client Workflow Tools</h2>
+              <p class="lede">
+                We connect your site to the way you actually work with clients: booking, intake, follow-up, and
+                handoffs. The goal is fewer emails, fewer missed steps, and a smoother experience for both sides.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Booking &amp; Calendar Integration</h3>
+                <p>
+                  Clean, direct paths from your site into your scheduling system, with clear expectations for clients at
+                  each step.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Intake &amp; Forms</h3>
+                <p>
+                  Forms that collect only what’s needed, structured so the information is easy to act on later.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Client Communication Patterns</h3>
+                <p>
+                  Simple, repeatable flows for confirmations, reminders, and follow-ups—without turning your operation
+                  into a notification factory.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Online Store & Fulfillment -->
+        <article class="paper reveal" id="commerce">
+          <div class="paper-inner">
+            <div>
+              <h2>Online Store &amp; Fulfillment</h2>
+              <p class="lede">
+                For businesses that need to sell online without inheriting a tangle of tools. We focus on clear product
+                setup, clean checkout, and fulfillment that matches how you actually ship or deliver.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Store Setup &amp; Structure</h3>
+                <p>
+                  Product categories, navigation, and detail pages designed so customers can find what they need quickly
+                  and understand what they’re buying.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Dropshipper &amp; Vendor Integration</h3>
+                <p>
+                  Connect your store to suppliers or dropshippers in a way that keeps orders traceable and expectations
+                  clear.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Product Data &amp; Variants</h3>
+                <p>
+                  Clean product records, sensible options, and consistent naming so your catalog doesn’t drift over
+                  time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Software & Systems -->
+        <article class="paper reveal" id="systems">
+          <div class="paper-inner">
+            <div>
+              <h2>Software &amp; Systems</h2>
+              <p class="lede">
+                When you need more than a website, we design and build the systems that sit behind it: tools, data
+                models, and workflows that support how your business actually runs.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>ERP Lite</h3>
+                <p>
+                  A focused, right-sized system for orders, inventory, and basic operations—without the overhead of a
+                  full enterprise platform.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>NanoEHR &amp; Specialized Tools</h3>
+                <p>
+                  Lightweight, purpose-built tools for specific domains where off-the-shelf software is too heavy or too
+                  generic.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Custom Integrations</h3>
+                <p>
+                  Connect the systems you already rely on so data moves cleanly and people don’t have to retype the same
+                  information in three places.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Production & Operational Tools -->
+        <article class="paper reveal" id="production">
+          <div class="paper-inner">
+            <div>
+              <h2>Production &amp; Operational Tools</h2>
+              <p class="lede">
+                For teams that live in the details of making, shipping, or delivering, we build tools that reduce
+                friction and make the work feel lighter without hiding the reality of the operation.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Workflow &amp; Shop-Floor Tools</h3>
+                <p>
+                  Interfaces and dashboards that match how work actually flows through your environment, not how a
+                  generic template assumes it does.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Automation Where It Helps</h3>
+                <p>
+                  Automate the repetitive, predictable steps while keeping human judgment in the places where nuance
+                  matters.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Operational Visibility</h3>
+                <p>
+                  Clear views into status, bottlenecks, and exceptions so leaders can act early instead of reacting
+                  late.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ongoing Support -->
+        <article class="paper reveal" id="support">
+          <div class="paper-inner">
+            <div>
+              <h2>Ongoing Support &amp; Refinement</h2>
+              <p class="lede">
+                Not a retainer by default, not a dependency by design. We stay available for the work that genuinely
+                needs a builder’s eye: adjustments, extensions, and refinements over time.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Targeted Adjustments</h3>
+                <p>
+                  Small, focused changes that keep your systems aligned with how your business evolves—without starting
+                  from scratch.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Refinement Over Replacement</h3>
+                <p>
+                  We prefer to improve what works instead of tearing it out. The goal is stability with clarity, not
+                  churn.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Ownership-Friendly Approach</h3>
+                <p>
+                  You keep control. We document, explain, and structure things so your team can operate confidently
+                  without needing us for every change.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development. Built for clarity.</small>
+        <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience
+          guides.</small>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

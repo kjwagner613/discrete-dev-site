@@ -1,68 +1,181 @@
-function initSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  if (!sidebar) return;
+// script.js
 
-  const toggleBtn = document.getElementById('toggleBtn');
-  const navContent = document.getElementById('navContent');
-  if (!toggleBtn || !navContent) return;
+async function loadPartial(selector, url) {
+  const el = document.querySelector(selector);
+  if (!el) return false;
 
-  const navLinks = navContent.querySelectorAll('a');
-
-  function setSidebarOpen(open, skipFocus = false) {
-    if (open) {
-      sidebar.classList.add('expanded');
-      sidebar.classList.remove('collapsed');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      navContent.setAttribute('aria-hidden', 'false');
-      navLinks.forEach(link => link.removeAttribute('tabindex'));
-      if (!skipFocus && navLinks.length) navLinks[0].focus();
-    } else {
-      sidebar.classList.remove('expanded');
-      sidebar.classList.add('collapsed');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      navContent.setAttribute('aria-hidden', 'true');
-      navLinks.forEach(link => link.setAttribute('tabindex', '-1'));
-      if (!skipFocus) toggleBtn.focus();
-    }
-  }
-
-  // Toggle and let CSS handle transitions
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setSidebarOpen(!sidebar.classList.contains('expanded'));
-  });
-
-  // Close sidebar when clicking outside (optional) - keeps UI tidy
-  document.addEventListener('click', (e) => {
-    const isClickInside = sidebar.contains(e.target);
-    if (!isClickInside && sidebar.classList.contains('expanded')) {
-      setSidebarOpen(false);
-    }
-  });
-
-  // Close sidebar with Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sidebar.classList.contains('expanded')) {
-      setSidebarOpen(false);
-    }
-  });
-
-  // Initialize to collapsed state on load (set tabindex and aria-hidden) without moving focus
-  setSidebarOpen(false, true);
+  const res = await fetch(url, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+  el.innerHTML = await res.text();
+  return true;
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  const slot = document.getElementById('sidebar-slot');
-  if (slot) {
-    try {
-      const resp = await fetch('partials/sidebar.html');
-      slot.innerHTML = await resp.text();
-    } catch (err) {
-      console.error('Failed to load sidebar partial', err);
-    }
+function wireDrawer() {
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const backdrop = document.getElementById("backdrop");
+
+  // If the page doesn't have the drawer bits, bail.
+  if (!menuBtn || !backdrop) return;
+
+  function openDrawer() {
+    document.body.classList.add("drawer-open");
+    menuBtn.setAttribute("aria-expanded", "true");
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
   }
-  initSidebar();
+
+  function closeDrawer() {
+    document.body.classList.remove("drawer-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.focus();
+  }
+
+  menuBtn.addEventListener("click", () => {
+    document.body.classList.contains("drawer-open") ? closeDrawer() : openDrawer();
+  });
+
+  if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
+  backdrop.addEventListener("click", closeDrawer);
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("drawer-open")) closeDrawer();
+  });
+
+  // Drawer link behavior:
+  // - If href is "#section" => smooth scroll (same page)
+  // - Else normal navigation (but close drawer immediately for UX)
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest(".drawer a");
+    if (!a) return;
+
+    const href = a.getAttribute("href");
+    if (!href) return;
+
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      closeDrawer();
+      const target = document.querySelector(href);
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+      return;
+    }
+
+    // For cross-page links like "index.html#contact", let navigation happen.
+    closeDrawer();
+  });
+}
+
+function resolveDrawerRoutes() {
+  // Single source of truth for where each thing currently lives.
+  // Change these as your site evolves.
+  const ROUTES = {
+    home: { page: "index.html", hash: "" }, // or "" if you want top-of-page
+    philosophy: { page: "philosophy.html", hash: "" },
+    technology: { page: "technology.html", hash: "" },
+    software: { page: "software.html", hash: "" },
+    corporateSvcs: { page: "corporateSvcs.html", hash: "" },
+    smallBusinessSvcs: { page: "smallBusinessSvcs.html", hash: "" },
+    contact: { page: "contact.html", hash: "" }, // later: { page: "contact.html", hash: "" }
+    servicesOverview: { page: "servicesOverview.html", hash: "" },
+  };
+
+  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+  document.querySelectorAll(".drawer [data-route]").forEach((a) => {
+    const key = a.getAttribute("data-route");
+    const dest = ROUTES[key];
+    if (!dest) return;
+
+    const page = (dest.page || "").toLowerCase();
+    const hash = dest.hash || "";
+
+    // If destination page is the current page, use hash-only so your smooth scroll works.
+    // Otherwise use page+hash to navigate normally.
+    if (page === currentPage) {
+      a.setAttribute("href", hash || "#");
+    } else {
+      a.setAttribute("href", `${dest.page}${hash}`);
+    }
+  });
+}
+
+
+function wireSmoothScrollButtons() {
+  document.querySelectorAll("[data-scroll]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const sel = btn.getAttribute("data-scroll");
+      const el = sel ? document.querySelector(sel) : null;
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+function wireReveal() {
+  const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  if (!revealEls.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  
+revealEls.forEach((el, i) => {
+  const delay = el.dataset.revealDelay
+    ? Number(el.dataset.revealDelay)
+    : Math.min(i * 70, 280);
+
+  el.style.transitionDelay = `${delay}ms`;
+  io.observe(el);
 });
+
+
+  // revealEls.forEach((el, i) => {
+  //   el.style.transitionDelay = `${Math.min(i * 70, 280)}ms`;
+  //   io.observe(el);
+  // });
+}
+
+function wireFooterYear() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+function wireFormSuccessNotice() {
+  const statusEl = document.querySelector(".form-status");
+  if (!statusEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "1") {
+    statusEl.textContent = "Your message was sent successfully.";
+  }
+}
+
+function demoSubmit() {
+  const note = document.getElementById("formNote");
+  if (note) note.textContent = "Form captured (demo). If you paste your real form endpoint, I’ll wire it up.";
+}
+window.demoSubmit = demoSubmit;
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load shared drawer first (so #closeBtn and #backdrop exist)
+  await loadPartial("#drawerMount", "partials/drawer.html");
+  await loadPartial("#brandTileMount", "partials/brand-tile.html");
+
+  // Now wire behaviors
+  resolveDrawerRoutes();
+  wireDrawer();
+  wireSmoothScrollButtons();
+  wireReveal();
+  wireFooterYear();
+  wireFormSuccessNotice();
+});
+
 /* Contact form: AJAX submit to Formspree with inline feedback */
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('.contact-form');
@@ -124,9 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         showStatus('Network error — please try again.', 'error');
-      } finally {
-        submitBtn.disabled = false;
-      }
+          } finally {
+            submitBtn.disabled = false;
+          }
+        });
+      });
     });
-  });
-});

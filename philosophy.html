@@ -1,74 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discrete Development Philosophy</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="public/images/DD-logo-favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Discrete Development — Philosophy</title>
+  <meta name="description"
+    content="Our philosophy: a calm, precise, ownership-friendly approach to architecture, automation, and refinement for corporate or enterprise businesses." />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+   <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+  <!-- Fonts (distinct display + readable body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+
 </head>
 
 <body>
-    <div class="page-container">
-        <div class="image-div">
-            <div class="center-wrapper">
-                <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
-            </div>
-        </div>
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
 
-        <!-- Sidebar -->
-        <!-- Sidebar (loaded from partials/sidebar.html) -->
-        <div id="sidebar-slot"></div>
-
-        <!-- Main content -->
-        <div id="content">
-            <!-- Your hero section goes here -->
-            <div class="page-title">The Philosophy Behind the Work</div>
-        </div>
-        <div class="philosophy-block">
-
-            <p class="category">Sophistication is Simplicity</p>
-
-            <p>Sophistication isn’t about layers of features or towering complexity.</p>
-            <p>It’s about clarity.</p>
-            <p>It’s about restraint.</p>
-            <p>Grace.</p>
-            <p>It’s about the discipline to remove everything that doesn’t serve the work.</p>
-            <p>Sophistication is invisible. It does not call attention to itself.</p>
-            <p>It’s the quiet confidence of a system that feels effortless to use.</p>
-            <p>It’s the elegance of a workflow that makes sense the moment you see it.</p>
-            <p>It’s the kind of simplicity that only comes from deep understanding.</p>
-            <p>We build software to work — cleanly, reliably, and without friction, towards your objectives.</p>
-            <p>Because the highest form of complexity is the kind you never have to think about.</p>
-
-        </div>
-
-        <div class="philosophy-block shift-right">
-
-            <p class="category">Simplicity Is Not the Absence of Complexity</p>
-            <p>It’s the Mastery of It</p>
-
-            <p>Behind every simple interface is a thousand careful decisions:</p>
-            <ul class="no-bullets">
-                <li>what to include</li>
-                <li>what to remove</li>
-                <li>what to automate</li>
-                <li>what to leave human</li>
-                <li>what to expose</li>
-                <li>what to protect</li>
-            </ul>
-
-            <p>Simplicity is not a lack of effort.</p>
-            <p>It’s the result of craftsmanship.</p>
-            <p>Our systems feel light because the heavy lifting is being done behind the scenes.</p>
-
-        </div>
-
-
-        <h1></h1>
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
+  </aside>
+
+
+  <!-- Inserts Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pip"></span> Discrete Development</div>
+          <h1>Philosophy</h1>
+          <p class="sub">
+            We come from a different origin — one shaped by decades of experience.
+
+          </p>
+          <div class="hero-actions">
+            <!-- <button class="btn primary" type="button" data-scroll="#architecture">Explore Services</button> -->
+             <a class="btn primary" type="button" href="servicesOverview.html" data-route="servicesOverview">Explore Services</a>
+            <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
+              class="btn" type="button" target="_blank">
+              Request a Consult
+            </a>
+          </div>
+        </div>
+
+        <div id="brandTileMount"></div>
+
+      </div>
+    </header>
+
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay:.12s">
+        <p>The Philosophy Behind The Work</p>
+        <div style="margin-right: 10px;" class="tag">Simplicity • Sophistication • Value</div>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true"></div>
+
+    <main>
+      <section class="sections" aria-label="Service pillars">
+
+        <!-- Card 1 -->
+        <article class="paper nudge-up reveal" id="simplicity">
+          <div class="paper-inner">
+            <div>
+              <h2 style="margin-top: 120px;">Sophistication is Simplicity</h2>
+              <p class="lede">
+
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>What it isn't</h3>
+                <p class="lede">
+                  Sophistication isn’t about layers of features or towering complexity.
+                  It is not a one size fits all solution.
+                  We don't "trim to fit."
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>What it is.</h3>
+                <p class="lede">
+                  It’s about the discipline to remove everything that doesn’t serve the work.
+                  Sophistication is invisible. It does not call attention to itself.
+                  It’s the quiet confidence of a system that feels effortless to use.
+                  It’s the elegance of a workflow that makes sense the moment you see it.
+                  It’s the kind of simplicity that only comes from deep understanding.
+
+                  Gracefulness under pressure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="paper reveal" id="approach">
+          <div class="paper-inner">
+            <div>
+              <h2 style="margin-top: 260px;">Our Approach</h2>
+              <p class="lede">
+
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Custom from Day #1</h3>
+                <p class="lede">
+                  We start from the ground and work our way towards your objectives. Not restrained in the template we
+                  have, the same offered at the beginning of every project.
+                  Every business is unique, and that uniquness is a strength. We respect and honor that, and it is
+                  reflected in our product we deliver to you.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Technology Agnostic</h3>
+                <p class="lede">
+                  We have no allegiance to any platform, vendor, or tool. The right tool is the one that fits your needs
+                  best,
+                  not the one we’re most familiar with. We evaluate options objectively and recommend what’s best for
+                  you. If that leads us to open source, and building a client from React, that is what we will do.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Craftsmanship, not Templates</h3>
+                <p class="lede">
+                  Templates create limitation. We will not hand you a list of available features for you to select,
+                  then go back to the office and begin removing those you didn't. We start with your unrestricted
+                  vision. Scaffold it and see what tech stack could provide for it. Castles are meant to be built in the
+                  sky -- we construct their foundations.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Our only commitment</h3>
+                <p class="lede">
+                  It is to the quality of the tool we hand over to you. Everything else is negotiable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3   -->
+        <article class="paper reveal" id="principles">
+          <div class="paper-inner">
+            <div>
+              <h2>Guiding Principles</h2>
+              <p class="lede">
+                We don't see our Values and Guiding Principles as limitations. Not just words on a page. They are the
+                foundation of
+                everything we do. The source of integrity. Reality.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Values</h3>
+                <ul>
+                  <li><em>Clarity:</em> Maintain a clear mental image of the desired outcome and continuously
+                    evaluate alignment.</li>
+                  <li><em>Integrity:</em> Ensure consistency between what is said, documented, and delivered.
+                  </li>
+                  <li><em>Continuous Growth:</em> Learn continuously and adopt new methods when they serve the
+                    purpose.</li>
+                  <li><em>Empathy:</em> Listen first, understand deeply, and build trust.</li>
+                  <li><em>Respect:</em> Value diverse viewpoints and respond thoughtfully.</li>
+                </ul>
+              </div>
+              <div class="pillar">
+                <h3>Guiding Principles</h3>
+                <ul>
+                  <li><em>Purpose Above All:</em> Every solution must solve a real need.</li>
+                  <li><em>Respect for Original Intent:</em> Understand the original purpose before extending a
+                    system.</li>
+                  <li><em>Values as Practice:</em> These principles define how we operate today.</li>
+                  <li><em>Client-Centered Understanding:</em> Begin without assumptions.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+
+
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development. Built for clarity.</small>
+        <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience
+          guides.</small>
+      </div>
+    </footer>
+  </div>
+
+
 </body>
 
 </html>

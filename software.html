@@ -1,65 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Sample</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="public/images/DD logo favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Software</title>
+  <meta name="description"
+    content="Our philosophy: a calm, precise, ownership-friendly approach to architecture, automation, and refinement for corporate or enterprise businesses." />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+  <!-- Fonts (distinct display + readable body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+
 </head>
 
 <body>
-    <div class="page-container">
-        <div class="image-div">
-            <div class="center-wrapper">
-                <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+
+  <!-- Inserts Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pip"></span> Discrete Development</div>
+          <h1>Software Sample</h1>
+          <p class="sub">
+            The formation of this company — and the realization of its philosophy — has been a long time coming. When we
+            see an opportunity for improvement — a different perspective — we take it.
+            This is not a declaration of
+            "better", only different. A solution formed from another direction.
+            Project in development, built with our philosophy, in React and Node.js.
+          </p>
+          <div class="hero-actions">
+            <!-- <button class="btn primary" type="button" data-scroll="#architecture">Explore Services</button> -->
+             <a class="btn primary" type="button" href="servicesOverview.html" data-route="servicesOverview">Explore Services</a>
+            <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
+              class="btn" type="button" target="_blank">
+              Request a Consult
+            </a>
+          </div>
+        </div>
+
+        <div id="brandTileMount"></div>
+
+      </div>
+    </header>
+
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay:.12s">
+        <p>Out philosophy come to life</p>
+        <div style="margin-right: 5px;" class="tag">Custom • Efficient • Modular</div>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true"></div>
+
+    <main>
+      <section class="sections" aria-label="Service pillars">
+
+        <!-- Card 1 -->
+        <article class="paper nudge-up reveal" id="simplicity">
+          <div class="paper-inner">
+            <div>
+              <h2>Discrete Work Tools</h2>
+              <p class="lede">A custom coded solution based on ERP functionality, designed with our philosophy of
+                sophistication through simplicity, built to streamline workflows, enhance data accuracy, and improve
+                overall operational efficiency. Built with the user experience in mind.
+              </p>
+              <div class="comment">
+                <p>First, in the braodcast industry, then in manufacturing, for over 30 years I have been the interface
+                  between
+                  leadership and infrastructure. Designing the infrastructure for audio/video post production, I learned
+                  what could be relied upon.</p>
+                <p>In manufacturing, I have seen the pitfalls of overengineered solutions, the constraints of templates,
+                  and the benefits of lean, purpose-built systems. Resources that could have supported better employee
+                  lives and healthcare were spent on making a master template fit the use cases of a company it wasn't
+                  designed for.
+                  This philosophy has evolved from the very beginning, and has continued for over 30 years. Its
+                  application will be a small push back into
+                  alignment. This software shows, will show, how the metrics sought, efficient execution, adaptable data
+                  model, function rich environment, intuitive interface, can be achieved by maintaining, and being
+                  faithful to; simplicity, clarity, and purpose.</p>
+                <p class="signoff">-Kevin W.</p>
+              </div>
+
+
             </div>
-        </div>
 
-        <!-- Sidebar -->
-              <!-- Sidebar (loaded from partials/sidebar.html) -->
-        <div id="sidebar-slot"></div>
-        
 
-        <!-- Main content -->
-        <div id="content">
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Purpose</h3>
+                <p class="lede">
+                  There is tremendous functionality in business software systems. Most try to make a version with every
+                  known requirement a client could request. Then trim it down when a prospective client shows interest.
+                </p>
+                <p class="lede">
+                  To serve and support all the potential, it requires a massive framework. routes, functions, so much
+                  extra code that will not be used, and not needed for most businesses. They offer a list of modules and
+                  functions — each representing a slice of the business. The client
+                  only needs to point them out.</p>
+                 <p class="lede">
+                  I see constraint in that approach — a boundary imposed before the work even begins. Providing a set
+                  defines a boundary. It is your system, it should do
+                  what you need it to, what you want it to. Technological advancement, modernization, does not have to
+                  be restrictive. We don't take shortcuts. Lets make it freeing.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3 class="migrate">Objective</h3>
+                <p class="lede">
+                  The objective is to build a tool to provide infrastructure for business processes, and adhere to lean
+                  principles itself. No waste. No overengineering. Simple in its production version. Reliable. More than
+                  adequate to create and maintain a customer database. Create Sales Orders, help manage and plan
+                  production. Connect the departments with an intuitive, minimal learning curve to promote adoption.
+                  Address the same issues seen today — interfaces and complexity that outpace the software’s actual
+                  capability.
+                </p>
+              </div>
 
-            <div class="page-title">Software Sample</div>
-            <div class="page-title">Philosophy at work</div>
-        </div>
-        <div class="services-block">
-            <p class="service-group">erp Lite</p>
-            <p class="category">
-                Purpose</p>
-            <p>There is tremendous functionality in business software systems. Most try to make a version with every
-                known requirement a client could request. Then trim it down for a prospective client when they are
-                interested.</p>
-            <p>To serve and support all the potential, it requires a massive framework. routes, functions, so much extra
-                code that will not be used, and not needed for most businesses. They give you a list of available
-                modules
-                and functions contained in the business represented by those modules. The client only needs to point
-                them out.
-            </p>
-            <p>I see constraint in that approach. Providing a set defines a boundary. It is your system, it should do
-                what you need it to, what you want it to. Technological advancement, modernization, does not have to be
-                restrictive. We don't take shortcuts. Lets make it freeing.</p>
-            <p>This sample is not fully functional. It is scaffolded. Foundation laid. the SD module coded and
-                assembled.</p>
-            <p>The objective was to build a tool to provide infrastructure for business processes, and adhere to lean
-                principles itself. No
-                waste. No overengineering.
-                Simple in its production version. Reliable. More than adequate to create and maintain a customer
-                database. Create
-                Sales Orders, help manage and plan production.
-                Connect the departments with an intuitive, minimal learning curve to promote adoption. Address many of
-                the complaints users post today regarding interfaces, and complexity that does not match the ability of
-                the scaled down software.</p>
-            <p>Software design sample:</p>
-            <a href="https://app.discrete-dev.com/" class="button">erp-Lite, a Proof of Philosophic Concept</a>
-        </div>
-        </br></br>
+
+              <div class="pillar">
+
+                <h3>Sample</h3>
+                <p class="lede">
+                  This sample is not fully functional — it is scaffolded. The foundation is laid — the SD module
+                  modeled, the first mechanism created. The rest of the modules are outlined, with data models defined.
+                  The intention is to provide a clear example of how the philosophy is applied to a real world
+                  application.
+                  You can use the SD module, create customers, products, price them. Put them on a sales order and
+                  generate an invoice (view only). The rest will follow. The data is being stored on MongoDB Atlas, but
+                  it can be anywhere you want.
+                </p>
+                <a href="https://app.discrete-dev.com/" class="button">DD-WorkTools, a Proof of Concept</a>
+
+              </div>
+            </div>
+          </div>
+        </article>
+
+
+      </section>
+
+      <section
+        style="height: 50rem; border-radius: 20px; margin-top: 10px; background: linear-gradient(180deg, var(--paper), rgba(255, 255, 255, .70));"
+        class="sections" aria-label="Service pillars">
+        <p style="  margin-top: 55px; margin-left: 30px; font-family: Fraunces, serif;
+        z-index: 50;
+        font-weight: 400;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        font-size: clamp(16px, 1.8vw, 20px);
+        color: rgba(11, 19, 32, .82);">A sample of the interface. <br>You can launch the latest version of the app above<br>with "DD-WorkTools, a Proof of Concept"</p>
+
+        <!-- <h2>Sample of the interface, you can launch the latest version of the app above</h2> -->
+
+        <img style="display: block; transform: scale(1.35); margin-top: 0; " src="public/images/Interface.jpg"
+          alt="Interface Image" id="interfaceERPlite">
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development. Built for clarity.</small>
+        <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience
+          guides.</small>
+      </div>
+    </footer>
+  </div>
+
+
 </body>
 
 </html>
