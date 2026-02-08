@@ -906,7 +906,7 @@
   .video-div {
     width: 80%;
     /* fixed width for cropping */
-    height: 210px;
+    height: 180px;
     /* fixed height for cropping */
     overflow: hidden;
     /* crop overflow */
@@ -916,18 +916,21 @@
     /* optional */
     margin: 0 auto;
     background: var(--bg0);
-    transform: scale(0.7);
-    margin-top: 55px;
+    /* transform: scale(0.7); */
+    /* margin-top: 55px; */
+    /* padding-top: 25px; */
+    
   }
 
   .video-crop {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     margin: 0 auto;
     position: relative;
-    top: -160px;
+    /* top: -198px; */
     left: 0;
+    object-fit: cover;
     /* transform: translate(-50%, -50%);
   object-fit: none; */
     /* max-width: none;
@@ -936,10 +939,15 @@
 
   .extender {
     background-color: #0d0d0d;
-    max-width: var(--max);
-    margin: 0 auto;
-    margin-bottom: 40px;
-    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    /* max-width: var(--max); */
+    max-width: 1150px;
+    margin: 40px auto 40px auto;
+    /* margin: 0 auto;
+    margin-bottom: 40px; */
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    
+    
 
 
 
