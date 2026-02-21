@@ -501,7 +501,7 @@
   align-items: flex-start;
   max-width: var(--max);
   gap: 14px;
-  margin: 56px auto 0; /* increased top spacing */
+  margin: 30px auto 0; /* increased top spacing */
   padding: 14px 16px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, .14);
