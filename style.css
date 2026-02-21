@@ -448,6 +448,7 @@
     margin: 0 auto;
     padding: 0 18px;
     transform: translateY(-6px);
+    margin-top: 20px;
   }
 
   .strip-inner {
