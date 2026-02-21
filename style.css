@@ -196,9 +196,7 @@
 
   /* OFFCANVAS */
   .drawer-backdrop {
-    position: relative;
-    top: 2vh;
-    left: 4vw;
+    position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, .45);
     opacity: 0;
@@ -210,17 +208,32 @@
 
   .drawer {
     position: fixed;
-    left: -20px;
+    inset: 0;
+    pointer-events: none;
+    z-index: 70;
+  }
+
+  .drawer-panel {
+    position: fixed;
+    left: 84px;
     top: 0;
     height: 100vh;
     width: min(420px, calc(100vw - 84px));
     background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .06));
     backdrop-filter: blur(18px);
     border-right: 1px solid rgba(255, 255, 255, .14);
-    transform: translateX(-104%);
+    transform: translateX(calc(-100% - 84px));
     transition: transform .26s cubic-bezier(.2, .9, .2, 1);
-    z-index: 70;
+    z-index: 71;
     padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    pointer-events: auto;
+  }
+
+  .drawer-panel {
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -297,7 +310,7 @@
     line-height: 1.45;
   }
 
-  .drawer-open .drawer {
+  .drawer-open .drawer-panel {
     transform: translateX(0);
   }
 
@@ -806,9 +819,10 @@
       margin-left: 72px;
     }
 
-    .drawer {
+    .drawer-panel {
       left: 72px;
       width: min(420px, calc(100vw - 72px));
+      transform: translateX(calc(-100% - 72px));
     }
 
     .strip-inner {
