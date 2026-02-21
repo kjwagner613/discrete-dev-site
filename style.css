@@ -497,6 +497,7 @@
     border: 1px solid rgba(255, 255, 255, .14);
     background: rgba(0, 0, 0, .12);
     white-space: nowrap;
+    max-width: 100%;
   }.specializing::before {
   content: "";
   position: absolute;
@@ -680,6 +681,17 @@
     text-indent: 1.5em;
   }
 
+  .small-business-page .pillar p,
+  .small-business-page .pillar ul,
+  .small-business-page .pillar li {
+    text-align: left;
+  }
+
+  .small-business-page .pillar ul {
+    padding-left: 1.25rem;
+    margin: 8px 0 0;
+  }
+
   .image-container {
     display: flex;
     justify-content: center;
@@ -689,9 +701,31 @@
   }
 
   #interfaceERPlite {
-    transform: scale(0.9);
+    display: block;
+    width: min(100%, 980px);
+    height: auto;
+    margin: 0 auto;
+    transform: none;
     justify-self: center;
 
+  }
+
+  .sample-preview {
+    border-radius: 20px;
+    margin-top: 10px;
+    background: linear-gradient(180deg, var(--paper), rgba(255, 255, 255, .70));
+    padding: 26px 20px 20px;
+  }
+
+  .sample-preview-title {
+    margin: 0 0 14px;
+    font-family: Fraunces, serif;
+    font-weight: 400;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: rgba(11, 19, 32, .82);
+    text-align: left;
   }
 
 
@@ -833,6 +867,36 @@
     .strip-inner .tag {
       width: 100%;
       text-align: center;
+      margin-right: 0;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      letter-spacing: .12em;
+      font-size: 11px;
+    }
+
+    .strip-inner p {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .paper h2 {
+      letter-spacing: .04em;
+      line-height: 1.25;
+    }
+
+    .pillar h3 {
+      font-size: 11.5px;
+      letter-spacing: .14em;
+    }
+
+    .lede,
+    .pillar p,
+    li {
+      line-height: 1.55;
+    }
+
+    .lede {
+      text-align: left;
     }
   }
 
@@ -1031,6 +1095,8 @@
     /* top: -198px; */
     left: 0;
     object-fit: cover;
+    transform: scale(0.75);
+    transform-origin: center;
     /* transform: translate(-50%, -50%);
   object-fit: none; */
     /* max-width: none;
