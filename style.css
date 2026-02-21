@@ -29,6 +29,8 @@
   html,
   body {
     height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -652,6 +654,10 @@
     align-items: start;
   }
 
+  .paper-inner>* {
+    min-width: 0;
+  }
+
   .paper h2 {
     margin: 0;
     font-family: Fraunces, serif;
@@ -667,6 +673,8 @@
     color: rgba(11, 19, 32, .72);
     line-height: 1.65;
     font-size: 14.5px;
+    overflow-wrap: anywhere;
+    word-break: normal;
     /* max-width: 65ch; */
     text-align: justify;
 
@@ -776,6 +784,12 @@
     font-size: 13.5px;
     line-height: 1.6;
     color: rgba(11, 19, 32, .74);
+    overflow-wrap: anywhere;
+  }
+
+  .comment,
+  .comment p {
+    overflow-wrap: anywhere;
   }
 
   /* The “overlap white band” feeling from screenshot:
