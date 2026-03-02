@@ -1,0 +1,20 @@
+# Allowlist entries are repo-relative paths.
+# Files and directories listed here are copied to dist/ for deployment.
+# Lines starting with # are ignored.
+
+# Active pages
+index.html
+philosophy.html
+technology.html
+software.html
+servicesOverview.html
+smallBusinessSvcs.html
+corporateSvcs.html
+contact.html
+
+# Shared assets/layout
+style.css
+script.js
+partials
+public
+CNAME

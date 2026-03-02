@@ -1,74 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Discrete Development</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Discrete Development — About</title>
+    <meta name="description" content="About Discrete Development." />
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="public/images/DD-logo-favicon.ico">
+    <script type="module" src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+    <!-- Fonts (distinct display + readable body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
+
 <body>
-    <div class="page-container">
-        <div class="image-div">
-            <div class="center-wrapper">
-                <img src="public/images/DD-logo-vented-wAlpha-2.png" alt="Discrete Development Logo" class="scaled">
+    <!-- Left rail -->
+    <aside class="rail" aria-label="Primary">
+        <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <span class="burger" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </span>
+        </button>
+
+        <div class="dots" aria-hidden="true">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </aside>
+
+
+    <!-- Inserts Drawer -->
+    <section class="drawer" id="drawer" aria-label="Site menu">
+        <div id="drawerMount"></div>
+    </section>
+
+
+    <div class="wrap">
+        <header class="hero">
+            <div class="grid">
+                <div class="hero-copy reveal">
+                    <div class="eyebrow"><span class="pip"></span> Discrete Development</div>
+                    <h1>About</h1>
+                    <p class="sub">
+
+                    </p>
+                    <div class="hero-actions">
+                        <!-- <button class="btn primary" type="button" data-scroll="#architecture">Explore Services</button> -->
+                        <a class="btn primary" type="button" href="servicesOverview.html"
+                            data-route="servicesOverview">Explore Services</a>
+                        <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
+                            class="btn" type="button" target="_blank">
+                            Request a Consult
+                        </a>
+                    </div>
+                </div>
+
+                <div id="brandTileMount"></div>
+
+            </div>
+        </header>
+
+        <div class="strip">
+            <div class="strip-inner reveal" style="animation-delay:.12s">
+                <p>About Discrete Development</p>
+                <div class="tag">Simplicity • Sophistication • Value</div>
             </div>
         </div>
 
-        <!-- Sidebar -->
-              <!-- Sidebar (loaded from partials/sidebar.html) -->
-        <div id="sidebar-slot"></div>
+        <div class="band" aria-hidden="true"></div>
 
-        <div class="page-title">About Discrete Development</div>
+        <main>
+            <section class="sections" aria-label="Service pillars">
 
-        <div class="about-block">
+                <!-- Card 1 -->
+                <article class="paper nudge-up reveal" id="simplicity">
+                    <div class="paper-inner">
+                        <div>
+                            <h2>Alignment</h2>
+                            <p class="lede">Discrete Development exists to build software that respects how work is
+                                being done. Often what we believe and what is actual vary, by a little or by a lot, we
+                                bring it into alignment.
 
-            <p class="category">Discrete Development exists to build software that respects how work is actually done.
-            </p>
-            <p>Tools should be designed not only for the job they support, but for the people who use them.
-                We begin by understanding the work, the operator, and the environment —
-                and only then do we build.</p>
-            <p>
-                Frameworks and templates drift.
-                Good systems adapt.
-                We design systems that fit people, workflows, and environments as they are —
-                and evolve alongside them.
-            </p>
-            <p class="category">What we believe</p>
-            <p>Most inefficiency doesn’t come from lack of effort.
-                It comes from tools that don’t reflect reality.
-                Processes evolve.
-                Workarounds accumulate.
-                Knowledge becomes local and tribal.
-                Over time, systems drift — not because people are careless, but because work is alive.
-                Good software acknowledges this.
-            </p>
-            <p class="category">How we approach the work</p>
-            <p>We begin with observation.</br>
-                Before building anything, we take time to understand:</p>
-            <ul class="no-bullets">
-                <li>how work actually moves</li>
-                <li>where friction has become accepted</li>
-                <li>what must remain human</li>
-                <li>what can quietly disappear through automation</li>
-            </ul>
-            <p>From there, we design with restraint:</p>
-            <ul class="no-bullets">
-                <li>clarity over cleverness</li>
-                <li>durability over novelty</li>
-                <li>simplicity as a feature, not an aesthetic</li>
-            </ul>
-            <p>The goal is not to impress.</p>
-            <p>The goal is to support.</p>
-            </p>
+                            </p>
+                        </div>
 
-        </div>
+                        <div class="pillars">
+                            <div class="pillar">
+                                <h3>Tools</h3>
+                                <p class="lede">
+                                    should be designed not only for the job they support, but for the people who use
+                                    them.
+                                    We begin by understanding the work, the operator, and the environment —
+                                    and only then do we build.
+                                </p>
+                                <p>Frameworks and templates drift.
+                                    Good systems adapt.
+                                    We design systems that fit people, workflows, and environments as they are —
+                                    and evolve alongside them.</p>
+                            </div>
+                            <div class="pillar">
+                                <h3>We Believe</h3>
+                                <p class="lede">Most inefficiency doesn’t come from lack of effort.
+                                    It comes from tools that don’t reflect reality.
+                                    Processes evolve.
+                                    Workarounds accumulate.
+                                    Knowledge becomes local and tribal.
+                                    Over time, systems drift — not because people are careless, but because work is
+                                    alive.
+                                    Good software acknowledges this.
+                                </p>
+                                </div>
+                                <div class="pillar">
+                                    <h3>We Begin</h3>
+                                    <p class="lede">With observation.</br>
+                                        Before building anything, we take time to understand:</p>
+                                    <ul class="no-bullets">
+                                        <li>how your work moves</li>
+                                        <li>where friction has become accepted</li>
+                                        <li>what must remain human</li>
+                                        <li>what can quietly disappear through automation</li>
+                                    </ul>
+                                    <p>From there, we design with restraint:</p>
+                                    <ul class="no-bullets">
+                                        <li>clarity over cleverness</li>
+                                        <li>durability over novelty</li>
+                                        <li>simplicity as a feature, not an aesthetic</li>
+                                    </ul>
+                                    <p>The goal is not to impress.</p>
+                                    <p>The goal is to support.</p>
+                                    </p>
 
-        <h1></h1>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </article>
+
+
+
+        </main>
+
+        <footer>
+            <div class="foot">
+                <small>© <span id="year"></span> Discrete Development</small>
+                <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience
+                    guides.</small>
+            </div>
+        </footer>
     </div>
+
+
 </body>
 
 </html>
