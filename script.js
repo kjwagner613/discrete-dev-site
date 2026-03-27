@@ -156,6 +156,51 @@ function wireFormSuccessNotice() {
   }
 }
 
+function wireChatbot() {
+  const CHATBOT_ENVIRONMENT_ID = "cad97fc4-0380-e466-a9b2-134b08c3470b";
+  const CHATBOT_REGION = "unitedstates";
+
+  if (document.getElementById("chatbot")) return;
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.id = "chatbot";
+  script.src = "https://res.public.onecdn.static.microsoft/customerconnect/v1/7dttl/init.js";
+  script.setAttribute("environmentId", CHATBOT_ENVIRONMENT_ID);
+  script.setAttribute("region", CHATBOT_REGION);
+  script.crossOrigin = "anonymous";
+  document.body.appendChild(script);
+}
+
+function wireChatbotLazyLoad() {
+  let loaded = false;
+  let fallbackId = null;
+
+  const loadOnce = () => {
+    if (loaded) return;
+    loaded = true;
+    if (fallbackId) {
+      clearTimeout(fallbackId);
+      fallbackId = null;
+    }
+    removeInteractionListeners();
+    wireChatbot();
+  };
+
+  const removeInteractionListeners = () => {
+    ["pointerdown", "keydown", "touchstart", "scroll"].forEach((eventName) => {
+      window.removeEventListener(eventName, loadOnce);
+    });
+  };
+
+  ["pointerdown", "keydown", "touchstart", "scroll"].forEach((eventName) => {
+    window.addEventListener(eventName, loadOnce, { once: true, passive: true });
+  });
+
+  // Fallback: still load for users who only read the page.
+  fallbackId = window.setTimeout(loadOnce, 4500);
+}
+
 function demoSubmit() {
   const note = document.getElementById("formNote");
   if (note) note.textContent = "Form captured (demo). If you paste your real form endpoint, I’ll wire it up.";
@@ -174,6 +219,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   wireReveal();
   wireFooterYear();
   wireFormSuccessNotice();
+  wireChatbotLazyLoad();
 });
 
 /* Contact form: AJAX submit to Formspree with inline feedback */
