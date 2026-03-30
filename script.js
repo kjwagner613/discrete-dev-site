@@ -72,6 +72,7 @@ function resolveDrawerRoutes() {
     philosophy: { page: "philosophy.html", hash: "" },
     technology: { page: "technology.html", hash: "" },
     software: { page: "software.html", hash: "" },
+    howToPurview: { page: "howTo/index.html", hash: "" },
     corporateSvcs: { page: "corporateSvcs.html", hash: "" },
     smallBusinessSvcs: { page: "smallBusinessSvcs.html", hash: "" },
     contact: { page: "contact.html", hash: "" }, // later: { page: "contact.html", hash: "" }
