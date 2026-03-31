@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Enable Microsoft Purview Audit (Standard)</title>
+	<meta name="description" content="Client guide for enabling Microsoft Purview Audit (Standard)." />
+	<style>
+		:root {
+			--bg: #f8fafc;
+			--ink: #0f172a;
+			--muted: #334155;
+			--card: #ffffff;
+			--line: #e2e8f0;
+			--accent: #0f766e;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			font-family: "Inter", "Segoe UI", Arial, sans-serif;
+			background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+			color: var(--ink);
+			line-height: 1.65;
+			padding: 28px 16px 44px;
+		}
+
+		.wrap {
+			width: min(920px, 100%);
+			margin: 0 auto;
+		}
+
+		.card {
+			background: var(--card);
+			border: 1px solid var(--line);
+			border-radius: 16px;
+			padding: clamp(18px, 3vw, 30px);
+			box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+		}
+
+		h1 {
+			margin: 0;
+			line-height: 1.2;
+			font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+		}
+
+		h2 {
+			margin: 28px 0 8px;
+			font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+			color: #0b3b52;
+		}
+
+		h3 {
+			margin: 18px 0 8px;
+			font-size: 1rem;
+			color: #155e75;
+		}
+
+		p { margin: 8px 0 0; }
+
+		ul, ol {
+			margin: 10px 0 0;
+			padding-left: 1.2rem;
+		}
+
+		li + li { margin-top: 6px; }
+
+		code {
+			font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+			background: #f1f5f9;
+			border: 1px solid #e2e8f0;
+			border-radius: 8px;
+			padding: 1px 6px;
+			font-size: 0.95em;
+		}
+
+		pre {
+			margin: 10px 0 0;
+			background: #0f172a;
+			color: #e2e8f0;
+			border-radius: 12px;
+			padding: 12px 14px;
+			overflow-x: auto;
+			font-size: 0.92rem;
+		}
+
+		.muted { color: var(--muted); }
+
+		.img-wrap {
+			margin-top: 12px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			overflow: hidden;
+			background: #fff;
+		}
+
+		.img-wrap img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.top-links {
+			margin-top: 14px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.link-btn {
+			text-decoration: none;
+			border: 1px solid #cbd5e1;
+			border-radius: 10px;
+			padding: 9px 12px;
+			color: #0f172a;
+			font-weight: 600;
+			background: #fff;
+		}
+
+		.link-btn.primary {
+			border-color: #0d9488;
+			background: linear-gradient(180deg, rgba(20, 184, 166, 0.15), rgba(20, 184, 166, 0.04));
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<article class="card">
+			<h1>Guide: Enabling Microsoft Purview Audit (Standard) in a Tenant</h1>
+			<p class="muted">This one-time setup enables audit collection and validates that search is functioning correctly.</p>
+
+			<div class="top-links">
+				<a class="link-btn" href="../index.html">All Client Guides</a>
+				<a class="link-btn" href="activate.md">View Markdown Source</a>
+				<a class="link-btn primary" href="../../index.html">Discrete Development Home</a>
+			</div>
+
+			<h2>1) Enable Audit Logging in Purview</h2>
+			<ol>
+				<li>Go to <strong>Microsoft Purview -&gt; Audit</strong>.</li>
+				<li>If prompted with <strong>Start recording user and admin activity</strong>, select it.</li>
+				<li>If asked to <strong>Complete organizational setup</strong>, choose <strong>Yes</strong>.</li>
+			</ol>
+			<p><strong>Expected behavior:</strong> The setup banner disappears and the audit interface becomes available.</p>
+
+			<h2>2) Allow Time for Ingestion to Initialize</h2>
+			<p>Initial event ingestion typically starts in 5 to 30 minutes.</p>
+			<ul>
+				<li>Failed to load data</li>
+				<li>Empty search results</li>
+				<li>No saved searches</li>
+			</ul>
+			<p>These are expected during first-time initialization.</p>
+
+			<h2>3) If Needed: Enable Exchange Organization Customization</h2>
+			<p>If audit search errors reference<code>InvalidOperationInDehydratedContextException</code> or mention <code>Enable-OrganizationCustomization</code>, or you get this window, complete these steps.</p>
+
+			<div class="img-wrap">
+				<img src="./purview-images/clientError.png" alt="Example Purview error indicating organizational setup is required" />
+			</div>
+
+			<h3>3.1 Install Exchange Online PowerShell Module</h3>
+			<pre><code>Install-Module ExchangeOnlineManagement</code></pre>
+
+			<h3>3.2 Allow Signed Scripts (if required)</h3>
+			<pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+
+			<h3>3.3 Connect to Exchange Online</h3>
+			<pre><code>Connect-ExchangeOnline</code></pre>
+
+			<h3>3.4 Enable Organization Customization</h3>
+			<pre><code>Enable-OrganizationCustomization</code></pre>
+			<p>If already hydrated, Exchange responds that customization is already enabled.</p>
+
+			<h2>4) Validate Audit Search Functionality</h2>
+			<ul>
+				<li>Date range: <strong>Last 24 hours</strong></li>
+				<li>Activity: <strong>List item updated</strong> (or another common event)</li>
+				<li>Users: leave blank</li>
+			</ul>
+			<p><strong>Success:</strong> Search runs without backend errors; results may be empty if no recent activity exists.</p>
+
+			<h2>5) Post-Activation Behavior</h2>
+			<ul>
+				<li>Audit events begin appearing automatically</li>
+				<li>Saved searches load normally</li>
+				<li>No setup banners or Exchange hydration errors remain</li>
+			</ul>
+		</article>
+	</div>
+</body>
+
+</html>

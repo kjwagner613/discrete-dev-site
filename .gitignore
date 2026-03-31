@@ -1,3 +1,12 @@
 dist/
 archive/
 .DS_Store
+gate/
+_redirects
+README.md
+LICENSE
+*.log
+*.tmp
+node_modules/
+*.cache/
+*.bak
