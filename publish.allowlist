@@ -12,6 +12,8 @@ smallBusinessSvcs.html
 corporateSvcs.html
 contact.html
 pharmaprospective
+gate
+_redirects
 
 # Shared assets/layout
 style.css
