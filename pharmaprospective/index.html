@@ -7,6 +7,13 @@
   <meta name="robots" content="noindex, nofollow" />
   <script>
     (function () {
+      const PREVIEW_CONFIG = {
+        // Auto-expire one week from April 8, 2026.
+        expiresAt: "2026-04-15T23:59:59-07:00",
+        // Set to true to immediately expire access on next deploy.
+        manualExpired: false
+      };
+
       function getCookie(name) {
         const nameEQ = name + "=";
         const cookies = document.cookie.split(";");
@@ -19,13 +26,38 @@
         return null;
       }
 
+      function isExpired() {
+        const expiresAtMs = new Date(PREVIEW_CONFIG.expiresAt).getTime();
+        if (Number.isNaN(expiresAtMs)) {
+          return PREVIEW_CONFIG.manualExpired;
+        }
+        return PREVIEW_CONFIG.manualExpired || Date.now() > expiresAtMs;
+      }
+
+      if (isExpired()) {
+        window.location.replace("/gate/gate.html");
+        return;
+      }
+
       if (getCookie("dd_preview_auth") !== "1") {
         window.location.replace("/gate/gate.html?redirect=/pharmaprospective/");
+        return;
       }
 
       window.logoutPreviewAccess = function logoutPreviewAccess() {
         document.cookie = "dd_preview_auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax";
         window.location.replace("/gate/gate.html?redirect=/pharmaprospective/");
+      };
+
+      window.copyProtectedUrl = async function copyProtectedUrl() {
+        const statusEl = document.getElementById("copy-status");
+        const url = window.location.origin + "/pharmaprospective/";
+        try {
+          await navigator.clipboard.writeText(url);
+          statusEl.textContent = "Protected URL copied.";
+        } catch (err) {
+          statusEl.textContent = "Unable to copy automatically. URL: " + url;
+        }
       };
     })();
   </script>
@@ -170,6 +202,21 @@
     .btn.secondary:hover {
       border-color: #6366f1;
       color: #c7cdf8;
+    }
+
+    .meta-note {
+      margin-top: 14px;
+      text-align: center;
+      color: #8b92b4;
+      font-size: 13px;
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #9ca3ff;
+      min-height: 18px;
     }
 
     footer {
@@ -369,10 +416,16 @@
       <a href="Proposal-v1.pdf" class="btn primary" download>
         ↓ Download PDF
       </a>
+      <button type="button" class="btn secondary" onclick="copyProtectedUrl()">
+        Copy protected URL
+      </button>
       <button type="button" class="btn secondary" onclick="logoutPreviewAccess()">
         Log out
       </button>
     </div>
+
+    <p class="meta-note">Preview access expires on April 15, 2026, or earlier if manually disabled.</p>
+    <div id="copy-status" class="status" aria-live="polite"></div>
 
     <footer>
       <p>This document is confidential and intended for authorized recipients only.</p>
