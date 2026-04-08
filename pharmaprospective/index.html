@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Discrete Development — Pharma Prospective Proposal</title>
   <meta name="robots" content="noindex, nofollow" />
+  <script>
+    (function () {
+      function getCookie(name) {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(";");
+        for (let cookie of cookies) {
+          cookie = cookie.trim();
+          if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length);
+          }
+        }
+        return null;
+      }
+
+      if (getCookie("dd_preview_auth") !== "1") {
+        window.location.replace("/gate/gate.html?redirect=/pharmaprospective/");
+      }
+
+      window.logoutPreviewAccess = function logoutPreviewAccess() {
+        document.cookie = "dd_preview_auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax";
+        window.location.replace("/gate/gate.html?redirect=/pharmaprospective/");
+      };
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -345,6 +369,9 @@
       <a href="proposal.pdf" class="btn primary" download>
         ↓ Download PDF
       </a>
+      <button type="button" class="btn secondary" onclick="logoutPreviewAccess()">
+        Log out
+      </button>
     </div>
 
     <footer>

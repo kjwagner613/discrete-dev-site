@@ -1,3 +1,1 @@
 /gate/* /gate/:splat 200
-/pharmaprospective/* /pharmaprospective/:splat 200 Cookie=dd_preview_auth=1
-/pharmaprospective/* /gate/gate.html?redirect=/pharmaprospective/:splat 302!
