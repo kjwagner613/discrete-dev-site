@@ -1,8 +1,6 @@
 dist/
 archive/
 .DS_Store
-gate/
-_redirects
 README.md
 LICENSE
 *.log
