@@ -1431,7 +1431,7 @@
     border-radius: 16px;
     /* optional */
     margin: 0 auto;
-    background: var(--bg0);
+    background: transparent;
     /* transform: scale(0.7); */
     /* margin-top: 55px; */
     /* padding-top: 25px; */
