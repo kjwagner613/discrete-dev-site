@@ -1444,6 +1444,8 @@
     display: block;
     margin: 0 auto;
     position: relative;
+    pointer-events: none;
+    user-select: none;
     /* top: -198px; */
     left: 0;
     object-fit: cover;
@@ -1453,6 +1455,34 @@
   object-fit: none; */
     /* max-width: none;
   max-height: none; */
+  }
+
+  .video-crop::-webkit-media-controls {
+    display: none !important;
+  }
+
+  .video-crop::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+
+  .video-crop::-webkit-media-controls-panel {
+    display: none !important;
+  }
+
+  .video-crop::-webkit-media-controls-play-button,
+  .video-crop::-webkit-media-controls-start-playback-button,
+  .video-crop::-webkit-media-controls-seek-back-button,
+  .video-crop::-webkit-media-controls-seek-forward-button,
+  .video-crop::-webkit-media-controls-rewind-button,
+  .video-crop::-webkit-media-controls-return-to-realtime-button,
+  .video-crop::-webkit-media-controls-current-time-display,
+  .video-crop::-webkit-media-controls-time-remaining-display,
+  .video-crop::-webkit-media-controls-timeline,
+  .video-crop::-webkit-media-controls-timeline-container,
+  .video-crop::-webkit-media-controls-fullscreen-button,
+  .video-crop::-webkit-media-controls-overflow-button {
+    display: none !important;
+    opacity: 0 !important;
   }
 
   .extender {
