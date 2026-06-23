@@ -810,6 +810,7 @@
     margin: 0 auto;
     transform: none;
     justify-self: center;
+    border-radius: var(--radius-lg);
 
   }
 
@@ -1499,4 +1500,12 @@
 
 
 
+  }
+
+  .impala-interface {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 16px;
   }
