@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[http-server from npm] | Client How-To</title>
+  <meta name="description" content="[Short guide description for search and sharing.]" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="howto-guide-page">
+  <div class="howto-wrap">
+    <article class="howto-card">
+      <h1>http-server from npm</h1>
+      <p class="howto-muted">A short guide on how to use the http-server package from npm to serve static files.</p>
+
+      <div class="howto-top-links">
+        <a class="btn" href="../index.html">All Client Guides</a>
+        <!-- <a class="btn" href="guide.md">View Markdown Source</a> -->
+        <a class="btn primary" href="../../index.html">Discrete Development Home</a>
+      </div>
+
+      <h2>1) Installation and why http-server</h2>
+      <p>To install and use the http-server package from npm, you can use the npx command to run it instantly without
+        full installation, or you can run npm install --global http-server to make it available anywhere on your
+        machine. This zero-configuration tool allows you to instantly spin up a local web server to serve static files
+        like HTML, CSS, and JavaScript files.</p>
+      <ol>
+        <li>To install it globally, run:
+          <pre><code>npm install --global http-server</code></pre>
+        </li>
+        <li>Or you can run this from the directory with the files to serve:
+          <pre><code>npx http-server</code></pre>
+        </li>
+        <li>Prerequisites for skipping installation: You need to have Node.js and npm installed and be in the directory
+          containing the files you want to serve.</li>
+      </ol>
+
+      <h2>2) Validation</h2>
+      <p>To verify that http-server is working, the terminal will output local web addresses that you can launch and see
+        your files. You can open a web browser and navigate to the address shown in the terminal, typically similar to
+        this:</p>
+      <pre><code>Available on:
+        http://127.0.0.1:8080
+        http://192.168.1.5:8080
+        http://192.168.1.5:8080
+        Hit CTRL-C to stop the server</code></pre>
+      <ul>
+        <li>Check that your static files are being served correctly by visiting the URL in a browser.</li>
+        <li>Ensure that the terminal shows incoming requests as you interact with the served files.</li>
+      </ul>
+
+      <h2>3) Troubleshooting</h2>
+      <p>Common issues may include port conflicts or missing files. Ensure that the port http-server is trying to use is
+        available and that the files you want to serve exist in the directory.</p>
+      <pre><code>npx http-server -p 8080</code></pre>
+
+ 
+      <div class="howto-note">
+       Feel free to <a href="../../contact.html">contact</a> us if you have any issues or further questions. You can also take a look at our guide <a href="../index.html">here</a>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>
