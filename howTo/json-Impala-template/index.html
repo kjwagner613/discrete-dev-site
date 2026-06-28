@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>[JSON templates] | Impala How-To</title>
+    <meta
+      name="description"
+      content="[Short guide description for search and sharing.]"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+
+  <body class="howto-guide-page">
+    <div class="howto-wrap">
+      <article class="howto-card">
+        <h1>JSON Templates</h1>
+        <p class="howto-muted">
+          A short guide on how to use JSON templates in Impala.
+        </p>
+
+        <div class="howto-top-links">
+          <a class="btn" href="../index.html">All Client Guides</a>
+          <!-- <a class="btn" href="guide.md">View Markdown Source</a> -->
+          <a class="btn primary" href="../../index.html"
+            >Discrete Development Home</a
+          >
+        </div>
+
+        <h2>1) Connecting a local library</h2>
+        <p>
+          JSON templates in Impala allow you to define structured data that can
+          be easily reused and manipulated within your applications. They
+          provide a standardized way to represent data, making it easier to
+          integrate with various systems and APIs.
+        </p>
+        
+          <p>
+            Below are three JSON templates. 1. Connecting a local library to
+            Impala. 2. Importing an audio playlist. 3, Importing a video
+            playlist. You can use these templates as a starting point for your
+            own JSON configurations.
+          </p>
+          <p><strong>Connecting a local library</strong></p>
+          <p>
+            <pre><code>
+       {
+            "audio": [
+            {
+            "name": "Title of Song",
+            "artist": "Aritst of Group",
+            "album": "Album Title",
+            "file": "Full name of the actual file"
+            }
+            ],
+            "video": [
+            {
+            "name": "Happy Days",
+            "artist": "Unknown artist",
+            "file": "Happy Days.mp4",
+            "mediaType": "video"
+            }
+          ]
+        }
+      </code></pre>
+          </p>
+          <p>
+           In the "file" field, The path should begin at the root of the library folder. For example, if your library is located at:
+            /Users/username/Music/Library, and your song file is located at
+            /Users/username/Music/Library/Artist/Album/Song.mp3, then the "file"
+            field should be set to "Artist/Album/Song.mp3".
+          </p>
+
+        <h2>2)  Importing an audio playlist.</h2>
+        <p>
+         
+        </p>
+        <pre><code>{"audio": [
+    {
+      "name": "Rolling In The Deep",
+      "artist": "Adele",
+      "album": "21",
+      "file": "01 Rolling In The Deep.mp3"
+    }
+  ]
+}</code></pre>
+     
+
+        <h2>3) Importing a video playlist.</h2>
+        <p>
+Video playlists can be imported into Impala using a similar JSON structure. Below is an example of how to define a video playlist in JSON format.
+        </p>
+        <pre><code>  {"video": [
+    {
+      "name": "Happy Days",
+      "artist": "Unknown artist",
+      "file": "Happy Days.mp4",
+      "mediaType": "video"
+    }
+  ]
+}
+</code></pre>
+
+        <div class="howto-note">
+          Feel free to <a href="../../contact.html">contact</a> us if you have
+          any issues or further questions. You can also take a look at our guide
+          <a href="../index.html">here</a>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
