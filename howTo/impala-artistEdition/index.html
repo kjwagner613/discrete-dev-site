@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impala Streamer - Artists Edition</title>
+    <meta name="description" content="Requirements and Features of Impala Streamer - Artists Edition" />
+    <link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="howto-guide-page">
+    <div class="howto-wrap">
+        <article class="howto-card">
+            <h1>The Artists Edition</h1>
+            <p class="howto-muted">
+                The missing connection from source to experience.
+            </p>
+
+            <div class="howto-top-links">
+                <a class="btn" href="../index.html">All Client Guides</a>
+                <!-- <a class="btn" href="guide.md">View Markdown Source</a> -->
+                <a class="btn primary" href="../../index.html">Discrete Development Home</a>
+            </div><br>
+            <h1>Impala Artist Edition — Formal Specifications</h1>
+
+           
+<h2>1. System Identity</h2>
+
+ <p>
+System Type: Local, sovereign media viewer Core Principle: Source → Experience</p>
+<p>Non-Functions:</p>
+<ul>
+    <li>No storage</li>
+    <li>No retention</li>
+    <li>No distribution</li>
+    <li>No commerce</li>
+    <li>No accounts</li>
+    <li>No analytics</li>
+    <li>No cloud dependencies</li>
+    <li>Impala is not a platform, marketplace, publisher, distributor, or merchant.</li>
+</ul>
+
+<h2>2. Artist Edition Overview</h2>
+The Artist Edition is a themed, isolated environment allowing musicians to:
+<ul>
+    <li>Load their own music locally</li>
+    <li>Curate playlists</li>
+    <li>Broadcast messages/links</li>
+    <li>Temporarily expose tracks to the collective catalog</li>
+    <li>Maintain full control over their catalog and revenue</li>
+    <li>Impala never stores or distributes their music.</li>
+</ul>
+
+<h2>3. Artist Bucket Specification</h2>
+<h3>3.1 Definition</h3>
+A local, isolated, temporary container holding the artist’s assets.
+
+<h3>3.2 Contents</h3>
+<ul>
+    <li>Audio tracks</li>
+    <li>Visuals</li>
+    <li>Playlist definitions</li>
+    <li>Edition identity metadata</li>
+</ul>
+<h3>3.3 Requirements</h3>
+<ul>
+    <li>Bucket must remain private</li>
+    <li>Bucket must never expose raw URLs</li>
+    <li>Bucket must never be downloadable</li>
+    <li>Bucket must be fully removable</li>
+    <li>Bucket must not persist after removal</li>
+    <li>Bucket must not sync to cloud</li>
+</ul>
+
+<h3>3.4 Lifecycle</h3>
+<ul>
+    <li>Created when artist loads assets</li>
+    <li>Active during playback</li>
+    <li>Destroyed when artist retracts access</li>
+    <li>Leaves no residual data</li>
+</ul>
+<h2>4. Player Identifier Specification</h2>
+<h3>4.1 Purpose</h3>
+Defines the identity of the Artist Edition.
+
+<h3>4.2 Fields</h3>
+    <ul>
+        <li>artistName</li>
+        <li>editionName</li>
+        <li>themeColor (optional)</li>
+        <li>badge (optional)</li>
+    </ul>
+
+<h3>4.3 Behavior</h3>
+<ul>
+    <li>Displayed in UI</li>
+    <li>Stored locally</li>
+    <li>No cloud sync</li>
+    <li>No accounts required</li>
+</ul>
+<h2>5. Control Switch Specification</h2>
+A critical safety mechanism ensuring artist control.
+
+<h3>5.1 Modes</h3>
+<p>A. Keep Local</p>
+<ul>
+    <li>Tracks remain inside the artist bucket only</li>
+    <li>No exposure to collective catalog</li>
+    <li>No risk to artist's commercial revenue</li>
+    <li>No distribution or leakage</li>
+</ul>
+<p>B. Add to Collective</p>
+<ul>
+    <li>Tracks appear in shared catalog</li>
+    <li>Exposure is temporary</li>
+    <li>Artist can retract at any time</li>
+    <li>No downloads</li>
+    <li>No file access</li>
+    <li>No persistence</li>
+</ul>
+<h3>5.2 Requirements</h3>
+<ul>
+<li>Must clearly indicate current mode</li>
+<li>Must allow switching between modes</li>
+<li>Must enforce catalog updates</li>
+<li>Must prevent leakage of local tracks</li>
+</ul>
+<ul>        
+<li>Must be reversible</li>
+<li>Must update catalog immediately</li>
+<li>Must not leave cached copies</li>
+</ul>
+<h2>6. Message/Link Pipe Specification</h2>
+<h3>6.1 Purpose</h3>
+A one-way broadcast channel for artists.
+
+<h3>6.2 Capabilities</h3>
+Artist can send:
+<ul>
+<li>Text messages</li>
+<li>Announcements</li>
+<li>Playlist updates</li>
+<li>External links (CD sales, Bandcamp, merch, tour dates, etc.)</li>
+</ul>
+<h3>6.3 Restrictions</h3>
+<ul>
+<li>Not a chat system</li>
+<li>Not a social feed</li>
+<li>Not a platform</li>
+<li>No inbound messages</li>
+<li>No analytics</li>
+<li>No tracking</li>
+</ul>
+<h2>7. Playlist Specification</h2>
+<h3>7.1 Artist Capabilities</h3>
+<ul>
+<li>Create playlists</li>
+<li>Reorder tracks</li>
+<li>Select visuals</li>
+<li>Select transitions</li>
+<li>Define vibe/theme</li>
+</ul>
+<h3>7.2 Fan Capabilities</h3>
+<ul>
+<li>View only</li>
+<li>No editing</li>
+<li>No interaction layer</li>
+</ul>
+<h2>8. Temporary Local Storage Specification</h2>
+<h3>8.1 Definition</h3>
+Music is stored only on the artist’s own device or environment
+
+<h3>8.2 Implications</h3>
+<ul>
+<li>Artist retains full ownership</li>
+<li>Artist retains full responsibility</li>
+<li>Discrete Development, LLC has zero liability</li>
+<li>Discrete Development, LLC does not store, retain, or distribute anything</li>
+</ul>
+<h3>8.3 Requirements</h3>
+<ul>
+<li>No caching beyond runtime</li>
+<li>No persistence after removal</li>
+<li>No replication</li>
+<li>No cloud sync</li>
+</ul>
+<h2>9. Liability & Compliance Boundary</h2>
+<h3>9.1 Discrete Development, LLC Is Not</h3>
+<ul>
+<li>A host</li>
+<li>A distributor</li>
+<li>A publisher</li>
+<li>A merchant</li>
+<li>A payment processor</li>
+<li>A rights holder</li>
+<li>A storage provider</li>
+</ul>
+<h3>9.2 Discrete Development, LLC Does Not</h3>
+<ul>
+<li>Store music</li>
+<li>Retain music</li>
+<li>Distribute music</li>
+<li>Sell music</li>
+<li>Process payments</li>
+<li>Take a cut</li>
+<li>Track users</li>
+</ul>
+<h3>9.3 Artist Responsibilities</h3>
+<ul>
+<li>Their storage</li>
+<li>Their catalog</li>
+<li>Their revenue</li>
+<li>Their taxes</li>
+<li>Their compliance</li>
+</ul><br>
+<p>📊 Flow Diagram (Text‑Based)</p>
+<pre><code>
+
+                ┌──────────────────────────┐
+                │      Artist Loads        │
+                │      Local Assets        │
+                └────────────┬─────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────┐
+                │     Artist Bucket        │
+                │  (Isolated, Temporary)   │
+                └────────────┬─────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────┐
+                │     Player Identifier    │
+                │  (Artist Edition Theme)  │
+                └────────────┬─────────────┘
+                             │
+                             ▼
+                ┌──────────────────────────┐
+                │     Control Switch       │
+                │  Local / Collective      │
+                └───────┬─────────┬────────┘
+                        │         │
+                        │         │
+        ┌───────────────┘         └────────────────┐
+        ▼                                            ▼
+┌──────────────────────────┐             ┌──────────────────────────┐
+│      Keep Local          │             │    Add to Collective     │
+│  (Private Edition Only)  │             │ (Temporary Exposure)     │
+└──────────────┬───────────┘             └──────────────┬───────────┘
+               │                                          │
+               ▼                                          ▼
+    ┌──────────────────────────┐               ┌──────────────────────────┐
+    │   Message/Link Pipe      │               │   Collective Catalog     │
+    │ (One-Way Broadcast)      │               │ (No Storage, No Files)   │
+    └──────────────┬───────────┘               └──────────────┬───────────┘
+                   │                                          │
+                   ▼                                          ▼
+        ┌──────────────────────────┐             ┌──────────────────────────┐
+        │       Playlists          │             │      Viewer Experience   │
+        │   (Curated by Artist)    │             │   (Source → Experience)  │
+        └──────────────────────────┘             └──────────────────────────┘
+</code></pre>
+          
+            <div class="howto-note">
+                Feel free to <a href="../../contact.html">contact</a> us if you have
+                any issues or further questions. You can also take a look at our guide
+                <a href="../index.html">here</a>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>
