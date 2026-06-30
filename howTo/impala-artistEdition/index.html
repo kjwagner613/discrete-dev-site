@@ -54,7 +54,9 @@ The Artist Edition is a themed, isolated environment allowing musicians to:
 
 <h2>3. Artist Bucket Specification</h2>
 <h3>3.1 Definition</h3>
-A local, isolated, temporary container holding the artist’s assets.
+<p>A local, isolated, temporary container holding the artist's assets.
+    Nothing in the bucket is uploaded, synced, or stored by Impala.
+</p>
 
 <h3>3.2 Contents</h3>
 <ul>
@@ -71,6 +73,7 @@ A local, isolated, temporary container holding the artist’s assets.
     <li>Bucket must be fully removable</li>
     <li>Bucket must not persist after removal</li>
     <li>Bucket must not sync to cloud</li>
+    <li>Bucket contents are fully removable and leave no residual data.</li>
 </ul>
 
 <h3>3.4 Lifecycle</h3>
@@ -212,8 +215,13 @@ Music is stored only on the artist’s own device or environment
 <li>Their catalog</li>
 <li>Their revenue</li>
 <li>Their taxes</li>
-<li>Their compliance</li>
-</ul><br>
+<li>Their compliance</li></ul>
+
+<h2>10. Storage Principle</h2>
+<ul class="no-bullet">
+<li style="font-size: 1.2rem; font-weight: bold; text-decoration: underline;">Impala stores nothing in and of itself.</li>
+</ul>
+<br>
 <p>📊 Flow Diagram (Text‑Based)</p>
 <pre><code>
 
