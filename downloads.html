@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Downloads | Discrete Development</title>
+  <meta name="description" content="Download current Discrete Development software modules and verify checksums." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js"></script>
+  <link rel="icon" type="image/x-icon" href="public/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pip"></span> Discrete Development</div>
+          <h1>Downloads</h1>
+          <p class="sub">
+            Sovereign tools for modern workflows.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="guides/index.html">Open Client Guides</a>
+            <a class="btn" href="productPage.html">View Product Overview</a>
+          </div>
+        </div>
+
+        <div id="brandTileMount"></div>
+      </div>
+    </header>
+
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay:.12s">
+        <p>Package Downloads and Verification</p>
+        <div class="tag">Checksums • Platform Builds • Release Notes</div>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true"></div>
+
+    <main>
+      <section class="sections" aria-label="Downloads">
+        <article class="paper nudge-up reveal" id="downloads">
+          <div class="paper-inner">
+            <div>
+              <h2>Discrete Development Downloads</h2>
+              <p class="lede">
+                Build artifacts are in progress. Download links will be enabled as each package is published.
+              </p>
+            </div>
+
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Impala</h3>
+                <ul>
+                  <li>
+                    PWA instructions:
+                    <a href="guides/impala-artistEdition/index.html">Open Impala client guide</a>
+                  </li>
+                  <li>Release date: Pending publish</li>
+                  <li>SHA-256 checksum: Pending publish</li>
+                  <li>Requires Helper if you would like to use local library.</li>
+                </ul>
+                <div class="hero-actions">
+                  <button class="btn primary" type="button" disabled aria-disabled="true">Download Impala (Coming soon)</button>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <h3>Helper</h3>
+                <ul>
+                  <li>Windows: Pending publish</li>
+                  <li>macOS: Pending publish</li>
+                  <li>Linux: Pending publish</li>
+                  <li>Version: Pending publish</li>
+                  <li>Release date: Pending publish</li>
+                  <li>SHA-256 checksum: Pending publish</li>
+                </ul>
+                <div class="hero-actions">
+                  <button class="btn" type="button" disabled aria-disabled="true">Helper for Windows (Coming soon)</button>
+                  <button class="btn" type="button" disabled aria-disabled="true">Helper for macOS (Coming soon)</button>
+                  <button class="btn" type="button" disabled aria-disabled="true">Helper for Linux (Coming soon)</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 8px;">
+              <a class="btn" href="guides/index.html">Back to Client Guides</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development</small>
+        <small style="opacity:.8;">The fringe, where manuals offer no help, memorization fails, only experience guides.</small>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

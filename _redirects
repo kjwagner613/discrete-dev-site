@@ -1,1 +1,2 @@
 /gate/* /gate/:splat 200
+/howTo/* /guides/:splat 301

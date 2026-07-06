@@ -73,29 +73,36 @@ function resolveDrawerRoutes() {
     technology: { page: "technology.html", hash: "" },
     software: { page: "software.html", hash: "" },
     products: { page: "productPage.html", hash: "" },
-    howToPurview: { page: "howTo/index.html", hash: "" },
+    howToPurview: { page: "guides/index.html", hash: "" },
+    downloads: { page: "downloads.html", hash: "" },
     corporateSvcs: { page: "corporateSvcs.html", hash: "" },
     smallBusinessSvcs: { page: "smallBusinessSvcs.html", hash: "" },
     contact: { page: "contact.html", hash: "" }, // later: { page: "contact.html", hash: "" }
     servicesOverview: { page: "servicesOverview.html", hash: "" },
   };
 
-  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  function normalizePath(pathname) {
+    const trimmed = (pathname || "/").replace(/\/+$/, "") || "/";
+    return trimmed === "/" ? "/index.html" : trimmed;
+  }
+
+  const currentPath = normalizePath(location.pathname);
 
   document.querySelectorAll(".drawer [data-route]").forEach((a) => {
     const key = a.getAttribute("data-route");
     const dest = ROUTES[key];
     if (!dest) return;
 
-    const page = (dest.page || "").toLowerCase();
+    const page = dest.page || "";
     const hash = dest.hash || "";
+    const targetPath = normalizePath(new URL(page, `${location.origin}/`).pathname);
 
-    // If destination page is the current page, use hash-only so your smooth scroll works.
-    // Otherwise use page+hash to navigate normally.
-    if (page === currentPage) {
+    // If destination page is the current page, use hash-only so smooth scroll can work.
+    // Otherwise use an absolute path so nested folders resolve correctly.
+    if (targetPath.toLowerCase() === currentPath.toLowerCase()) {
       a.setAttribute("href", hash || "#");
     } else {
-      a.setAttribute("href", `${dest.page}${hash}`);
+      a.setAttribute("href", `${targetPath}${hash}`);
     }
   });
 }
@@ -211,8 +218,8 @@ window.demoSubmit = demoSubmit;
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Load shared drawer first (so #closeBtn and #backdrop exist)
-  await loadPartial("#drawerMount", "partials/drawer.html");
-  await loadPartial("#brandTileMount", "partials/brand-tile.html");
+  await loadPartial("#drawerMount", "/partials/drawer.html");
+  await loadPartial("#brandTileMount", "/partials/brand-tile.html");
 
   // Now wire behaviors
   resolveDrawerRoutes();

@@ -1384,6 +1384,15 @@
     background: #f8fafc;
   }
 
+  .btn[disabled],
+  .btn[aria-disabled="true"] {
+    opacity: .62;
+    cursor: not-allowed;
+    filter: saturate(.6);
+    box-shadow: none;
+    pointer-events: none;
+  }
+
 
   /* Base button style for <a> */
   a.button {
