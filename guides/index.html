@@ -7,9 +7,34 @@
   <title>Client Guides | Discrete Development</title>
   <meta name="description" content="Client-facing setup guides from Discrete Development." />
   <link rel="stylesheet" href="../style.css" />
+  <script type="module" src="../script.js"></script>
+  <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico">
 </head>
 
-<body class="howto-index-page">
+<body>
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+  <!-- Inserts Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+
+<div class="howto-index-page">
   <div class="howto-wrap">
     <h1 class="howto-index-title">Client Guides</h1>
     <!-- <p class="sub">Share these guides with clients when they need clear, step-by-step setup instructions.</p> -->
@@ -27,7 +52,8 @@
       <article class="howto-card">
         <p class="howto-eyebrow">Microsoft 365</p>
         <h2>Enable Microsoft Purview Audit (Standard)</h2>
-        <p>Activate the audit pipeline, handle Exchange organization hydration requirements, and validate successful search behavior.</p>
+        <p>Activate the audit pipeline, handle Exchange organization hydration requirements, and validate successful
+          search behavior.</p>
         <div class="howto-actions">
           <a class="btn primary" href="purview/index.html">Open Guide</a>
           <a class="btn" href="purview/activate.md">View Markdown Source</a>
@@ -44,20 +70,22 @@
         </div>
       </article>
 
-            <article class="howto-card">
+      <article class="howto-card">
         <p class="howto-eyebrow">Utility</p>
         <h2>JSON Templates</h2>
-        <p>JSON templates in Impala allow you to define structured data that can be easily reused and manipulated within your applications.</p>
+        <p>JSON templates in Impala allow you to define structured data that can be easily reused and manipulated within
+          your applications.</p>
         <div class="howto-actions">
           <a class="btn primary" href="json-Impala-template/index.html">Open HTML Guide</a>
           <!-- <a class="btn" href="json-Impala-template/guide.md">Open Markdown Guide</a> -->
         </div>
       </article>
 
-                  <article class="howto-card">
+      <article class="howto-card">
         <p class="howto-eyebrow">Impala Streamer Feature</p>
         <h2>Artist's Edition</h2>
-        <p>The Artist's Edition feature in Impala Streamer allows artists to manage their content, control access, and define how their music is presented within the platform.</p>
+        <p>The Artist's Edition feature in Impala Streamer allows artists to manage their content, control access, and
+          define how their music is presented within the platform.</p>
         <div class="howto-actions">
           <a class="btn primary" href="impala-artistEdition/index.html">Open HTML Guide</a>
           <!-- <a class="btn" href="impala-artistEdition/guide.md">Open Markdown Guide</a> -->
@@ -68,6 +96,7 @@
     </section>
 
     <p class="howto-back"><a href="../index.html">Back to Discrete Development</a></p>
+  </div>
   </div>
 </body>
 

@@ -918,6 +918,23 @@
     overflow-wrap: anywhere;
   }
 
+  .downloads-page .pillar li {
+    overflow-wrap: anywhere;
+  }
+
+  .downloads-page .helper-downloads {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .downloads-page .download {
+    min-height: 40px;
+    height: auto;
+    text-align: center;
+    width: 100%;
+  }
+
   .comment,
   .comment p {
     overflow-wrap: anywhere;
@@ -990,6 +1007,10 @@
   }
 
   @media (max-width: 560px) {
+    .downloads-page .helper-downloads {
+      grid-template-columns: 1fr;
+    }
+
     .rail {
       width: 72px;
     }
