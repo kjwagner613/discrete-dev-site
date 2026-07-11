@@ -1518,3 +1518,38 @@
     margin: 20px 0;
     border-radius: 16px;
   }
+
+    .download {
+    appearance: none;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .02)),
+      linear-gradient(180deg, #3b424b, #2f353e);
+    color: rgba(255, 255, 255, .92);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 7px;
+    border-radius: 16px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
+    transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease;
+  }
+
+  .download:hover {
+    transform: translateY(-1px);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .03)),
+      linear-gradient(180deg, #464f5a, #353c46);
+    border-color: rgba(255, 255, 255, .24);
+    box-shadow: 0 16px 32px rgba(11, 19, 32, .24), inset 0 1px 0 rgba(255, 255, 255, .18);
+  }
+
+  .download:active {
+    transform: translateY(0) scale(.99);
+    box-shadow: 0 10px 20px rgba(11, 19, 32, .18), inset 0 1px 0 rgba(255, 255, 255, .12);
+  }
