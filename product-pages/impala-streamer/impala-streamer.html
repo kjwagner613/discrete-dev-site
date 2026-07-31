@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="impala-streamer.css" />
+    <script type="module" src="../../script.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Impala | Sovereign Listening Environment</title>
+  </head>
+
+  <body class="impala-streamer-page">
+    <aside class="rail" aria-label="Primary">
+      <button
+        class="menu"
+        id="menuBtn"
+        aria-haspopup="dialog"
+        aria-controls="drawer"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open menu</span>
+        <span class="burger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <div class="dots" aria-hidden="true">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </aside>
+
+    <section class="drawer" id="drawer" aria-label="Site menu">
+      <div id="drawerMount"></div>
+    </section>
+
+    <div class="wrap">
+      <main class="home-page impala-page">
+        <!-- HERO -->
+        <header class="hero">
+          <div class="grid">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">Sovereign Listening Environment</p>
+              <h1>Impala</h1>
+              <p>
+                Impala is a calm, predictable, user-controlled music environment
+                designed to remove algorithmic noise, advertising pressure, and
+                platform-driven behavioral shaping from the act of listening.
+              </p>
+              <div class="button-row">
+                <a class="primary-button" href="../../guides/impala-artistEdition/index.html">
+                  Artist Edition Specifications
+                </a>
+                <a
+                  class="primary-button secondary"
+                  href="../../productPage.html#small-business"
+                >
+                  Return to Products
+                </a>
+              </div>
+            </div>
+            <div class="impala-brand-tile reveal" aria-label="Impala logo tile">
+              <img
+                src="../../public/images/ddMusic.ico"
+                alt="Impala Streamer logo"
+                class="impala-brand-icon"
+              />
+            </div>
+          </div>
+        </header>
+        
+        <!-- INTRO SECTION -->
+        <div class="section reveal">
+          <h2>What Impala Is</h2>
+          <p class="section-intro">
+            Impala is built on a simple premise: technology should respect
+            attention. It should behave predictably, remain faithful to its stated
+            purpose, and avoid manipulative patterns. Impala is not a feed, a
+            funnel, or a growth mechanism. It is a listening tool.
+          </p>
+          <ul>
+            <li>No algorithmic recommendations</li>
+            <li>No engagement traps</li>
+            <li>No ads, no tracking, no harvesting</li>
+            <li>Local-first, user-controlled playback</li>
+            <li>Designed for reliability, not addiction</li>
+          </ul>
+        </div>
+
+      <!-- DESIGN PRINCIPLES -->
+      <div class="section reveal">
+        <h2>Design Principles</h2>
+        <p class="section-intro">
+          Impala is governed by a short set of design principles that guide the
+          interface, storage model, playback behavior, and artist-facing tools.
+        </p>
+        <ul>
+          <li>
+            <strong>Simplicity is reliability.</strong> Remove complexity,
+            remove failure.
+          </li>
+          <li>
+            <strong>Stay faithful to purpose.</strong> A player should play,
+            clearly and consistently.
+          </li>
+          <li>
+            <strong>No iteration in the body of code.</strong> Stability over
+            novelty.
+          </li>
+          <li>
+            <strong>Sovereign systems.</strong> The user owns the experience.
+          </li>
+          <li>
+            <strong>Zero manipulation.</strong> No algorithms shaping behavior.
+          </li>
+        </ul>
+      </div>
+
+      <!-- USER EDITION -->
+      <div class="section reveal">
+        <h2>User Edition</h2>
+        <p class="section-intro">
+          The User Edition is the everyday listening environment: simple, calm,
+          and predictable.
+        </p>
+        <ul>
+          <li>
+            Local playlists with native manipulation to combine, reorder, and
+            manage tracks
+          </li>
+          <li>Starred track tag system allowing dynamic content grouping.</li>
+          <li>Minimal UI</li>
+          <li>Local or Cloud Library</li>
+          <li>
+            Live Stream (webcast) with a catalog of reliable streams, and an
+            open field for custom user input.
+          </li>
+          <li>Direct control over playback</li>
+          <li>
+            SyncPlay, where a group can watch and listen together and transport
+            control is either shared across the group, or one master controller.
+          </li>
+          <li>
+            Coast to Coast, where two people can watch a video together, with
+            SyncPlay function and an open mic, or push to talk, adding
+            conversation to the experience.
+          </li>
+          <li>
+            Impala's core handles all shared, sovereign functionality, while
+            additional services remain fully modular and optional. These
+            services operate in discrete processing environments and never
+            affect core performance.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ARTIST EDITION -->
+      <div class="section reveal" id="artist-edition">
+        <h2>Artist Edition</h2>
+        <p class="section-intro">
+          The Artist Edition, currently in development, is a formalized
+          environment for musicians to manage creative assets, control
+          distribution, and maintain sovereignty over their work. It is built on
+          the same principles as the User Edition, but with expanded
+          capabilities.
+        </p>
+        <ul>
+          <li>Asset management (audio, metadata, artwork)</li>
+          <li>Rights and compliance visibility</li>
+          <li>Audience communication tools</li>
+          <li>Playlist and message-link controls</li>
+          <li>Temporary local storage for drafts and experiments</li>
+        </ul>
+      </div>
+
+      <!-- SLEEPE PRINCIPLE -->
+      <div class="section reveal">
+        <h2>Ephemeral and Sovereign</h2>
+        <p class="section-intro">The core rule of Impala:</p>
+        <p class="principle-statement">Impala stores nothing itself.</p>
+        <p>
+          All data is maintained in browser cache and is cleared on exit. The
+          user owns the experience.
+        </p>
+        <br />
+        <p>
+          This principle ensures that Impala never becomes a data-harvesting
+          platform. User activity stays local, temporary, and under direct user
+          control.
+        </p>
+      </div>
+
+      <!-- Why Impala is important -->
+      <div class="section reveal">
+        <h2>Why Impala Matters</h2>
+        <p class="section-intro">
+          Sovereignty has drifted quietly for decades, replaced piece by piece
+          by algorithms, funnels, and behavioral shaping. Impala is the
+          beginning of bringing it back — starting with listening, and extending
+          outward into every domain where calm, user-owned systems should exist.
+        </p>
+        <ul>
+          <li>Reduces exposure to manipulative algorithms</li>
+          <li>Eliminates advertising pressure</li>
+          <li>Supports mental well-being by minimizing distractions</li>
+          <li>Encourages mindful listening experiences</li>
+        </ul>
+      </div>
+
+      <!--Optimizing for Humanity -->
+      <div class="section reveal">
+        <h2>Optimizing for Humanity</h2>
+        <p class="section-intro">
+          Optimizing for Humans means designing technology that respects
+          attention, behaves predictably, absorbs friction wherever possible,
+          protects user agency, and stays faithful to purpose. Impala is built
+          on this principle — a calm, sovereign listening environment created
+          for people, not algorithms, not advertising, and not for harvesting
+          attention.
+        </p>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer-note">
+        <a href="../../productPage.html#small-business">Return to Products</a>
+      </footer>
+      </main>
+    </div>
+  </body>
+</html>
