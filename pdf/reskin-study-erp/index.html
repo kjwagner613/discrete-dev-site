@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valiant CEO Article</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe7d6;
+      --panel: #fffaf0;
+      --ink: #1e1b16;
+      --edge: #d7c6a1;
+      --action: #1e5c58;
+      --action-ink: #ffffff;
+      --brand-deep: #1f3a52;
+      --brand-gold: #d2a24c;
+      --brand-cream: #fff6e3;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at top, #fffef9 0%, var(--bg) 60%);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    .viewer {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border-bottom: 1px solid var(--edge);
+      background:
+        linear-gradient(120deg, rgba(255, 250, 240, 0.98), rgba(255, 244, 220, 0.96)),
+        radial-gradient(circle at top right, rgba(30, 92, 88, 0.1), transparent 45%);
+      backdrop-filter: blur(7px);
+      box-shadow: 0 4px 18px rgba(35, 27, 11, 0.08);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      border: 1px solid #d4c3a0;
+      background: linear-gradient(135deg, var(--brand-cream), #fffdf9);
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: #fff;
+      background:
+        linear-gradient(140deg, var(--brand-deep), #2e607b 52%, var(--brand-gold));
+      box-shadow: 0 3px 10px rgba(31, 58, 82, 0.3);
+      overflow: hidden;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1;
+      gap: 4px;
+    }
+
+    .brand-text strong {
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      color: #253243;
+      font-weight: 700;
+    }
+
+    .brand-text em {
+      margin: 0;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: #786649;
+    }
+
+    .btn {
+      border: 1px solid #ccb78f;
+      background: linear-gradient(180deg, #fff, #f8eedc);
+      color: #2b2116;
+      padding: 8px 11px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #bfa06b;
+      box-shadow: 0 3px 8px rgba(61, 44, 18, 0.18);
+    }
+
+    .btn[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn.primary {
+      border-color: #174a47;
+      background: linear-gradient(180deg, #26716c, var(--action));
+      color: var(--action-ink);
+    }
+
+    .meta {
+      margin-left: auto;
+      font-size: 14px;
+      color: #3f372d;
+      white-space: nowrap;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #dbc8a6;
+      background: rgba(255, 253, 245, 0.8);
+    }
+
+    .jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #4d4538;
+    }
+
+    .action-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #dbc8a6;
+      background: rgba(255, 253, 245, 0.8);
+      white-space: nowrap;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .action-group .btn {
+      margin: 0;
+    }
+
+    .jump input {
+      width: 64px;
+      border: 1px solid var(--edge);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .stage {
+      overflow: auto;
+      padding: 18px 12px 24px;
+    }
+
+    .canvas-wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--edge);
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(34, 26, 10, 0.12);
+      padding: 10px;
+    }
+
+    .canvas-wrap.hidden {
+      display: none;
+    }
+
+    .index-wrap {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: none;
+    }
+
+    .index-wrap.show {
+      display: block;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 16px;
+    }
+
+    .thumb-card {
+      border: 1px solid var(--edge);
+      border-radius: 10px;
+      padding: 10px;
+      background: var(--panel);
+      box-shadow: 0 6px 16px rgba(34, 26, 10, 0.1);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .thumb-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(34, 26, 10, 0.16);
+    }
+
+    .thumb-card canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid #e6dac2;
+    }
+
+    .thumb-label {
+      margin-top: 8px;
+      font-size: 13px;
+      text-align: center;
+      color: #5a4e3b;
+      font-weight: 600;
+    }
+
+    #pdf-canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+      border-radius: 8px;
+    }
+
+    .status {
+      width: min(1100px, 100%);
+      margin: 10px auto 0;
+      text-align: center;
+      font-size: 14px;
+      color: #665c4b;
+      min-height: 1.2em;
+    }
+
+    .status-row {
+      width: min(1100px, 100%);
+      margin: 10px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 1.4em;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #cdbb93;
+      border-top-color: #23395b;
+      animation: spin 0.9s linear infinite;
+      display: none;
+    }
+
+    .spinner.show {
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .toolbar {
+        gap: 8px;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 7px 9px;
+      }
+
+      .meta {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .jump {
+        width: 100%;
+      }
+
+      .action-group {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+      }
+    }
+
+    /* Match the site's dark glass interface while keeping document pages paper-bright. */
+    :root {
+      --bg: #0b0f14;
+      --panel: rgba(255, 255, 255, 0.74);
+      --ink: #0b1320;
+      --edge: rgba(255, 255, 255, 0.16);
+      --action: #234936;
+      --action-ink: #ffffff;
+      --brand-deep: #0f1722;
+      --brand-gold: #93c5fd;
+      --brand-cream: rgba(255, 255, 255, 0.08);
+    }
+
+    html,
+    body {
+      background:
+        radial-gradient(1200px 700px at 20% 12%, rgba(255, 255, 255, 0.12), transparent 60%),
+        radial-gradient(900px 600px at 78% 22%, rgba(147, 197, 253, 0.16), transparent 65%),
+        radial-gradient(1000px 700px at 60% 86%, rgba(167, 243, 208, 0.1), transparent 60%),
+        linear-gradient(180deg, #0f1722, var(--bg));
+      color: rgba(255, 255, 255, 0.86);
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .toolbar {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.18));
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand,
+    .meta,
+    .action-group {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .brand {
+      border-radius: 16px;
+    }
+
+    .logo-mark {
+      border-radius: 12px;
+      background: linear-gradient(140deg, #0f1722, #2e607b 52%, #93c5fd);
+    }
+
+    .brand-text strong {
+      color: rgba(255, 255, 255, 0.94);
+      font-family: Fraunces, serif;
+      font-weight: 400;
+    }
+
+    .brand-text em,
+    .jump,
+    .meta {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .btn {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: linear-gradient(180deg, #3b424b, #2f353e);
+      color: rgba(255, 255, 255, 0.86);
+      border-radius: 10px;
+    }
+
+    .btn:hover {
+      border-color: rgba(167, 243, 208, 0.35);
+      background: linear-gradient(180deg, #464f5a, #353c46);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn.primary {
+      border-color: #234936;
+      background: linear-gradient(180deg, #2f5f46, #234936);
+    }
+
+    .jump input {
+      border-color: rgba(11, 19, 32, 0.12);
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .stage {
+      padding-top: 24px;
+    }
+
+    .canvas-wrap,
+    .thumb-card {
+      border-color: rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .canvas-wrap {
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .thumb-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06));
+    }
+
+    .thumb-card:hover {
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .thumb-card canvas {
+      border-color: rgba(11, 19, 32, 0.12);
+    }
+
+    .thumb-label,
+    .status {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .spinner {
+      border-color: rgba(255, 255, 255, 0.18);
+      border-top-color: #a7f3d0;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer">
+    <div class="toolbar" role="toolbar" aria-label="PDF controls">
+      <div class="brand" aria-label="Viewer branding">
+        <span class="logo-mark" aria-hidden="true">
+          <img src="../../../public/images/favicon.ico" alt="" />
+        </span>
+        <span class="brand-text">
+          <strong>PDF Viewer</strong>
+          <em>Discrete Development</em>
+        </span>
+      </div>
+      <button class="btn" id="prev" type="button" aria-label="Previous page">Prev</button>
+      <button class="btn" id="next" type="button" aria-label="Next page">Next</button>
+      <button class="btn" id="zoom-out" type="button" aria-label="Zoom out">-</button>
+      <button class="btn" id="zoom-in" type="button" aria-label="Zoom in">+</button>
+      <button class="btn" id="view-index" type="button" aria-label="Index view">Index</button>
+      <button class="btn" id="view-page" type="button" aria-label="Page view">Reader</button>
+      <div class="action-group" aria-label="Document actions">
+        <label class="jump" for="page-jump">
+          Go to
+          <input id="page-jump" type="number" min="1" step="1" inputmode="numeric" aria-label="Go to page" />
+        </label>
+        <a class="btn primary" href="reskin-study-erp-research.pdf" target="_blank" rel="noopener">Open Full PDF</a>
+        <a class="btn" href="reskin-study-erp-research.pdf" download>Download</a>
+      </div>
+      <div class="meta">
+        Page <span id="page-num">1</span> / <span id="page-count">--</span>
+        <span id="zoom-label">(100%)</span>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="canvas-wrap">
+        <canvas id="pdf-canvas"></canvas>
+      </div>
+      <div class="index-wrap" id="index-wrap" aria-live="polite">
+        <div class="thumb-grid" id="thumb-grid"></div>
+      </div>
+      <div class="status-row">
+        <span class="spinner" id="spinner" aria-hidden="true"></span>
+        <p class="status" id="status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/pdfjs/pdf.min.js?v=20260730"></script>
+  <script>
+    (function () {
+      var pdfPath = "reskin-study-erp-research.pdf";
+      var storageKey = "dd_article_pdf_view_state_v1";
+      var state = {
+        pdfDoc: null,
+        pageNum: 1,
+        pageCount: 0,
+        scale: 1.0,
+        rendering: false,
+        pendingPage: null,
+        viewMode: "index",
+        thumbsRendered: false
+      };
+
+      var canvas = document.getElementById("pdf-canvas");
+      var ctx = canvas.getContext("2d");
+      var canvasWrapEl = document.querySelector(".canvas-wrap");
+      var indexWrapEl = document.getElementById("index-wrap");
+      var thumbGridEl = document.getElementById("thumb-grid");
+      var pageNumEl = document.getElementById("page-num");
+      var pageCountEl = document.getElementById("page-count");
+      var zoomLabelEl = document.getElementById("zoom-label");
+      var statusEl = document.getElementById("status");
+      var spinnerEl = document.getElementById("spinner");
+      var pageJumpEl = document.getElementById("page-jump");
+      var prevBtn = document.getElementById("prev");
+      var nextBtn = document.getElementById("next");
+      var zoomOutBtn = document.getElementById("zoom-out");
+      var zoomInBtn = document.getElementById("zoom-in");
+      var indexBtn = document.getElementById("view-index");
+      var pageBtn = document.getElementById("view-page");
+
+      function saveViewState() {
+        try {
+          var snapshot = {
+            pageNum: state.pageNum,
+            scale: state.scale,
+            viewMode: state.viewMode
+          };
+          localStorage.setItem(storageKey, JSON.stringify(snapshot));
+        } catch (_err) {
+          // Ignore storage issues (private mode, disabled storage).
+        }
+      }
+
+      function restoreViewState() {
+        try {
+          var raw = localStorage.getItem(storageKey);
+          if (!raw) {
+            return;
+          }
+          var parsed = JSON.parse(raw);
+          if (parsed && Number.isFinite(parsed.pageNum)) {
+            state.pageNum = Math.max(1, Math.round(parsed.pageNum));
+          }
+          if (parsed && Number.isFinite(parsed.scale)) {
+            state.scale = Math.max(0.5, Math.min(3, parsed.scale));
+          }
+          if (parsed && (parsed.viewMode === "index" || parsed.viewMode === "page")) {
+            state.viewMode = parsed.viewMode;
+          }
+        } catch (_err) {
+          // Ignore invalid JSON or blocked storage.
+        }
+      }
+
+      function setReaderControlsDisabled(disabled) {
+        prevBtn.disabled = disabled;
+        nextBtn.disabled = disabled;
+        zoomOutBtn.disabled = disabled;
+        zoomInBtn.disabled = disabled;
+        pageJumpEl.disabled = disabled;
+      }
+
+      function setViewMode(mode) {
+        state.viewMode = mode;
+        var isIndex = mode === "index";
+        canvasWrapEl.classList.toggle("hidden", isIndex);
+        indexWrapEl.classList.toggle("show", isIndex);
+        indexBtn.classList.toggle("primary", isIndex);
+        pageBtn.classList.toggle("primary", !isIndex);
+        setReaderControlsDisabled(isIndex);
+        saveViewState();
+      }
+
+      function showSpinner(show) {
+        spinnerEl.classList.toggle("show", !!show);
+      }
+
+      function openDirectPdf() {
+        window.location.replace(pdfPath);
+      }
+
+      function setStatus(message) {
+        statusEl.textContent = message || "";
+      }
+
+      function renderThumbnails() {
+        if (!state.pdfDoc) {
+          return Promise.resolve();
+        }
+
+        if (state.thumbsRendered) {
+          return Promise.resolve();
+        }
+
+        setStatus("Building page index...");
+        showSpinner(true);
+        thumbGridEl.innerHTML = "";
+
+        var sequence = Promise.resolve();
+        for (var i = 1; i <= state.pageCount; i += 1) {
+          (function (pageNumber) {
+            sequence = sequence.then(function () {
+              return state.pdfDoc.getPage(pageNumber).then(function (page) {
+                var viewport = page.getViewport({ scale: 0.24 });
+                var thumbCanvas = document.createElement("canvas");
+                thumbCanvas.width = Math.floor(viewport.width);
+                thumbCanvas.height = Math.floor(viewport.height);
+                var thumbCtx = thumbCanvas.getContext("2d");
+
+                return page.render({
+                  canvasContext: thumbCtx,
+                  viewport: viewport
+                }).promise.then(function () {
+                  var card = document.createElement("button");
+                  card.type = "button";
+                  card.className = "thumb-card";
+                  card.setAttribute("aria-label", "Open page " + pageNumber);
+                  card.appendChild(thumbCanvas);
+
+                  var label = document.createElement("div");
+                  label.className = "thumb-label";
+                  label.textContent = "Page " + pageNumber;
+                  card.appendChild(label);
+
+                  card.addEventListener("click", function () {
+                    state.pageNum = pageNumber;
+                    queueRenderPage(state.pageNum);
+                    setViewMode("page");
+                    setStatus("");
+                  });
+
+                  thumbGridEl.appendChild(card);
+                });
+              });
+            });
+          })(i);
+        }
+
+        return sequence.then(function () {
+          state.thumbsRendered = true;
+          showSpinner(false);
+          setStatus("Select a page to open.");
+        }).catch(function () {
+          showSpinner(false);
+          setStatus("Could not build thumbnails. Use Open Full PDF.");
+        });
+      }
+
+      function renderPage(pageNum) {
+        state.rendering = true;
+        showSpinner(true);
+        setStatus("Rendering page " + pageNum + "...");
+
+        state.pdfDoc.getPage(pageNum).then(function (page) {
+          var viewport = page.getViewport({ scale: state.scale });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          var renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+          };
+
+          page.render(renderContext).promise.then(function () {
+            state.rendering = false;
+            showSpinner(false);
+            pageNumEl.textContent = String(state.pageNum);
+            pageJumpEl.value = String(state.pageNum);
+            zoomLabelEl.textContent = "(" + Math.round(state.scale * 100) + "%)";
+            setStatus("");
+            saveViewState();
+
+            if (state.pendingPage !== null) {
+              var pending = state.pendingPage;
+              state.pendingPage = null;
+              renderPage(pending);
+            }
+          });
+        });
+      }
+
+      function queueRenderPage(pageNum) {
+        if (state.rendering) {
+          state.pendingPage = pageNum;
+        } else {
+          renderPage(pageNum);
+        }
+      }
+
+      function goToPage(pageNum) {
+        if (!state.pdfDoc) {
+          return;
+        }
+        if (pageNum < 1 || pageNum > state.pageCount) {
+          return;
+        }
+        state.pageNum = pageNum;
+        queueRenderPage(state.pageNum);
+      }
+
+      prevBtn.addEventListener("click", function () {
+        goToPage(state.pageNum - 1);
+      });
+
+      nextBtn.addEventListener("click", function () {
+        goToPage(state.pageNum + 1);
+      });
+
+      zoomInBtn.addEventListener("click", function () {
+        state.scale = Math.min(3, state.scale + 0.15);
+        queueRenderPage(state.pageNum);
+      });
+
+      zoomOutBtn.addEventListener("click", function () {
+        state.scale = Math.max(0.5, state.scale - 0.15);
+        queueRenderPage(state.pageNum);
+      });
+
+      indexBtn.addEventListener("click", function () {
+        setViewMode("index");
+        renderThumbnails();
+      });
+
+      pageBtn.addEventListener("click", function () {
+        setViewMode("page");
+        queueRenderPage(state.pageNum);
+        setStatus("");
+      });
+
+      pageJumpEl.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter") {
+          return;
+        }
+        var requested = Number(pageJumpEl.value);
+        if (!Number.isFinite(requested)) {
+          return;
+        }
+        setViewMode("page");
+        goToPage(Math.round(requested));
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.target === pageJumpEl) {
+          return;
+        }
+        if (state.viewMode === "index") {
+          return;
+        }
+        if (event.key === "ArrowRight") {
+          goToPage(state.pageNum + 1);
+        }
+        if (event.key === "ArrowLeft") {
+          goToPage(state.pageNum - 1);
+        }
+      });
+
+      if (window.pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "assets/pdfjs/pdf.worker.min.js?v=20260730";
+
+        restoreViewState();
+
+        setStatus("Loading PDF...");
+        showSpinner(true);
+        pdfjsLib.getDocument(pdfPath).promise.then(function (pdfDoc) {
+          state.pdfDoc = pdfDoc;
+          state.pageCount = pdfDoc.numPages;
+          state.pageNum = Math.min(state.pageNum, state.pageCount);
+          pageCountEl.textContent = String(state.pageCount);
+          pageJumpEl.max = String(state.pageCount);
+          setViewMode(state.viewMode);
+          if (state.viewMode === "index") {
+            renderThumbnails();
+          } else {
+            queueRenderPage(state.pageNum);
+          }
+        }).catch(function () {
+          showSpinner(false);
+          setStatus("Viewer unavailable. Opening full PDF...");
+          setTimeout(openDirectPdf, 450);
+        });
+      } else {
+        setStatus("Viewer script failed. Opening full PDF...");
+        setTimeout(openDirectPdf, 450);
+      }
+    })();
+  </script>
+</body>
+</html>
