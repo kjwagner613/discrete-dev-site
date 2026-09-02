@@ -21,13 +21,28 @@ body.coast-to-coast-page {
 }
 
 .coast-page {
-  --surface: linear-gradient(180deg, var(--paper), rgba(255, 255, 255, 0.66));
+  --surface: linear-gradient(180deg, rgba(17, 25, 31, 0.98) 0%, rgba(17, 25, 31, 0.98) 42%, rgba(63, 60, 56, 0.8) 58%, rgba(63, 60, 56, 0.8) 100%);
   --text: rgba(11, 19, 32, 0.88);
   --muted: rgba(11, 19, 32, 0.74);
   --line: rgba(255, 255, 255, 0.24);
   max-width: 980px;
   margin: 0 auto;
   padding: 0 18px 2.5rem;
+}
+
+.coast-page .section-top {
+  position: relative;
+}
+
+.coast-page .section-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -120px;
+  height: 120px;
+  background: linear-gradient(180deg, rgba(17, 25, 31, 0.9) 0%, rgba(30, 39, 47, 1) 100%);
+  pointer-events: none;
 }
 
 .coast-page .hero {
@@ -65,8 +80,8 @@ body.coast-to-coast-page {
   margin-top: 1.5rem;
   border-radius: var(--radius-lg);
   background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: var(--shadow2);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 0 1px rgba(94, 86, 80, 0.06), 0 18px 34px rgba(25, 16, 10, 0.12);
   padding: clamp(1.1rem, 3vw, 1.6rem);
 }
 
@@ -180,9 +195,13 @@ body.lightbox-open {
   z-index: 1;
   max-width: 560px;
   margin: 1.6rem auto 0;
-  color: var(--muted);
+  color: rgba(244, 238, 232, 0.96);
   text-align: center;
   font-size: 0.96rem;
+}
+
+.coast-visual-caption:last-of-type {
+  color: rgba(219, 185, 129, 0.96);
 }
 
 .coast-page .footer-note {
