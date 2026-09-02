@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="coast-to-coast.css" />
+    <script type="module" src="../../script.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico" />
+    <title>Impala Streamer | Coast to Coast</title>
+    <meta name="description" content="One personal media library, streamed without a hitch from either coast." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="coast-to-coast-page">
+    <aside class="rail" aria-label="Primary">
+        <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <span class="burger" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </span>
+        </button>
+
+        <div class="dots" aria-hidden="true">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </aside>
+
+    <section class="drawer" id="drawer" aria-label="Site menu">
+        <div id="drawerMount"></div>
+    </section>
+
+    <div class="wrap">
+        <main class="home-page coast-page">
+            <header class="hero">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Impala Streamer / Coast to Coast</p>
+                    <h1>One video.<br> One experience.</h1>
+
+                    <p>Across a distance</p>
+                    <p>with voice communication.</p>
+                    <p>Share the space, share the time.
+                    </p>
+                </div>
+            </header>
+
+            <div class="section reveal">
+                <div class="coast-visual-frame">
+                    <img class="coast-visual-backdrop" src="images/impalaStreamer.webp" alt="" aria-hidden="true"
+                        loading="lazy" />
+                    <button type="button" class="coast-visual-trigger" data-full-src="images/couchSpan.webp"
+                        aria-label="View full screen">
+                        <img class="coast-visual-focus" src="images/couchSpan.webp"
+                            alt="A single couch stretching across a map of the country, illustrating one continuous Impala Streamer session from coast to coast"
+                            loading="lazy" />
+                    </button>
+                </div>
+                <p class="coast-visual-caption" style="font-size: 1.7rem">Talk like you're in the same room. <br>Perfectly in sync.</p>
+                <p class="coast-visual-caption" style="font-size: 2rem">The distance will disappear.</p>
+            </div>
+
+            <footer class="footer-note">
+                <a href="../../product-pages/impala-streamer/impala-streamer.html">Return to Impala Streamer</a>
+            </footer>
+        </main>
+    </div>
+
+    <div class="coast-lightbox" id="coastLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button type="button" class="coast-lightbox-close" id="coastLightboxClose"
+            aria-label="Close full screen image">&times;</button>
+        <img class="coast-lightbox-img" id="coastLightboxImg" src="" alt="" />
+    </div>
+
+    <script>
+        (() => {
+            const lightbox = document.getElementById("coastLightbox");
+            const lightboxImg = document.getElementById("coastLightboxImg");
+            const closeBtn = document.getElementById("coastLightboxClose");
+            let lastFocused = null;
+
+            function openLightbox(trigger) {
+                lastFocused = trigger;
+                lightboxImg.src = trigger.dataset.fullSrc;
+                lightboxImg.alt = trigger.querySelector("img")?.alt || "";
+                lightbox.classList.add("is-open");
+                lightbox.setAttribute("aria-hidden", "false");
+                document.body.classList.add("lightbox-open");
+                closeBtn.focus();
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove("is-open");
+                lightbox.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("lightbox-open");
+                lightboxImg.src = "";
+                if (lastFocused) lastFocused.focus();
+            }
+
+            document.querySelectorAll(".coast-visual-trigger").forEach((trigger) => {
+                trigger.addEventListener("click", () => openLightbox(trigger));
+            });
+
+            closeBtn.addEventListener("click", closeLightbox);
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+            });
+        })();
+    </script>
+</body>
+
+</html>
