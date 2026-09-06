@@ -1,30 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="impala-streamer.css" />
-    <script type="module" src="../../script.js"></script>
-    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>Impala | Sovereign Listening Environment</title>
-  </head>
 
-  <body class="impala-streamer-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="impala-streamer.css" />
+  <script type="module" src="../../script.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <title>Impala Streamer Core</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Left rail -->
     <aside class="rail" aria-label="Primary">
-      <button
-        class="menu"
-        id="menuBtn"
-        aria-haspopup="dialog"
-        aria-controls="drawer"
-        aria-expanded="false"
-      >
+      <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
         <span class="sr-only">Open menu</span>
         <span class="burger" aria-hidden="true">
           <span></span><span></span><span></span>
@@ -38,201 +38,161 @@
       </div>
     </aside>
 
+    <!-- Inserts Drawer -->
     <section class="drawer" id="drawer" aria-label="Site menu">
       <div id="drawerMount"></div>
     </section>
 
-    <div class="wrap">
-      <main class="home-page impala-page">
+    <div class="impala-streamer-page">
+      <main class="impala-page">
+
         <!-- HERO -->
-        <header class="hero">
-          <div class="grid">
-            <div class="hero-copy reveal">
-              <p class="eyebrow">Sovereign Listening Environment</p>
-              <h1>Impala Streamer</h1>
-              <p>
-                Impala is a calm, predictable, user-faithful music environment
-                designed to remove algorithmic noise, advertising pressure, and
-                platform-driven behavioral shaping from the act of listening.
-              </p>
-              <div class="button-row">
-                <a class="primary-button" href="../../guides/impala-artistEdition/index.html">
-                  Artist Edition Specifications
-                </a>
-                <a
-                  class="primary-button secondary"
-                  href="../../productPage.html#small-business"
-                >
-                  Return to Products
-                </a>
-              </div>
-            </div>
-            <div class="impala-brand-tile reveal" aria-label="Impala logo tile">
-              <img
-                src="../../public/images/ddMusic.ico"
-                alt="Impala Streamer logo"
-                class="impala-brand-icon"
-              />
+        <section class="hero grid">
+          <div class="impala-brand-tile">
+            <img src="../../public/images/ddMusic.ico" alt="Impala Streamer Hero" class="impala-brand-icon" />
+          </div>
+
+          <div class="hero-copy">
+            <div class="eyebrow">Sovereign Listening Environment</div>
+            <h1>Impala Streamer Core</h1>
+            <p>
+              Impala Streamer Core is built for clarity, calm, and control.
+              A media experience that behaves predictably, respects attention,
+              and stays faithful to its purpose.
+            </p>
+
+            <div class="button-row">
+              <a class="primary-button"
+                href="../../public/downloadable/impala-streamer-windows-10-11-x64-local-v1.4.2.zip" download>Download
+                Impala Streamer - FREE - for Win 10/11 x64</a>
             </div>
           </div>
-        </header>
-        
-        <!-- INTRO SECTION -->
-        <div class="section reveal">
-          <h2>What Impala Streamer Is</h2>
+        </section>
+
+        <!-- CORE SECTION -->
+        <section class="section">
+          <h2>Impala Streamer Core</h2>
+
           <p class="section-intro">
-            Impala is built on a simple premise: technology should respect
-            attention. It should behave predictably, remain faithful to its stated
-            purpose, and avoid manipulative patterns. Impala is not a feed, a
-            funnel, or a growth mechanism. It is a listening tool.
+            Impala Streamer Core runs entirely on your machine.
+            No cloud dependency. No surveillance. No behavioral shaping.
+            Just your library, your space, and your rules.
           </p>
+
+          <img src="../../public/images/scenes/impalaStreamerCore.webp" alt="Impala Core Scene"
+            style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+
           <ul>
-            <li>No algorithmic recommendations</li>
-            <li>No engagement traps</li>
-            <li>No ads, no tracking, no harvesting</li>
-            <li>Local-first, user-controlled playback</li>
-            <li>Designed for reliability, not addiction</li>
+            <li>Local Library — internal storage or USB volumes</li>
+            <li>Full Local Indexing — fast, private, offline</li>
+            <li>Local Media Server — HTML5 playback on any LAN device</li>
+            <li>Supported Formats — MP3, FLAC, MP4, MKV (auto-ranscode)</li>
           </ul>
-        </div>
 
-      <!-- DESIGN PRINCIPLES -->
-      <div class="section reveal">
-        <h2>Design Principles</h2>
-        <p class="section-intro">
-          Impala is governed by a short set of design principles that guide the
-          interface, storage model, playback behavior, and artist-facing tools.
-        </p>
-        <ul>
-          <li>
-            <strong>Simplicity is reliability.</strong> Remove complexity,
-            remove failure.
-          </li>
-          <li>
-            <strong>Stay faithful to purpose.</strong> A player should play,
-            clearly and consistently.
-          </li>
-          <li>
-            <strong>No iteration in the body of code.</strong> Stability over
-            novelty.
-          </li>
-          <li>
-            <strong>Sovereign systems.</strong> The user owns the experience.
-          </li>
-          <li>
-            <strong>Zero manipulation.</strong> No algorithms shaping behavior.
-          </li>
-        </ul>
+          <p class="principle-statement">Impala Streamer Core is free forever.</p>
+        </section>
+
+        <!-- CLOUD OPTION -->
+        <section class="section">
+          <h2>Cloud Option</h2>
+
+          <img src="../../public/images/scenes/cloud.webp" alt="Cloud Option Scene"
+            style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+
+          <p>
+            The Cloud Option is a validation layer that unlocks premium features.
+            It does not track, profile, or harvest.
+            It coordinates between your local installed app, and the add on services.
+            When you activate the Cloud Option, you also get Live Stream, which lets you watch WebCast content, and
+            metadata for music, Metadata is turned off in settings by default since it invovles external requests. You
+            can enable it if you want richer information.
+          </p>
+
+          <p><strong>Cloud Option — $2/mo (introductory)</strong></p>
+
+          <p class="footer-note">
+            Pricing will evolve as the cost of required services goes up. That's all.
+          </p>
+        </section>
+
+        <!-- ADD-ONS -->
+        <section class="section">
+          <h2>Premium Add-Ons</h2>
+
+          <div class="grid" style="margin-top:1.4rem;">
+
+            <!-- SyncPlay -->
+            <div>
+              <img src="../../public/images/scenes/syncPlay.webp" alt="SyncPlay Scene"
+                style="width:100%; border-radius:12px;" />
+              <h3>SyncPlay</h3>
+              <p>
+                Shared playback that feels natural.
+                Start together, stay together, with master or shared control.
+                No countdown hacks. No drift. No friction.
+              </p>
+              <p><strong>$2/mo</strong></p>
+            </div>
+
+            <!-- Coast to Coast -->
+            <div>
+              <img src="../../public/images/scenes/coast-to-coast.webp" alt="Coast to Coast Scene"
+                style="width:100%; border-radius:12px;" />
+              <h3>Coast to Coast</h3>
+              <p>
+                SyncPlay extended with voice communication.
+                Hands-free or push-to-talk.
+                A quiet, focused way to watch together from anywhere.
+              </p>
+              <p><strong>$2/mo</strong></p>
+            </div>
+
+            <!-- Metadata -->
+            <div>
+              <img src="../../public/images/scenes/moviePosters.webp" alt="Metadata Scene"
+                style="width:100%; border-radius:12px;" />
+              <h3>Movie Metadata</h3>
+              <p>
+                Rich metadata without surveillance.
+                Posters, cast, runtime, summaries — delivered without external tracking.
+                Your library stays yours.
+              </p>
+              <p><strong>$4/mo</strong></p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- DESIGN MANDATE -->
+        <section class="section">
+          <h2>Design Mandate</h2>
+
+          <p class="section-intro">
+            Impala is governed by a short set of principles.
+          </p>
+
+          <ul>
+            <li>Simplicity is reliability</li>
+            <li>Remove complexity, remove failure</li>
+            <li>Stay faithful to purpose</li>
+            <li>No marketing in app, No ads. No distractions.</li>
+            <li>Stability over novelty</li>
+            <li>Sovereign systems — You own your space.</li>
+            <li>Zero manipulation</li>
+            <li>No algorithms shaping behavior</li>
+          </ul>
+</section>
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development</small>
+        <small style="opacity:.8;">Product continually optimized for the Human Race</small>
       </div>
+    </footer>
+        
 
-      <!-- USER EDITION -->
-      <div class="section reveal">
-        <h2>User Edition</h2>
-        <p class="section-intro">
-          The User Edition is the everyday listening environment: simple, calm,
-          and predictable.
-        </p>
-        <ul>
-          <li>
-            Local playlists with native manipulation to combine, reorder, and
-            manage tracks
-          </li>
-          <li>Starred track tag system allowing dynamic content grouping.</li>
-          <li>Minimal UI</li>
-          <li>Local or Cloud Library</li>
-          <li>
-            Live Stream (webcast) with a catalog of reliable streams, and an
-            open field for custom user input.
-          </li>
-          <li>Direct control over playback</li>
-          <li>
-            SyncPlay, where a group can watch and listen together and transport
-            control is either shared across the group, or one master controller.
-          </li>
-          <li>
-            Coast to Coast, where two people can watch a video together, with
-            SyncPlay function and an open mic, or push to talk, adding
-            conversation to the experience.
-          </li>
-          <li>
-            Impala's core handles all shared, sovereign functionality, while
-            additional services remain fully modular and optional. These
-            services operate in discrete processing environments and never
-            affect core performance.
-          </li>
-        </ul>
-      </div>
-
-      <!-- ARTIST EDITION -->
-      <div class="section reveal" id="artist-edition">
-        <h2>Artist Edition</h2>
-        <p class="section-intro">
-          The Artist Edition, currently in development, is a formalized
-          environment for musicians to manage creative assets, control
-          distribution, and maintain sovereignty over their work. It is built on
-          the same principles as the User Edition, but with expanded
-          capabilities.
-        </p>
-        <ul>
-          <li>Asset management (audio, metadata, artwork)</li>
-          <li>Rights and compliance visibility</li>
-          <li>Audience communication tools</li>
-          <li>Playlist and message-link controls</li>
-          <li>Temporary local storage for drafts and experiments</li>
-        </ul>
-      </div>
-
-      <!-- SLEEPE PRINCIPLE -->
-      <div class="section reveal">
-        <h2>Ephemeral and Sovereign</h2>
-        <p class="section-intro">The core rule of Impala:</p>
-        <p class="principle-statement">Impala stores nothing itself.</p>
-        <p>
-          All data is maintained in browser cache and is cleared on exit. The
-          user owns the experience.
-        </p>
-        <br />
-        <p>
-          This principle ensures that Impala never becomes a data-harvesting
-          platform. User activity stays local, temporary, and under direct user
-          control.
-        </p>
-      </div>
-
-      <!-- Why Impala is important -->
-      <div class="section reveal">
-        <h2>Why Impala Matters</h2>
-        <p class="section-intro">
-          Sovereignty has drifted quietly for decades, replaced piece by piece
-          by algorithms, funnels, and behavioral shaping. Impala is the
-          beginning of bringing it back — starting with listening, and extending
-          outward into every domain where calm, user-owned systems should exist.
-        </p>
-        <ul>
-          <li>Reduces exposure to manipulative algorithms</li>
-          <li>Eliminates advertising pressure</li>
-          <li>Supports mental well-being by minimizing distractions</li>
-          <li>Encourages mindful listening experiences</li>
-        </ul>
-      </div>
-
-      <!--Optimizing for Humanity -->
-      <div class="section reveal">
-        <h2>Optimizing for Humanity</h2>
-        <p class="section-intro">
-          Optimizing for Humans means designing technology that respects
-          attention, behaves predictably, absorbs friction wherever possible,
-          protects user agency, and stays faithful to purpose. Impala is built
-          on this principle — a calm, sovereign listening environment created
-          for people, not algorithms, not advertising, and not for harvesting
-          attention.
-        </p>
-      </div>
-
-      <!-- FOOTER -->
-      <footer class="footer-note">
-        <a href="../../productPage.html#small-business">Return to Products</a>
-      </footer>
       </main>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

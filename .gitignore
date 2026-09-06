@@ -8,3 +8,4 @@ LICENSE
 node_modules/
 *.cache/
 *.bak
+deprecated/

@@ -1613,3 +1613,15 @@
   .spacer {
     margin-bottom:25px;
   }
+  
+.sale-tag {  
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.spacing {
+  margin-left: 15px;
+  display: inline-block;
+}
+  
