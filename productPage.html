@@ -1,290 +1,261 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Products Page</title>
-    <meta
-      name="description"
-      content="List of products made by Discrete Development"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" src="script.js"></script>
-    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico" />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <!-- Left rail -->
-    <aside class="rail" aria-label="Primary">
-      <button
-        class="menu"
-        id="menuBtn"
-        aria-haspopup="dialog"
-        aria-controls="drawer"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open menu</span>
-        <span class="burger" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
-      </button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products Page</title>
+  <meta name="description" content="List of products made by Discrete Development" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js"></script>
+  <link rel="icon" type="image/x-icon" href="public/images/favicon.ico" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
 
-      <div class="dots" aria-hidden="true">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+<body>
+  <!-- Left rail -->
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+
+  <!-- Drawer -->
+  <section class="drawer" id="drawer" aria-label="Site menu">
+    <div id="drawerMount"></div>
+  </section>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="pip"></span> Discrete Development
+          </div>
+          <h1>Products</h1>
+          <p class="sub">
+            Products we have developed and the concepts that inspired them.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" type="button" data-scroll="#services">
+              Explore Services
+            </button>
+            <a href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
+              class="btn" target="_blank" rel="noopener noreferrer">
+              Request a Consult
+            </a>
+          </div>
+        </div>
+
+        <div id="brandTileMount"></div>
       </div>
-    </aside>
+    </header>
 
-    <!-- Drawer -->
-    <section class="drawer" id="drawer" aria-label="Site menu">
-      <div id="drawerMount"></div>
-    </section>
+    <div class="strip">
+      <div class="strip-inner reveal" style="animation-delay: 0.12s">
+        <p>Products in Development or Released</p>
+        <div class="tag">Sovereign • Subscription Free • Marketing Free</div>
+      </div>
+    </div>
 
-    <div class="wrap">
-      <header class="hero">
-        <div class="grid">
-          <div class="hero-copy reveal">
-            <div class="eyebrow">
-              <span class="pip"></span> Discrete Development
+    <div class="band" aria-hidden="true"></div>
+
+    <main>
+      <section class="sections" aria-label="Service overview" id="services">
+        <article class="paper nudge-up reveal" id="impala-streamer">
+          <div class="paper-inner">
+            <div>
+              <h2>Impala Streamer</h2>
+              <a href="product-pages/impala-streamer/impala-streamer.html" class="primary-button" ><strong>Pricing, Features, and
+                Download</a>
+              <!-- <a class="spacing" href="public/downloadable/impala-streamer-windows-10-11-x64-local-v1.4.2.zip" download>Download Impala Streamer for Win 10/11 x64</a> -->
+              <p class="lede" style="opacity:80%">
+                A personal media streamer built to provide fast, reliable, and independent media playback. And does not
+                slip marketing into your space. This is a return to placing the user experience above everything else.
+                There is no tracking, no profiling, the user remains a user, and is not turned into a product by selling
+                your behavior and preferences to other businesses.
+              </p>
+              <img src="public/images/impalaStreamer/player.png" class="impala-interface"
+                alt="Impala Streamer Interface" />
+              <img src="public/images/impalaStreamer/library.png" class="impala-interface"
+                alt="Impala Streamer Library Interface" />
+              <img src="public/images/impalaVidLibrary.png" class="impala-interface"
+                alt="Impala Streamer Live Video Library Interface" />
+              <img src="public/images/impalaLiveStream.png" class="impala-interface"
+                alt="Impala Streamer Live Stream Interface" />
             </div>
-            <h1>Products</h1>
-            <p class="sub">
-              Products we have developed and the concepts that inspired them.
-            </p>
-            <div class="hero-actions">
-              <button class="btn primary" type="button" data-scroll="#services">
-                Explore Services
-              </button>
-              <a
-                href="https://outlook.office.com/bookwithme/user/9eafa579c1574ff7b1e9e9f767d1d162@discrete-dev.com/meetingtype/ucGy9M7mV0eMIAi4jWEbcw2?anonymous&ismsaljsauthenabled&ep=mlink"
-                class="btn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Request a Consult
-              </a>
+
+            <div class="pillars">
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Built For Real Use</h3>
+                <ul>
+                  <li>Instant load, no dependencies</li>
+                  <li>Predictable behavior, no “smart” features</li>
+                  <li>Local media support with optional JSON libraries</li>
+                  <li>Custom playlists and personalization</li>
+                  <li>Diagnostics for multi-day uptime and stability</li>
+                </ul>
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Sovereign by Design</h3>
+                <ul>
+                  <li>
+                    No accounts. No analytics. No ads. No subscriptions.
+                  </li>
+                  <li>
+                    Works the same every time — no tracking, no profiling, no
+                    surprises.
+                  </li>
+                  <li>
+                    Once purchased, it is owned permanently. No recurring
+                    fees.
+                  </li>
+                </ul>
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Current Status</h3>
+                <p>Impala Streamer Core available for download for WIN 10/11 x64- FREE.</p>
+                <p>Streamer comes with support for local library, and can optionally share your library over your local
+                  network. Just select to enable that function during the install.</p>
+
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>The Core (Engine)</h3>
+                <p>
+                  Impala Streamer uses the browser's native HTML5 media engine
+                  through standard &lt;audio&gt; and &lt;video&gt; elements.
+                  For HLS/live streams, it uses browser-native HLS where
+                  available and hls.js where needed. It does not use mpv,
+                  GStreamer, or FFmpeg as the playback engine. MKV is automatically transcoded, or if media is HTML5
+                  compatible, it will be extracted instead for a faster processing duration.
+                </p>
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Movie Poster Art and Metadata</h3>
+                <p>
+                  Optional features are added by way of microservices that integrate with the core application you
+                  installed. The microservice picks up the processing burden to keep the core fast and responsive.
+                </p>
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Current Capabilities</h3>
+                <p>
+                  Impala currently supports MP3, MP4, and FLAC playback. Local
+                  files can be served through the optional Impala Local
+                  Library Companion, which runs on the user's computer and
+                  provides an indexed music/video folder or USB attached drive
+                  to the web app. Impala also plays private cloud-hosted S4
+                  media through signed URLs, playlists, and live/webcast
+                  streams. Direct stream URLs are supported through the Live
+                  Stream control surface when live streaming is enabled,
+                  though “paste any URL and play” is not the primary workflow.
+                  Additional features can be added over time, all optional.
+                  The modular architecture allows expansion without affecting
+                  the core experience.
+                </p>
+              </div>
+              <div class="spacer"></div>
+              <div class="pillar">
+                <h3>Interface</h3>
+                <ul>
+                  <li>
+                    No accounts. No analytics. No ads. No subscriptions. No
+                    tracking.
+                  </li>
+                  <li>
+                    Original concept and ownership restored. Works the same
+                    every time — no profiling, no surprises.
+                  </li>
+                  <li>
+                    Once purchased, it is owned permanently. No recurring
+                    fees.
+                  </li>
+                  <li>
+                    Future features will be delivered as optional
+                    microservices that never alter or interfere with the core
+                    interface or playback experience.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+        </article>
 
-          <div id="brandTileMount"></div>
-        </div>
-      </header>
+        <article class="paper reveal" id="modernization">
+          <div class="paper-inner">
+            <div>
+              <h2>ERP-Lite (Work Tools)</h2>
+              <p class="lede">
+                A streamlined suite of work tools built in the likeness of an
+                ERP — modules, workflows, and automation — without the layers
+                of inherited complexity. Technology-agnostic,
+                subscription-free, and engineered from a clean foundation.
+              </p>
+              <img src="public/images/Interface.jpg" alt="Interface Image" id="interfaceERPlite" />
+            </div>
 
-      <div class="strip">
-        <div class="strip-inner reveal" style="animation-delay: 0.12s">
-          <p>Products in Development or Released</p>
-          <div class="tag">Sovereign • Subscription Free • Marketing Free</div>
-        </div>
+            <div class="pillars">
+              <div class="pillar">
+                <h3>Start with the heart</h3>
+                <p>
+                  The workflow engine that gathers, evaluates, predicts, and
+                  reports acts as the system’s central nervous system. We
+                  build that first — then develop outward to support your
+                  operational requirements.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Simplified Modules</h3>
+                <p>
+                  “Simple” doesn’t mean less capable — it means structurally
+                  clean. No legacy code, no compatibility layers, no technical
+                  debt carried forward. Every layer removed eliminates risk,
+                  fragility, and hidden constraints.
+                </p>
+              </div>
+              <div class="pillar">
+                <h3>Performance &amp; Free Interface</h3>
+                <p>
+                  Optimized processes produce fast, consistent responses. The
+                  interface stays responsive, predictable, and free from
+                  unnecessary complexity — letting operators work without
+                  friction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <small>© <span id="year"></span> Discrete Development</small>
+        <small style="opacity: 0.8">The fringe, where manuals offer no help, memorization fails, only
+          experience guides.</small>
       </div>
+    </footer>
+  </div>
+</body>
 
-      <div class="band" aria-hidden="true"></div>
-
-      <main>
-        <section class="sections" aria-label="Service overview" id="services">
-          <article class="paper nudge-up reveal" id="impala-streamer">
-            <div class="paper-inner">
-              <div>
-                <h2>Impala Streamer</h2>
-                <a
-                  href="product-pages/impala-streamer/impala-streamer.html"
-                  class="primary-button"
-                  >Pricing, Features, and Download</a>
-                 <!-- <a class="spacing" href="public/downloadable/impala-streamer-windows-10-11-x64-local-v1.4.2.zip" download>Download Impala Streamer for Win 10/11 x64</a> -->
-                <p class="lede">
-                  A sovereign audio/video player built for people who want
-                  speed, stability, and control—without accounts, tracking, or
-                  algorithmic noise. Designed for everyday listening: walking,
-                  working, or streaming at home.
-                </p>
-                <img
-                  src="public/images/impalaStreamer/player.png"
-                  class="impala-interface"
-                  alt="Impala Streamer Interface"
-                />
-                <img
-                  src="public/images/impalaStreamer/library.png"
-                  class="impala-interface"
-                  alt="Impala Streamer Library Interface"
-                />
-                         <img
-                  src="public/images/impalaVidLibrary.png"
-                  class="impala-interface"
-                  alt="Impala Streamer Live Video Library Interface"
-                />
-                <img
-                  src="public/images/impalaLiveStream.png"
-                  class="impala-interface"
-                  alt="Impala Streamer Live Stream Interface"
-                />
-              </div>
-
-              <div class="pillars">
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Built For Real Use</h3>
-                  <ul>
-                    <li>Instant load, no dependencies</li>
-                    <li>Predictable behavior, no “smart” features</li>
-                    <li>Local media support with optional JSON libraries</li>
-                    <li>Custom playlists and personalization</li>
-                    <li>Diagnostics for multi-day uptime and stability</li>
-                  </ul>
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Sovereign by Design</h3>
-                  <ul>
-                    <li>
-                      No accounts. No analytics. No ads. No subscriptions.
-                    </li>
-                    <li>
-                      Works the same every time — no tracking, no profiling, no
-                      surprises.
-                    </li>
-                    <li>
-                      Once purchased, it is owned permanently. No recurring
-                      fees.
-                    </li>
-                  </ul>
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Current Status</h3>
-                  <p>Impala Streamer Core available for download for WIN 10/11 x64- FREE.</p>
-                  <p>Streamer comes with support for local library, and can optionally share your library over your local network. Just select to enable that function during the install.</p>
-                 
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>The Core (Engine)</h3>
-                  <p>
-                    Impala Streamer uses the browser's native HTML5 media engine
-                    through standard &lt;audio&gt; and &lt;video&gt; elements.
-                    For HLS/live streams, it uses browser-native HLS where
-                    available and hls.js where needed. It does not use mpv,
-                    GStreamer, or FFmpeg as the playback engine. MKV is automatically transcoded, or if media is HTML5 compatible, it will be extracted instead for a faster processing duration.
-                  </p>
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Movie Poster Art and Metadata</h3>
-                  <p>
-                   Optional features are added by way of microservices that integrate with the core application you installed. The microservice picks up the processing burden to keep the core fast and responsive.
-                  </p>
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Current Capabilities</h3>
-                  <p>
-                    Impala currently supports MP3, MP4, and FLAC playback. Local
-                    files can be served through the optional Impala Local
-                    Library Companion, which runs on the user's computer and
-                    provides an indexed music/video folder or USB attached drive
-                    to the web app. Impala also plays private cloud-hosted S4
-                    media through signed URLs, playlists, and live/webcast
-                    streams. Direct stream URLs are supported through the Live
-                    Stream control surface when live streaming is enabled,
-                    though “paste any URL and play” is not the primary workflow.
-                    Additional features can be added over time, all optional.
-                    The modular architecture allows expansion without affecting
-                    the core experience.
-                  </p>
-                </div>
-                <div class="spacer"></div>
-                <div class="pillar">
-                  <h3>Interface</h3>
-                  <ul>
-                    <li>
-                      No accounts. No analytics. No ads. No subscriptions. No
-                      tracking.
-                    </li>
-                    <li>
-                      Original concept and ownership restored. Works the same
-                      every time — no profiling, no surprises.
-                    </li>
-                    <li>
-                      Once purchased, it is owned permanently. No recurring
-                      fees.
-                    </li>
-                    <li>
-                      Future features will be delivered as optional
-                      microservices that never alter or interfere with the core
-                      interface or playback experience.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="paper reveal" id="modernization">
-            <div class="paper-inner">
-              <div>
-                <h2>ERP-Lite (Work Tools)</h2>
-                <p class="lede">
-                  A streamlined suite of work tools built in the likeness of an
-                  ERP — modules, workflows, and automation — without the layers
-                  of inherited complexity. Technology-agnostic,
-                  subscription-free, and engineered from a clean foundation.
-                </p>
-                <img
-                  src="public/images/Interface.jpg"
-                  alt="Interface Image"
-                  id="interfaceERPlite"
-                />
-              </div>
-
-              <div class="pillars">
-                <div class="pillar">
-                  <h3>Start with the heart</h3>
-                  <p>
-                    The workflow engine that gathers, evaluates, predicts, and
-                    reports acts as the system’s central nervous system. We
-                    build that first — then develop outward to support your
-                    operational requirements.
-                  </p>
-                </div>
-                <div class="pillar">
-                  <h3>Simplified Modules</h3>
-                  <p>
-                    “Simple” doesn’t mean less capable — it means structurally
-                    clean. No legacy code, no compatibility layers, no technical
-                    debt carried forward. Every layer removed eliminates risk,
-                    fragility, and hidden constraints.
-                  </p>
-                </div>
-                <div class="pillar">
-                  <h3>Performance &amp; Free Interface</h3>
-                  <p>
-                    Optimized processes produce fast, consistent responses. The
-                    interface stays responsive, predictable, and free from
-                    unnecessary complexity — letting operators work without
-                    friction.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-      </main>
-
-      <footer>
-        <div class="foot">
-          <small>© <span id="year"></span> Discrete Development</small>
-          <small style="opacity: 0.8"
-            >The fringe, where manuals offer no help, memorization fails, only
-            experience guides.</small
-          >
-        </div>
-      </footer>
-    </div>
-  </body>
 </html>

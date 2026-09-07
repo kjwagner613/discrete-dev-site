@@ -81,7 +81,7 @@ body.impala-streamer-page {
 .impala-page .button-row {
   margin-top: 1.4rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -181,6 +181,258 @@ body.impala-streamer-page {
   margin-bottom: 1rem;
 }
 
+.impala-page .dependency-section {
+  margin-top: 0;
+}
+
+.impala-page .dependency-map {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  padding: clamp(0.8rem, 3vw, 2rem) 0;
+}
+
+.impala-page .dependency-node {
+  width: min(100%, 270px);
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+}
+
+.impala-page .dependency-node img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid rgba(35, 73, 54, 0.32);
+  border-radius: 50%;
+  box-shadow: var(--shadow2);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.impala-page .dependency-node:hover img,
+.impala-page .dependency-node:focus-visible img {
+  transform: translateY(-3px);
+  border-color: var(--accent-dark);
+  box-shadow: 0 18px 34px rgba(11, 19, 32, 0.3);
+}
+
+.impala-page .dependency-node span,
+.impala-page .dependency-node small {
+  display: block;
+}
+
+.impala-page .dependency-node span {
+  margin-top: 0.65rem;
+  font-family: Fraunces, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.impala-page .dependency-node small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.impala-page .dependency-arrow {
+  position: relative;
+  width: 1px;
+  height: clamp(54px, 7vw, 88px);
+  margin: 0.7rem 0;
+  background: var(--accent-dark);
+}
+
+.impala-page .dependency-arrow::after {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid var(--accent-dark);
+  border-bottom: 1px solid var(--accent-dark);
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.impala-page .dependency-arrow span {
+  position: absolute;
+  top: 50%;
+  left: 0.7rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.impala-page .add-on-nodes {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1rem, 4vw, 4rem);
+}
+
+.service-page {
+  --surface: linear-gradient(180deg, var(--paper), rgba(255, 255, 255, 0.66));
+  --text: rgba(11, 19, 32, 0.88);
+  --muted: rgba(11, 19, 32, 0.74);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) 18px 2.5rem;
+}
+
+.service-page .service-back {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-justify: center;
+  display: block;
+  text-align: center;
+}
+
+
+
+.service-page .service-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(2.5rem, 7vw, 5rem) 0;
+}
+
+
+.service-page .service-hero img {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(167, 243, 208, 0.45);
+  box-shadow: var(--shadow);
+}
+
+.service-page .cloud-service-row {
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  align-items: center;
+  padding-top: 0;
+}
+
+.service-page .cloud-service-row img {
+  grid-column: 1;
+}
+
+.service-page .cloud-service-row .service-panel {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.service-page h1 {
+  margin: 0.4rem 0 1rem;
+}
+
+.service-page .service-eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-page .service-summary {
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.service-page .service-panel {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow2);
+  color: var(--text);
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.service-page .service-panel h2 {
+  margin-top: 0;
+  font-family: Fraunces, serif;
+  font-weight: 500;
+}
+
+.service-page .service-panel p,
+.service-page .service-panel li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.service-page .service-panel li {
+  margin-bottom: 0.5rem;
+}
+
+.service-page .download-link {
+  display: inline-flex;
+  margin-top: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: #234936;
+  color: rgba(240, 248, 243, 0.96);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.impala-page .capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem) clamp(1.75rem, 5vw, 4.5rem);
+}
+
+.impala-page .capability {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.9fr);
+  align-items: start;
+  gap: 1rem;
+}
+
+.impala-page .capability img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.impala-page .capability h3 {
+  margin: 0;
+  font-family: Fraunces, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.impala-page .capability h3 span {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.impala-page .capability p {
+  margin: 0.6rem 0 0;
+}
+
 .impala-page strong {
   color: var(--text);
   font-weight: 700;
@@ -219,6 +471,8 @@ body.impala-streamer-page {
   }
 
   .impala-page .impala-brand-tile {
+    grid-column: auto;
+    grid-row: auto;
     justify-self: start;
     width: min(320px, 100%);
   }
@@ -230,6 +484,30 @@ body.impala-streamer-page {
 
   .impala-page .primary-button {
     text-align: center;
+  }
+
+  .impala-page .capability-grid,
+  .impala-page .capability {
+    grid-template-columns: 1fr;
+  }
+
+  .impala-page .add-on-nodes {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page .service-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page .service-hero img {
+    grid-column: auto;
+    grid-row: auto;
+    width: min(320px, 100%);
+  }
+
+  .service-page .cloud-service-row .service-panel {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 

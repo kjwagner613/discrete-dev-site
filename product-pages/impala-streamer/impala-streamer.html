@@ -55,137 +55,81 @@
           <div class="hero-copy">
             <div class="eyebrow"><span class="pip"></span> Sovereign Listening Environment</div>
             <div class="space"></div>
-            <h1>Impala Streamer Core</h1>
-            <p class="opacity-80">
-              Impala Streamer Core is built for clarity, calm, and control.
-              A media experience that behaves predictably, respects attention,
-              and stays faithful to its purpose.
-            </p>
+            <h1>Impala Streamer Architecture</h1>
             <div class="space2"></div>
+            <p class="opacity-80">
+              The design and architecture of a system can either stress the system unnecessarily, inviting failure, or
+              it can help distribute that load across the entire structure, enhancing performance and reliability. The
+              component that every service has in common is that they need a player to connect to the world. That player
+              is built into the core, and the services are built as independent collaborative modules. Their tasks never
+              impact the core service — even when your library grows to thousands of movies and tens of thousands of
+              songs. Impala Streamer is designed to remain fast and responsive at its core. </p>
+            <!-- <div class="space2"></div> -->
+            <p>Download Impala Streamer for Free</p>
             <div class="button-row">
-              <p>Download Impala Streamer for Free</p>
-
               <a class="primary-button"
                 href="../../public/downloadable/impala-streamer-windows-10-11-x64-local-v1.4.2.zip" download>Win 10/11
-                x64</a> <a class="primary-simulated"
-              >Additional Platforms Supported Soon</a>
+                x64</a> <a class="primary-simulated">Additional Platforms Supported Soon</a>
             </div>
             <div class="space"></div>
           </div>
         </section>
 
-        <!-- CORE SECTION -->
-        <section class="section">
-          <h2>Impala Streamer Core</h2>
-
-          <p class="section-intro">
-            Impala Streamer Core runs entirely on your machine.
-            No cloud dependency. No surveillance. No behavioral shaping.
-            Just your library, your space, and your rules.
-          </p>
-
-          <img src="../../public/images/scenes/impalaStreamerCore.webp" alt="Impala Core Scene"
-            style="width:100%; border-radius:12px; margin-bottom:1rem;" />
-
-          <ul>
-            <li>Local Library — internal storage or USB volumes</li>
-            <li>Full Local Indexing — fast, private, offline</li>
-            <li>Local Media Server — HTML5 playback on any LAN device</li>
-            <li>Supported Formats — MP3, FLAC, MP4, MKV (auto-ranscode)</li>
-          </ul>
-
-          <p class="principle-statement">Impala Streamer Core is free forever.</p>
+        <section class="section dependency-section" id="inspiration">
+          <h2>A Response to a Frustrating Industry Trend</h2>
+          <p>I have been curating my personal media library for nearly 20 years, 13 of which have included personal
+            media streamers. When my collection reached a moderate size, features like metadata, album art, and movie
+            posters began causing unacceptable lag. It was simply too much work for one machine — managing all that
+            content for thousands of movies and tens of thousands of songs — when all I want to do is start a movie or
+            find that song I haven't been able to get out of my head all day.</p>
+          <p>Impala Streamer solves this by separating those tasks into independent services that never interfere with
+            the main purpose of its existence: to play the media you want played, when you want it played — not after it
+            has finished processing other tasks. Impala Streamer respects your time and removes that friction. The way
+            it is supposed to be.</p>
         </section>
+        <div class="space"></div>
+        <!-- SERVICE DEPENDENCIES -->
+        <section class="section dependency-section" id="capabilities">
+          <h2>How Services Connect</h2>
+          <p class="section-intro">Impala Streamer Core works independently. Optional services require the Cloud Option for
+            authorization, so they never change the local listening experience.</p>
 
-        <!-- CLOUD OPTION -->
-        <section class="section">
-          <h2>Cloud Option</h2>
+          <div class="dependency-map" aria-label="Impala service dependencies">
+            <a class="dependency-node core-node" href="core.html">
+              <img src="../../public/images/scenes/impalaCore-forDiagram.png" alt="Impala Streamer Core Scene" />
+              <span>Impala Streamer Core</span>
+              <small>Free forever</small>
+            </a>
 
-          <img src="../../public/images/scenes/cloud.webp" alt="Cloud Option Scene"
-            style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+            <div class="dependency-arrow" aria-hidden="true"><span>Core enables</span></div>
 
-          <p>
-            The Cloud Option is a validation layer that unlocks premium features.
-            It does not track, profile, or harvest.
-            It coordinates between your local installed app, and the add on services.
-            When you activate the Cloud Option, you also get Live Stream, which lets you watch WebCast content, and
-            metadata for music, Metadata is turned off in settings by default since it invovles external requests. You
-            can enable it if you want richer information.
-          </p>
+            <a class="dependency-node cloud-node" href="cloud-option.html">
+              <img src="../../public/images/scenes/cloud.webp" alt="Cloud Option Scene" />
+              <span>Cloud Option</span>
+              <small>Authorization for optional services</small>
+            </a>
 
-          <p><strong>Cloud Option — $2/mo (introductory)</strong></p>
+            <div class="dependency-arrow branch-arrow" aria-hidden="true"><span>Authorizes</span></div>
 
-          <p class="footer-note">
-            Pricing will evolve as the cost of required services goes up. That's all.
-          </p>
-        </section>
-
-        <!-- ADD-ONS -->
-        <section class="section">
-          <h2>Premium Add-Ons</h2>
-
-          <div class="grid" style="margin-top:1.4rem;">
-
-            <!-- SyncPlay -->
-            <div>
-              <img src="../../public/images/scenes/syncPlay.webp" alt="SyncPlay Scene"
-                style="width:100%; border-radius:12px;" />
-              <h3>SyncPlay</h3>
-              <p>
-                Shared playback that feels natural.
-                Start together, stay together, with master or shared control.
-                No countdown hacks. No drift. No friction.
-              </p>
-              <p><strong>$2/mo</strong></p>
+            <div class="add-on-nodes">
+              <a class="dependency-node" href="syncplay.html">
+                <img src="../../public/images/scenes/syncPlay.webp" alt="SyncPlay Scene" />
+                <span>SyncPlay</span>
+                <small>$2/month</small>
+              </a>
+              <a class="dependency-node" href="coast-to-coast.html">
+                <img src="../../public/images/scenes/coastCouch-Diagram.png" alt="Coast to Coast Scene" />
+                <span>Coast to Coast</span>
+                <small>$2/month</small>
+              </a>
+              <a class="dependency-node" href="movie-metadata.html">
+                <img src="../../public/images/scenes/moviePosters.webp" alt="Movie Metadata Scene" />
+                <span>Movie Metadata</span>
+                <small>$4/month</small>
+              </a>
             </div>
-
-            <!-- Coast to Coast -->
-            <div>
-              <img src="../../public/images/scenes/coast-to-coast.webp" alt="Coast to Coast Scene"
-                style="width:100%; border-radius:12px;" />
-              <h3>Coast to Coast</h3>
-              <p>
-                SyncPlay extended with voice communication.
-                Hands-free or push-to-talk.
-                A quiet, focused way to watch together from anywhere.
-              </p>
-              <p><strong>$2/mo</strong></p>
-            </div>
-
-            <!-- Metadata -->
-            <div>
-              <img src="../../public/images/scenes/moviePosters.webp" alt="Metadata Scene"
-                style="width:100%; border-radius:12px;" />
-              <h3>Movie Metadata</h3>
-              <p>
-                Rich metadata without surveillance.
-                Posters, cast, runtime, summaries — delivered without external tracking.
-                Your library stays yours.
-              </p>
-              <p><strong>$4/mo</strong></p>
-            </div>
-
           </div>
-        </section>
-
-        <!-- DESIGN MANDATE -->
-        <section class="section">
-          <h2>Design Mandate</h2>
-
-          <p class="section-intro">
-            Impala is governed by a short set of principles.
-          </p>
-
-          <ul>
-            <li>Simplicity is reliability</li>
-            <li>Remove complexity, remove failure</li>
-            <li>Stay faithful to purpose</li>
-            <li>No marketing in app, No ads. No distractions.</li>
-            <li>Stability over novelty</li>
-            <li>Sovereign systems — You own your space.</li>
-            <li>Zero manipulation</li>
-            <li>No algorithms shaping behavior</li>
-          </ul>
+          <p class="footer-note">Select a scene to view that product or service.</p>
         </section>
         <footer>
           <div class="foot">
