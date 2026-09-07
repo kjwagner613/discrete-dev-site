@@ -322,7 +322,8 @@
   }
 
   /* MAIN WRAP accounts for rail */
-  .wrap {
+  .wrap,
+  .service-page {
     margin-left: 84px;
     min-height: 100vh;
   }
@@ -1049,7 +1050,8 @@
       width: 72px;
     }
 
-    .wrap {
+    .wrap,
+    .service-page {
       margin-left: 72px;
     }
 

@@ -285,6 +285,13 @@ body.impala-streamer-page {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(2.5rem, 7vw, 5rem) 18px 2.5rem;
+  padding-left: calc(84px + 18px);
+}
+
+@media (max-width: 560px) {
+  .service-page {
+    padding-left: calc(72px + 18px);
+  }
 }
 
 .service-page .service-back {
