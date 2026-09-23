@@ -1432,6 +1432,10 @@
     height: auto;
   }
 
+  .howto-img-wrap-half {
+    width: 50%;
+  }
+
   .howto-note {
     margin-top: 14px;
     border: 1px dashed #94a3b8;
@@ -1439,6 +1443,30 @@
     padding: 10px 12px;
     color: #334155;
     background: #f8fafc;
+  }
+
+  .howto-finished {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 24px;
+    border-top: 1px solid #0f172a;
+    border-bottom: 1px solid #0f172a;
+    color: #fff;
+    background-color: #fff;
+    background-image: conic-gradient(#0f172a 25%, #fff 0 50%, #0f172a 0 75%, #fff 0);
+    background-size: 24px 24px;
+  }
+
+  .howto-finished span {
+    padding: 4px 18px;
+    color: #fff;
+    background: #0f172a;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
   }
 
   .btn[disabled],
