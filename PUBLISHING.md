@@ -1,24 +1,7 @@
-# Publishing (Allowlist-Based)
+# Publishing
 
-This project publishes from `dist/`, built from an explicit allowlist.
+Netlify publishes the repository root directly. The configuration is in
+`netlify.toml`; it runs no build command and uses `.` as the publish directory.
 
-## 1) Edit the allowlist
-
-Update `publish.allowlist` with the exact files/folders you want live.
-
-## 2) Build deploy output
-
-Run from repo root:
-
-```bash
-bash scripts/build-dist.sh
-```
-
-## 3) Deploy only `dist/`
-
-Set your host/deploy job to publish the `dist/` directory, not the repo root.
-
-## Notes
-
-- If a path in `publish.allowlist` does not exist, the build fails.
-- This prevents accidental publishing of archived or draft files.
+Push commits to `main` to update the live site. `deprecated/`, `archive/`, and
+other local-only files listed in `.netlifyignore` are excluded from deployment.

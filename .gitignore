@@ -1,5 +1,6 @@
 dist/
 archive/
+.netlify/
 .DS_Store
 README.md
 LICENSE
