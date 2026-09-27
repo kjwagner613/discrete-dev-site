@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="erpLite.css" />
+    <script type="module" src="../../script.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <title>ERP Lite</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Left rail -->
+        <aside class="rail" aria-label="Primary">
+            <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+                <span class="sr-only">Open menu</span>
+                <span class="burger" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
+
+            <div class="dots" aria-hidden="true">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </aside>
+
+        <!-- Inserts Drawer -->
+        <section class="drawer" id="drawer" aria-label="Site menu">
+            <div id="drawerMount"></div>
+        </section>
+
+        <div class="impala-streamer-page">
+            <main class="impala-page">
+
+                <!-- HERO -->
+                <section class="hero grid">
+                    <div class="impala-brand-tile">
+                        <img src="../../public/images/ddMusic.ico" alt="ERP Lite Hero" class="impala-brand-icon" />
+                    </div>
+
+                    <div class="hero-copy">
+                        <div class="eyebrow"><span class="pip"></span>Operations for Operators</div>
+                        <div class="space"></div>
+                        <h1>ERP Lite Architecture</h1>
+                        <div class="space2"></div>
+                        <p class="opacity-80">
+                            Built on our Impala Architecture, ERP Lite ensures efficient and reliable performance for
+                            all your operational needs. Focused on the user to reduce complication, letting the system
+                            absorb the weight. We never forgot one of the first aspirations of technology, to simplify
+                            life. Error reduction and efficiency increases are just some natural benefits of well
+                            engineered workfows and solutions.</p>
+                        <!-- <div class="space2"></div> -->
+
+                    </div>
+                </section>
+
+                <section class="section dependency-section" id="inspiration">
+                    <h2>A relationship with what and how we create.</h2>
+                    <p>It is a common mis-calculation with large complex multifunction systems that by the time its
+                        users
+                        have the chance to meet the interface, the project is already over budget and past its
+                        completion
+                        date.</p>
+                    <p>That those who will be spending the most tiome with this component never consutwed about wejat
+                        might maje thir work more enjoyable. Unfortuately the interface is left for last, after al=l
+                        you must build the core and all the functiunal aspects without worry for the final form.
+                        Function, follows form, follows functionn. Complexity in the externally facing for mofter mirros
+                        the internal complexity. Like how we are, on the inside, tends to exert influence over how we
+                        are, on the outside.
+                    <p>Constant consideration for how our work will impact the world, and those who interact with it,
+                        instills a responsibility carried long after deployment. With focus on detail like that creates
+                        craft.</p>
+                </section>
+                <div class="space"></div>
+                <!-- SERVICE DEPENDENCIES -->
+                <section class="section dependency-section" id="capabilities">
+                    <h2>How Services Connect</h2>
+                    <p class="section-intro">Impala Streamer Core works independently. Optional services require the
+                        Cloud Option for
+                        authorization, so they never change the local listening experience.</p>
+
+                    <div class="dependency-map" aria-label="Impala service dependencies">
+                        <a class="dependency-node core-node" href="core.html">
+                            <img src="../../public/images/scenes/impalaCore-forDiagram.png"
+                                alt="Impala Streamer Core Scene" />
+                            <span>Impala Streamer Core</span>
+                            <small>Free forever</small>
+                        </a>
+
+                        <div class="dependency-arrow" aria-hidden="true"><span>Core enables</span></div>
+
+                        <a class="dependency-node cloud-node" href="cloud-option.html">
+                            <img src="../../public/images/scenes/cloud.webp" alt="Cloud Option Scene" />
+                            <span>Cloud Option</span>
+                            <small>Authorization for optional services</small>
+                        </a>
+
+                        <div class="dependency-arrow branch-arrow" aria-hidden="true"><span>Authorizes</span></div>
+
+                        <div class="add-on-nodes">
+                            <a class="dependency-node" href="syncplay.html">
+                                <img src="../../public/images/scenes/syncPlay-v2-flyer.png" alt="SyncPlay Scene" />
+                                <span>SyncPlay</span>
+                                <small>$2/month</small>
+                            </a>
+                            <a class="dependency-node" href="coast-to-coast.html">
+                                <img src="../../public/images/scenes/coastCouch-Diagram.png"
+                                    alt="Coast to Coast Scene" />
+                                <span>Coast to Coast</span>
+                                <small>$2/month</small>
+                            </a>
+                            <a class="dependency-node" href="movie-metadata.html">
+                                <img src="../../public/images/scenes/moviePosters.webp" alt="Movie Metadata Scene" />
+                                <span>Movie Metadata</span>
+                                <small>$4/month</small>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="footer-note">Select a scene to view that product or service.</p>
+                </section>
+                <footer>
+                    <div class="foot">
+                        <small>© <span id="year"></span> Discrete Development</small>
+                        <small style="opacity:.8;">Product continually optimized for the Human Race</small>
+                    </div>
+                </footer>
+
+
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
