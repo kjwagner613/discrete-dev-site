@@ -133,15 +133,15 @@ function wireReveal() {
     },
     { threshold: 0.12 }
   );
-  
-revealEls.forEach((el, i) => {
-  const delay = el.dataset.revealDelay
-    ? Number(el.dataset.revealDelay)
-    : Math.min(i * 70, 280);
 
-  el.style.transitionDelay = `${delay}ms`;
-  io.observe(el);
-});
+  revealEls.forEach((el, i) => {
+    const delay = el.dataset.revealDelay
+      ? Number(el.dataset.revealDelay)
+      : Math.min(i * 70, 280);
+
+    el.style.transitionDelay = `${delay}ms`;
+    io.observe(el);
+  });
 
 
   // revealEls.forEach((el, i) => {
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /* Contact form: AJAX submit to Formspree with inline feedback */
 document.addEventListener('DOMContentLoaded', () => {
-  const forms = document.querySelectorAll('.contact-form');
+  const forms = document.querySelectorAll('.contact-form, .feedback-form');
   forms.forEach(form => {
     const statusEl = form.querySelector('.form-status');
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -292,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         showStatus('Network error — please try again.', 'error');
-          } finally {
-            submitBtn.disabled = false;
-          }
-        });
-      });
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
+  });
+});

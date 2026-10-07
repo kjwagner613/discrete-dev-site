@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feedback | Discrete Development</title>
+    <meta name="description" content="Provide feedback to Discrete Development." />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body class="feedback-page">
+    <aside class="rail" aria-label="Primary">
+        <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <span class="burger" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </span>
+        </button>
+
+        <div class="dots" aria-hidden="true">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </aside>
+
+    <section class="drawer" id="drawer" aria-label="Site menu">
+        <div id="drawerMount"></div>
+    </section>
+
+    <div class="wrap">
+        <header class="hero">
+            <div class="grid">
+                <div class="hero-copy reveal">
+                    <div class="eyebrow"><span class="pip"></span> Discrete Development</div>
+                    <h1>Feedback</h1>
+                    <p class="sub">
+                        Make the next version better, with us.
+                    </p>
+                </div>
+
+                <div id="brandTileMount"></div>
+            </div>
+        </header>
+
+        <div class="strip">
+            <div class="strip-inner reveal" style="animation-delay:.12s">
+                <p>Small details can lead to better tools.</p>
+                <div class="tag">Ideas • Friction • Unexpected wins</div>
+            </div>
+        </div>
+
+        <div class="band" aria-hidden="true"></div>
+
+        <main>
+            <section class="sections" aria-label="Feedback" id="impalaHelper">
+                <article class="paper nudge-up reveal" id="feedback">
+                    <div class="feedback">
+                        <div class="feedback-copy">
+                            <p class="feedback-kicker">A note from you</p>
+                            <h2>What could work better?</h2>
+                            <p>
+                                Tell us what you were trying to do, what happened, or what you wish the tool could do.
+                                A sentence is enough; specifics are welcome.
+                            </p>
+
+                            <div class="feedback-prompts">
+                                <p>Not sure where to start?</p>
+                                <ul>
+                                    <li>What felt clear or surprisingly useful?</li>
+                                    <li>Where did you get stuck or slow down?</li>
+                                    <li>What did you expect to happen instead?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="feedback-form-panel">
+
+                            <form id="feedbackForm" class="feedback-form" action="https://formspree.io/f/mgvgbdkb"
+                                method="POST">
+
+                                <label for="fb-message">Your feedback</label>
+                                <textarea id="fb-message" name="feedback" rows="7"
+                                    placeholder="I was trying to…"></textarea>
+
+                                <p class="feedback-hint">No required fields. Share only what you're comfortable sharing.
+                                </p>
+
+                                <label for="fb-email">Email <span>(optional)</span></label>
+                                <input id="fb-email" name="email" type="email" autocomplete="email"
+                                    placeholder="Only if you'd like a reply">
+
+                                <!-- Distinguish feedback submissions -->
+                                <input type="hidden" name="_subject" value="New Feedback Submission">
+
+                                <!-- Redirect back to feedback page -->
+                                <input type="hidden" name="_redirect" value="feedback.html?sent=1#feedback">
+
+                                <!-- Honeypot -->
+                                <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+
+                                <button type="submit" class="btn-primary send-btn">Send feedback</button>
+
+                                <!-- REQUIRED for your script.js -->
+                                <span class="form-status" role="status" aria-live="polite"></span>
+                            </form>
+
+                            <p class="privacy-note">Your email is optional and helps us respond if you ask a question.
+                            </p>
+                        </div>
+
+
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="foot" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+
+                <!-- Left -->
+                <small>© <span id="year"></span> Discrete Development</small>
+
+                <!-- Center -->
+                <!-- <small style="opacity:.8; text-align:center; flex:1;">
+      The fringe, design for the extraordinary.
+    </small> -->
+
+                <!-- Right -->
+                <small>
+                    <p>The fringe, design for the extraordinary.</p>
+                </small>
+
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
