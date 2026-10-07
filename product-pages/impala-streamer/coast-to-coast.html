@@ -12,9 +12,21 @@
 </head>
 
 <body>
-  <aside class="rail" aria-label="Primary"><button class="menu" id="menuBtn" aria-haspopup="dialog"
-      aria-controls="drawer" aria-expanded="false"><span class="sr-only">Open menu</span><span class="burger"
-        aria-hidden="true"><span></span><span></span><span></span></span></button></aside>
+  <aside class="rail" aria-label="Primary">
+    <button class="menu" id="menuBtn" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <div class="dots" aria-hidden="true">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </aside>
+  
   <section class="drawer" id="drawer" aria-label="Site menu">
     <div id="drawerMount"></div>
   </section>
@@ -49,9 +61,9 @@
             <p>Coast to Coast uses SyncPlay to synchronize media playback across different locations, ensuring both
               participants are at the sane part of the story. With the addition of vocal communication, either hands
               free or push to talk, it's the next best thing to being there.</p>
-     
+
             <p><strong>$2/month</strong></p>
-           
+
           </div>
         </section>
         <div class="space"></div>

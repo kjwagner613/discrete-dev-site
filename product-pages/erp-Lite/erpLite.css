@@ -20,7 +20,7 @@ body.impala-streamer-page {
   gap: clamp(18px, 4vw, 42px);
 }
 
-.impala-page .impala-brand-tile {
+.impala-page .erplite-brand-tile {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
@@ -38,9 +38,9 @@ body.impala-streamer-page {
   padding: 18px;
 }
 
-.impala-page .impala-brand-icon {
+.impala-page .erplite-brand-icon {
   /* width: min(92%, 440px); */
-  width: 95%;
+  width: 100%;
   height: auto;
   image-rendering: -webkit-optimize-contrast;
 }
@@ -477,12 +477,14 @@ body.impala-streamer-page {
     grid-template-columns: 1fr;
   }
 
-  .impala-page .impala-brand-tile {
+  .impala-page .erplite-brand-tile {
     grid-column: auto;
     grid-row: auto;
     justify-self: start;
-    width: min(320px, 100%);
+    width: 500px;
+    /* width: min(320px, 100%); */
   }
+
 
   .impala-page .button-row {
     flex-direction: column;
@@ -754,4 +756,41 @@ h3 {
 
 .opacity-80 {
   opacity: 0.8;
+}
+
+#activityCustomerBased {
+  width: 35vw;
+  height: auto;
+  border: 3px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+}
+
+#productCatalog {
+  width: 35vw;
+  height: auto;
+  margin-left: auto;
+  justify-self: right;
+  border: 3px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+}
+
+#slaDrivenStatus {
+  width: 35vw;
+  height: auto;
+  margin-left: auto;
+  justify-self: right;
+  border: 3px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.row-item {
+  flex: 1;
+  /* min-width: 15vw; */
 }
