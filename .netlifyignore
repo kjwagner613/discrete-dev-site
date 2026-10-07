@@ -1,7 +1,0 @@
-deprecated/
-archive/
-node_modules/
-*.log
-*.tmp
-*.cache/
-*.bak
