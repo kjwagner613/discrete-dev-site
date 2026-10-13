@@ -91,7 +91,8 @@
         <!-- SERVICE DEPENDENCIES -->
         <section class="section dependency-section" id="capabilities">
           <h2>How Services Connect</h2>
-          <p class="section-intro">Impala Streamer Core works independently. Optional services require the Cloud Option for
+          <p class="section-intro">Impala Streamer Core works independently. Optional services require the Cloud Option
+            for
             authorization, so they never change the local listening experience.</p>
 
           <div class="dependency-map" aria-label="Impala service dependencies">
@@ -129,7 +130,62 @@
               </a>
             </div>
           </div>
+
+
+
+
           <p class="footer-note">Select a scene to view that product or service.</p>
+        </section>
+        <div class="space"></div>
+
+        <section class="section dependency-section" id="inspiration">
+          <h2>Real World Experience</h2>
+          <p>Impala was designed to reduce friction wherever possible. The goal was not to require dedicated hardware,
+            complex server-client deployments, or extensive setup before media could be enjoyed.
+          </p>
+          <p>(Actually, the first time I installed it, I thought I'd broken it. The installer finished so quickly I
+            assumed something had gone wrong. A moment later the browser asked permission to open, and that's when I
+            realized the server was already running.)</p>
+          <p>
+            In personal testing, the Home edition was installed, configured, and serving media across a local network in
+            under five minutes. The installation package is approximately 16.5 MB and requires no external framework
+            downloads or package restoration steps.
+          </p>
+          <p>
+            Testing was performed on a Dell business-class laptop with an Intel i5 processor and 32 GB RAM.
+          </p>
+          <p>
+            During normal use, the system simultaneously:</p>
+          <ul>
+            <li>Served media across the local network</li>
+            <li>Played music locally</li>
+            <li>Performed three concurrent MKV-to-H.264 HD transcodes</li>
+            <li>Remained available for general desktop use</li>
+
+          </ul>
+          <p>
+            Throughout testing, playback remained responsive without buffering, interruptions, or noticeable delays.
+          </p>
+          <p>Observed resource utilization:</p>
+          <p>
+            <strong> CPU:</strong> approximately 80% (during sustained transcoding)<br>
+            <strong>Memory:</strong> approximately 50%
+          </p>
+          <p>
+            Impala relies on HTML5, CSS, and JavaScript while utilizing FFmpeg for media processing tasks.<br>
+            The intent is to keep the system lightweight, maintainable, and capable of running on hardware many users
+            already own.
+            <br> The objective is simple:
+          </p>
+          <ul>
+            <li>Install the software</li>
+            <li>Point it at your media</li>
+            <li>Begin using it without needing to become a system administrator first</li>
+          </ul>
+          <p style="margin-top:20px;">Above all,</p>
+          <p style="font-size: 1.3rem"><strong>Never push work onto the user that the system can absorb.</strong></p>
+
+
         </section>
         <footer>
           <div class="foot">
